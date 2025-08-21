@@ -1,6 +1,6 @@
-![alt text](URL_DE_VOTRE_GIF_OU_SCREENSHOT.gif)
+![alt text](intro.jpg)
 
-<p align="center">Il est fortement recommandé de remplacer cette image par une capture d'écran ou un GIF animé de votre jeu !</p>
+
 
 Gyro-Bricks: Special Edition propulse le genre classique du casse-briques dans une nouvelle dimension avec son arène circulaire dynamique à 360°. Plongez dans un univers rétro-futuriste où vos réflexes, votre stratégie et votre capacité à maîtriser le chaos seront mis à rude épreuve.
 
