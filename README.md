@@ -1,80 +1,79 @@
 # Gyro-Bricks: Special Edition
 
-> Le Casse-Briques. Réinventé. En 360 Degrés.
+> The Brick-Breaker. Reinvented. In 360 Degrees.
 
-![Gameplay de Gyro-Bricks](https://github.com/Hisammmmmmmm/gyro-bricks/blob/main/Intro.jpg?raw=true)
+![Gyro-Bricks Gameplay](https://github.com/Hisammmmmmmm/gyro-bricks/blob/main/Intro.jpg?raw=true)
 
-
-**Gyro-Bricks: Special Edition** propulse le genre classique du casse-briques dans une nouvelle dimension avec son arène circulaire dynamique à 360°. Plongez dans un univers rétro-futuriste où vos réflexes, votre stratégie et votre capacité à maîtriser le chaos seront mis à rude épreuve.
+**Gyro-Bricks: Special Edition** propels the classic brick-breaker genre into a new dimension with its dynamic 360° circular arena. Dive into a retro-futuristic universe where your reflexes, strategy, and ability to master chaos will be put to the test.
 
 <p align="center">
   <a href="https://hisammmmmmmm.github.io/gyro-bricks">
-    <strong> jouer à Gyro-Bricks maintenant ! </strong>
+    <strong> Play Gyro-Bricks Now! </strong>
   </a>
 </p>
 
-## Table des Matières
+## Table of Contents
 
-- [À Propos du Jeu](#à-propos-du-jeu)
-- [Caractéristiques Principales](#caractéristiques-principales)
-- [Modes de Jeu](#modes-de-jeu)
-- [Comment Jouer](#comment-jouer)
-- [Commandes](#commandes)
-- [Technologies Utilisées](#technologies-utilisées)
-- [Crédits et Remerciements](#crédits-et-remerciements)
-- [Licence](#licence)
+- [About the Game](#about-the-game)
+- [Main Features](#main-features)
+- [Game Modes](#game-modes)
+- [How to Play](#how-to-play)
+- [Controls](#controls)
+- [Technologies Used](#technologies-used)
+- [Credits and Acknowledgments](#credits-and-acknowledgments)
+- [License](#license)
 
-## À Propos du Jeu
+## About the Game
 
-Le principe est familier : un paddle, une balle, et des briques à détruire. Mais la révolution est dans l'arène. Au lieu d'un simple mouvement horizontal, vous contrôlez votre paddle sur un périmètre circulaire complet, protégeant le cœur d'un réacteur contre des vagues de briques de plus en plus menaçantes.
+The concept is familiar: a paddle, a ball, and bricks to destroy. But the revolution is in the arena. Instead of a simple horizontal movement, you control your paddle around a full circular perimeter, protecting a reactor core from increasingly threatening waves of bricks.
 
-Ce gameplay unique crée des trajectoires imprévisibles, des réactions en chaîne explosives et demande une stratégie totalement nouvelle.
+This unique gameplay creates unpredictable trajectories, explosive chain reactions, and demands a completely new strategy.
 
-## Caractéristiques Principales
+## Main Features
 
--   🌀 **Arène Dynamique à 360° :** Anticipez des rebonds complexes et couvrez tous les angles pour survivre.
--   🎨 **Esthétique Rétro-Futuriste :** Plongez dans une ambiance néon-lumineuse inspirée de la science-fiction des années 80, avec une bande-son techno entraînante.
--   🚀 **Système de Pouvoirs Stratégiques :** Collectez du **mana** et déchaînez des capacités dévastatrices comme des **Explosions**, des **Super Coups** ou l'**Attraction de la Balle**.
--   🧱 **Des Briques aux Effets Uniques :** Affrontez des briques **Tireuses**, **Mobiles**, **Régénératrices** ou encore **de Chaos**.
--   🏆 **Plus de 100 Succès :** Des défis simples aux exploits légendaires, prouvez votre maîtrise du jeu.
--   📊 **Statistiques Détaillées :** Suivez vos performances, vos meilleurs scores et votre progression.
--   📱 **Multi-plateforme :** Jouez avec précision sur ordinateur (souris/clavier) ou en déplacement grâce à des commandes tactiles optimisées.
+-   🌀 **Dynamic 360° Arena:** Anticipate complex bounces and cover all angles to survive.
+-   🎨 **Retro-Futuristic Aesthetic:** Immerse yourself in a neon-lit atmosphere inspired by 80s science fiction, with an upbeat techno soundtrack.
+-   🚀 **Strategic Power-Up System:** Collect **mana** and unleash devastating abilities like **Explosions**, **Super Shots**, or **Ball Attraction**.
+-   🧱 **Bricks with Unique Effects:** Face **Shooter**, **Mobile**, **Regenerating**, or even **Chaos** bricks.
+-   🏆 **Over 100 Achievements:** From simple challenges to legendary feats, prove your mastery of the game.
+-   📊 **Detailed Statistics:** Track your performance, high scores, and progress.
+-   📱 **Cross-Platform:** Play with precision on a computer (mouse/keyboard) or on the go with optimized touch controls.
 
-## Modes de Jeu
+## Game Modes
 
-1.  **Mode Normal :** La campagne principale. Progressez à travers des niveaux de difficulté croissante et affrontez des boss redoutables tous les cinq niveaux.
-2.  **Mode Boss Fight :** L'épreuve d'habileté pure. Plus de briques, juste vous contre des boss titanesques dans des combats chronométrés.
-3.  **Mode Survie (Faille Temporelle) :** Survivez le plus longtemps possible face à des vagues de briques infinies tandis que l'arène se rétrécit inexorablement.
-4.  **Mode Puzzle :** Un défi cérébral. Avec un seul lancer, trouvez la trajectoire parfaite pour atteindre la cible en un minimum de rebonds.
+1.  **Normal Mode:** The main campaign. Progress through levels of increasing difficulty and face formidable bosses every five levels.
+2.  **Boss Fight Mode:** The ultimate skill test. No more bricks, just you against titanic bosses in timed battles.
+3.  **Survival Mode (Time Rift):** Survive as long as possible against endless waves of bricks as the arena inexorably shrinks.
+4.  **Puzzle Mode:** A brain challenge. With a single launch, find the perfect trajectory to hit the target in the fewest bounces.
 
-## Comment Jouer
+## How to Play
 
-### Jouer en Ligne
+### Play Online
 
-La manière la plus simple de jouer est de se rendre sur le lien suivant :
+The easiest way to play is to visit the following link:
 
-**[jouer à Gyro-Bricks](https://hisammmmmmmm.github.io/gyro-bricks/)**  
+**[Play Gyro-Bricks](https://hisammmmmmmm.github.io/gyro-bricks/)**
 
-## Commandes
+## Controls
 
-| Action | Commande Souris/Clavier | Commande Tactile (Paysage) |
+| Action | Mouse/Keyboard Control | Touch Control (Landscape) |
 | :--- | :--- | :--- |
-| **Déplacer le Paddle** | Mouvement de la souris | Glisser sur la **zone extérieure droite** de l'écran |
-| **Lancer la Balle / Pouvoir 1** | Clic Gauche / Espace | Appuyer sur la **zone intérieure droite** de l'écran |
-| **Pouvoir 2** | Clic Droit / Entrée | Appuyer sur le **deuxième bouton de pouvoir** à gauche |
-| **Changer la Vitesse** | Molette / Flèches Haut & Bas | Utiliser le **slider de vitesse** en bas à gauche |
-| **Activer Pouvoir 1 (mobile)** | - | Appuyer sur le **premier bouton de pouvoir** à gauche |
+| **Move Paddle** | Mouse movement | Slide on the **outer right area** of the screen |
+| **Launch Ball / Power 1** | Left Click / Spacebar | Tap the **inner right area** of the screen |
+| **Power 2** | Right Click / Enter | Tap the **second power button** on the left |
+| **Change Speed** | Scroll Wheel / Up & Down Arrows | Use the **speed slider** at the bottom left |
+| **Activate Power 1 (mobile)** | - | Tap the **first power button** on the left |
 
-## Technologies Utilisées
+## Technologies Used
 
-Ce jeu est construit entièrement avec des technologies web standard, sans aucune dépendance externe (framework).
+This game is built entirely with standard web technologies, with no external dependencies (frameworks).
 
 -   **HTML5**
 -   **CSS3**
 -   **JavaScript (ES6+)**
 
-## Crédits et Remerciements
+## Credits and Acknowledgments
 
--   **Musiques :** Les musiques libres de droits proviennent de la chaîne YouTube **Infraction & NCM**.
--   **Effets Sonores :** Les effets sonores ont été téléchargés depuis **Pixabay** ([https://pixabay.com/fr/sound-effects/](https://pixabay.com/fr/sound-effects/)).
--   **Développement :** Ce jeu a été développé par **HMZ** avec l'aide des outils d'intelligence artificielle **Gemini Pro (Google)** et **Kimi K2 (Moonshot AI)**.
+-   **Music:** Royalty-free music comes from the YouTube channel **Infraction & NCM**.
+-   **Sound Effects:** Sound effects were downloaded from **Pixabay** ([https://pixabay.com/sound-effects/](https://pixabay.com/sound-effects/)).
+-   **Development:** This game was developed by **HMZ** with the help of artificial intelligence tools **Gemini Pro (Google)** and **Kimi K2 (Moonshot AI)**.
