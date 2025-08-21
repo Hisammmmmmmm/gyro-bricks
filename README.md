@@ -37,7 +37,7 @@ This unique gameplay creates unpredictable trajectories, explosive chain reactio
 -   🧱 **Bricks with Unique Effects:** Face **Shooter**, **Mobile**, **Regenerating**, or even **Chaos** bricks.
 -   🏆 **Over 100 Achievements:** From simple challenges to legendary feats, prove your mastery of the game.
 -   📊 **Detailed Statistics:** Track your performance, high scores, and progress.
--   📱 **Cross-Platform:** Play with precision on a computer (mouse/keyboard) or on the go with optimized touch controls.
+-   📱 Cross-Platform & Mobile-Ready: Play with precision on a computer (mouse/keyboard) or on the go. The game features a responsive design that adapts to smartphone screens for optimal ergonomics and user experience.
 
 ## Game Modes
 
