@@ -2466,11 +2466,13 @@
         <!-- AJOUT DE L'ECRAN DE CLASSEMENT -->
           <div id="leaderboardScreen" style="display: none; text-align: left; max-width: 800px;">
             <h1>Classement Mondial</h1>
-            <!-- La sélection du niveau a été retirée -->
+            <!-- La sélection du niveau a été retirée -->    
             <div id="leaderboardControls" style="display: flex; gap: 10px; align-items: center; margin-bottom: 15px; flex-wrap: wrap;">
                 <button id="leaderboardNormalBtn">Mode Normal</button>
                 <button id="leaderboardBossBtn" class="boss-mode-btn">Mode Boss</button>
+                <button id="leaderboardSurvivalBtn" class="extra-life-btn">Mode Survie</button> <!-- BOUTON AJOUTÉ -->
             </div>
+  
             <div id="leaderboardContent" style="margin-top: 15px; max-height: 60vh; overflow-y: auto;">
                 <!-- Les scores seront insérés ici par JavaScript -->
             </div>
@@ -6674,8 +6676,7 @@
             updateMenuFocus(puzzleCompleteScreen);
         }
 
-            function showGameOver() {
-            // CORRIGÉ : Assure que le son se joue au moment du Game Over, pas au clic
+             async function showGameOver() {
             playGameOver();
 
             backgroundMusic.volume = 0.25;
@@ -6684,14 +6685,13 @@
             saveGlobalStats();
             if (autoSaveInterval) clearInterval(autoSaveInterval);
             
-            // Masque tous les contenus spécifiques par défaut
             normalGameOverContent.style.display = 'none';
             survivalGameOverContent.style.display = 'none';
             puzzleGameOverContent.style.display = 'none';
             
             if (isPuzzleMode) {
                 puzzleGameOverContent.style.display = 'block';
-                restartLevelBtn.style.display = 'none'; // Pas de "recommencer le niveau" pour les puzzles
+                restartLevelBtn.style.display = 'none';
                 restartGameBtn.dataset.langKey = 'puzzle_retry';
                 backToMenuBtn.dataset.langKey = 'puzzle_back_select';
             }
@@ -6705,6 +6705,7 @@
                 restartLevelBtn.style.display = 'none';
                 restartGameBtn.dataset.langKey = 'restart_survival';
                 
+                // Sauvegarde locale (inchangée)
                 let survivalStats = [];
                 try {
                     const saved = localStorage.getItem(STATS_KEY_SURVIVAL);
@@ -6715,11 +6716,35 @@
                 if (survivalStats.length > 20) survivalStats.length = 20;
                 localStorage.setItem(STATS_KEY_SURVIVAL, JSON.stringify(survivalStats));
 
+                // --- NOUVEAU BLOC : ENVOI DU SCORE DE SURVIE À FIREBASE ---
+                if (typeof db !== 'undefined' && score > 0) {
+                    let playerName = localStorage.getItem('gyrobricks_playerName');
+                    if (!playerName || playerName.trim().length < 3) {
+                        playerName = await promptForPlayerName(); // On attend que le joueur entre son nom
+                        localStorage.setItem('gyrobricks_playerName', playerName);
+                    }
+                    
+                    const scoreData = {
+                        time: survivalTime,
+                        score: score,
+                        wave: waveNumber,
+                        bosses: survivalBossesDefeated,
+                        playerName: playerName.trim(),
+                        timestamp: firebase.firestore.FieldValue.serverTimestamp()
+                    };
+
+                    db.collection('leaderboards_survival').add(scoreData)
+                        .then(docRef => console.log("Score de survie mondial enregistré avec l'ID: ", docRef.id))
+                        .catch(error => console.error("Erreur lors de l'enregistrement du score de survie: ", error));
+                }
+                // --- FIN DU NOUVEAU BLOC ---
+
                 if (survivalTime >= 120000) unlockAchievement('b_42');
                 if (survivalTime >= 300000) unlockAchievement('s_31');
                 if (survivalTime >= 600000) unlockAchievement('g_21');
                 if (survivalBossesDefeated >= 1) unlockAchievement('b_44');
                 if (survivalBossesDefeated >= 5) unlockAchievement('g_22');
+
             } else {
                 normalGameOverContent.style.display = 'block';
                 gameOverScreen.querySelector('h2').dataset.langKey = 'game_over';
@@ -8265,6 +8290,7 @@
         if(leaderboardScreen) {
             document.getElementById('leaderboardNormalBtn').addEventListener('click', () => fetchLeaderboard('normal'));
             document.getElementById('leaderboardBossBtn').addEventListener('click', () => fetchLeaderboard('boss'));
+            document.getElementById('leaderboardSurvivalBtn').addEventListener('click', () => fetchLeaderboard('survival')); // LIGNE AJOUTÉE
         }
         
         function populateAchievementsScreen() { 
@@ -8862,61 +8888,78 @@
             const contentDiv = document.getElementById('leaderboardContent');
             const normalBtn = document.getElementById('leaderboardNormalBtn');
             const bossBtn = document.getElementById('leaderboardBossBtn');
+            const survivalBtn = document.getElementById('leaderboardSurvivalBtn');
             
             contentDiv.innerHTML = `<p>${getTranslation('loading')}</p>`;
 
-            // Met en évidence le bouton du mode actif
-            normalBtn.classList.toggle('active', mode === 'normal');
-            bossBtn.classList.toggle('active', mode === 'boss');
+                // Met en évidence le bouton du mode actif
+                normalBtn.classList.toggle('active', mode === 'normal');
+                bossBtn.classList.toggle('active', mode === 'boss');
+                survivalBtn.classList.toggle('active', mode === 'survival');
 
-            const modeCollection = mode === 'boss' ? 'leaderboards_boss' : 'leaderboards_normal';
+                let query;
+                let tableHeaderHTML = '';
+                let isSurvival = (mode === 'survival');
 
-            try {
-                // === LA LIGNE IMPORTANTE A ÉTÉ MODIFIÉE ICI ===
-                // On trie d'abord par niveau (décroissant), PUIS par score (décroissant).
-                const querySnapshot = await db.collection(modeCollection)
-                    .orderBy("level", "desc")  // 1. Trier par niveau
-                    .orderBy("score", "desc")  // 2. Puis par score
-                    .limit(50)
-                    .get();
-                
-                if (querySnapshot.empty) {
-                    contentDiv.innerHTML = `<p>Aucun score pour ce mode. Soyez le premier !</p>`;
-                    return;
+                // On configure la requête et l'en-tête du tableau en fonction du mode
+                if (isSurvival) {
+                    query = db.collection('leaderboards_survival')
+                        .orderBy("time", "desc")
+                        .orderBy("score", "desc")
+                        .limit(50);
+                    tableHeaderHTML = `<thead><tr><th>#</th><th>Joueur</th><th>Temps</th><th>Score</th><th>Vague</th></tr></thead>`;
+                } else {
+                    const modeCollection = mode === 'boss' ? 'leaderboards_boss' : 'leaderboards_normal';
+                    query = db.collection(modeCollection)
+                        .orderBy("level", "desc")
+                        .orderBy("score", "desc")
+                        .limit(50);
+                    tableHeaderHTML = `<thead><tr><th>#</th><th>Joueur</th><th>Score</th><th>Niveau</th><th>Étoiles</th></tr></thead>`;
                 }
 
-                // Le reste de l'affichage du tableau est identique
-                let html = '<table style="width: 100%; border-collapse: collapse;">';
-                html += `<thead><tr><th>#</th><th>Joueur</th><th>Score</th><th>Niveau</th><th>Étoiles</th></tr></thead><tbody>`;
-                
-                let rank = 1;
-                querySnapshot.forEach(doc => {
-                    const data = doc.data();
+                try {
+                    const querySnapshot = await query.get();
                     
-                    let starsHTML = '';
-                    for (let i = 0; i < 5; i++) {
-                        starsHTML += i < data.stars ? '<i class="fas fa-star" style="color:#ffd700;"></i>' : '<i class="far fa-star" style="color:#444;"></i>';
+                    if (querySnapshot.empty) {
+                        contentDiv.innerHTML = `<p>Aucun score pour ce mode. Soyez le premier !</p>`;
+                        return;
                     }
 
-                    html += `
-                        <tr style="border-bottom: 1px solid var(--ui-border-color);">
-                            <td style="padding: 8px;">${rank++}</td>
-                            <td style="padding: 8px;">${escapeHtml(data.playerName)}</td>
-                            <td style="padding: 8px;">${data.score.toLocaleString()}</td>
-                            <td style="padding: 8px; text-align: center;">${data.level}</td>
-                            <td style="padding: 8px;">${starsHTML}</td>
-                        </tr>
-                    `;
-                });
+                    let html = `<table style="width: 100%; border-collapse: collapse;">${tableHeaderHTML}<tbody>`;
+                    
+                    let rank = 1;
+                    querySnapshot.forEach(doc => {
+                        const data = doc.data();
+                        html += `<tr style="border-bottom: 1px solid var(--ui-border-color);">`;
+                        html += `<td style="padding: 8px;">${rank++}</td>`;
+                        html += `<td style="padding: 8px;">${escapeHtml(data.playerName)}</td>`;
+                        
+                        // On affiche les colonnes spécifiques au mode
+                        if (isSurvival) {
+                            html += `<td style="padding: 8px;">${formatTime(data.time)}</td>`;
+                            html += `<td style="padding: 8px;">${data.score.toLocaleString()}</td>`;
+                            html += `<td style="padding: 8px; text-align: center;">${data.wave}</td>`;
+                        } else {
+                            let starsHTML = '';
+                            for (let i = 0; i < 5; i++) {
+                                starsHTML += i < data.stars ? '<i class="fas fa-star" style="color:#ffd700;"></i>' : '<i class="far fa-star" style="color:#444;"></i>';
+                            }
+                            html += `<td style="padding: 8px;">${data.score.toLocaleString()}</td>`;
+                            html += `<td style="padding: 8px; text-align: center;">${data.level}</td>`;
+                            html += `<td style="padding: 8px;">${starsHTML}</td>`;
+                        }
+                        
+                        html += `</tr>`;
+                    });
 
-                html += '</tbody></table>';
-                contentDiv.innerHTML = html;
+                    html += '</tbody></table>';
+                    contentDiv.innerHTML = html;
 
-            } catch (error) {
-                console.error("Erreur lors de la récupération du classement : ", error);
-                contentDiv.innerHTML = `<p>Impossible de charger le classement. Veuillez réessayer.</p>`;
+                } catch (error) {
+                    console.error("Erreur lors de la récupération du classement : ", error);
+                    contentDiv.innerHTML = `<p>Impossible de charger le classement. Veuillez réessayer.</p>`;
+                }
             }
-        }
 
         // Petite fonction utilitaire pour éviter les injections XSS
         function escapeHtml(unsafe) {
