@@ -179,7 +179,8 @@
         overflow: hidden; /* Ensures video doesn't bleed out */
     }
     
-    #introVideo {
+    /* MODIFICATION : Remplacement de #introVideo par #introImage */
+    #introImage {
         position: absolute;
         top: 50%;
         left: 50%;
@@ -188,17 +189,6 @@
         object-fit: cover;
         transform: translate(-50%, -50%);
         z-index: 0; /* Behind everything in the intro screen */
-    }
-
-    #introImage { /* Le sélecteur est changé de #introVideo à #introImage */
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transform: translate(-50%, -50%);
-        z-index: 0; /* Conserve sa place en arrière-plan */
     }
 
     #introScreen::before {
@@ -307,7 +297,7 @@
         aspect-ratio: 1 / 1; 
     }
 
-    #menu, #modeSelect, #settingsScreen, #powerSelectMenu, #tutorialContainer, #levelCompleteScreen, #statsScreen, #achievementsScreen, #creditsScreen, #confirmDialog, #puzzleLevelSelectScreen, #puzzleCompleteScreen {
+    #menu, #modeSelect, #settingsScreen, #powerSelectMenu, #tutorialContainer, #levelCompleteScreen, #statsScreen, #achievementsScreen, #creditsScreen, #confirmDialog, #puzzleLevelSelectScreen, #puzzleCompleteScreen, #leaderboardScreen {
         background: rgba(20, 5, 40, 0.65);
         backdrop-filter: blur(12px) saturate(150%);
         border: 2px solid var(--ui-border-color);
@@ -433,13 +423,13 @@
     }
 
     /* Scrollbar styling for menus */
-    #menu::-webkit-scrollbar, #gameOverScreen::-webkit-scrollbar, #modeSelect::-webkit-scrollbar, #settingsScreen::-webkit-scrollbar, #powerSelectMenu::-webkit-scrollbar, #tutorialContainer::-webkit-scrollbar, #levelCompleteScreen::-webkit-scrollbar, #statsScreen::-webkit-scrollbar, #achievementsScreen::-webkit-scrollbar, #puzzleLevelSelectScreen::-webkit-scrollbar, #puzzleCompleteScreen::-webkit-scrollbar {
+    #menu::-webkit-scrollbar, #gameOverScreen::-webkit-scrollbar, #modeSelect::-webkit-scrollbar, #settingsScreen::-webkit-scrollbar, #powerSelectMenu::-webkit-scrollbar, #tutorialContainer::-webkit-scrollbar, #levelCompleteScreen::-webkit-scrollbar, #statsScreen::-webkit-scrollbar, #achievementsScreen::-webkit-scrollbar, #puzzleLevelSelectScreen::-webkit-scrollbar, #puzzleCompleteScreen::-webkit-scrollbar, #leaderboardScreen::-webkit-scrollbar {
         width: 8px;
     }
-    #menu::-webkit-scrollbar-track, #gameOverScreen::-webkit-scrollbar-track, #modeSelect::-webkit-scrollbar-track, #settingsScreen::-webkit-scrollbar-track, #powerSelectMenu::-webkit-scrollbar-track, #tutorialContainer::-webkit-scrollbar-track, #levelCompleteScreen::-webkit-scrollbar-track, #statsScreen::-webkit-scrollbar-track, #achievementsScreen::-webkit-scrollbar-track, #puzzleLevelSelectScreen::-webkit-scrollbar-track, #puzzleCompleteScreen::-webkit-scrollbar-track {
+    #menu::-webkit-scrollbar-track, #gameOverScreen::-webkit-scrollbar-track, #modeSelect::-webkit-scrollbar-track, #settingsScreen::-webkit-scrollbar-track, #powerSelectMenu::-webkit-scrollbar-track, #tutorialContainer::-webkit-scrollbar-track, #levelCompleteScreen::-webkit-scrollbar-track, #statsScreen::-webkit-scrollbar-track, #achievementsScreen::-webkit-scrollbar-track, #puzzleLevelSelectScreen::-webkit-scrollbar-track, #puzzleCompleteScreen::-webkit-scrollbar-track, #leaderboardScreen::-webkit-scrollbar-track {
         background: rgba(0, 249, 255, 0.1);
     }
-    #menu::-webkit-scrollbar-thumb, #gameOverScreen::-webkit-scrollbar-thumb, #modeSelect::-webkit-scrollbar-thumb, #settingsScreen::-webkit-scrollbar-thumb, #powerSelectMenu::-webkit-scrollbar-thumb, #tutorialContainer::-webkit-scrollbar-thumb, #levelCompleteScreen::-webkit-scrollbar-thumb, #statsScreen::-webkit-scrollbar-thumb, #achievementsScreen::-webkit-scrollbar-thumb, #puzzleLevelSelectScreen::-webkit-scrollbar-thumb, #puzzleCompleteScreen::-webkit-scrollbar-thumb {
+    #menu::-webkit-scrollbar-thumb, #gameOverScreen::-webkit-scrollbar-thumb, #modeSelect::-webkit-scrollbar-thumb, #settingsScreen::-webkit-scrollbar-thumb, #powerSelectMenu::-webkit-scrollbar-thumb, #tutorialContainer::-webkit-scrollbar-thumb, #levelCompleteScreen::-webkit-scrollbar-thumb, #statsScreen::-webkit-scrollbar-thumb, #achievementsScreen::-webkit-scrollbar-thumb, #puzzleLevelSelectScreen::-webkit-scrollbar-thumb, #puzzleCompleteScreen::-webkit-scrollbar-thumb, #leaderboardScreen::-webkit-scrollbar-thumb {
         background: var(--primary-glow-color);
         border-radius: 10px;
     }
@@ -496,7 +486,7 @@
         }
     }
 
-    #menu h1, #modeSelect h1, #settingsScreen h1, #powerSelectMenu h2, #tutorialContainer h2, #levelCompleteScreen h2, #statsScreen h1, #achievementsScreen h1, #puzzleLevelSelectScreen h1, #puzzleCompleteScreen h2 {
+    #menu h1, #modeSelect h1, #settingsScreen h1, #powerSelectMenu h2, #tutorialContainer h2, #levelCompleteScreen h2, #statsScreen h1, #achievementsScreen h1, #puzzleLevelSelectScreen h1, #puzzleCompleteScreen h2, #leaderboardScreen h1 {
         color: var(--primary-glow-color);
         font-size: clamp(1.5em, 4vw, 2.5em); 
         margin-bottom: 20px;
@@ -568,7 +558,7 @@
         text-shadow: 0 0 5px rgba(255, 100, 100, 0.5);
     }
 
-    #menu button, #gameOverScreen button, #modeSelect button, #settingsScreen button, #powerSelectMenu button, #tutorialContainer button, #levelCompleteScreen button, #statsScreen button, #achievementsScreen button, #creditsScreen button, #confirmDialog button, #puzzleLevelSelectScreen button, #puzzleCompleteScreen button {
+    #menu button, #gameOverScreen button, #modeSelect button, #settingsScreen button, #powerSelectMenu button, #tutorialContainer button, #levelCompleteScreen button, #statsScreen button, #achievementsScreen button, #creditsScreen button, #confirmDialog button, #puzzleLevelSelectScreen button, #puzzleCompleteScreen button, #leaderboardScreen button {
         background: linear-gradient(45deg, var(--primary-glow-color), #00aaff);
         border: 1px solid transparent;
         padding: 12px 25px; 
@@ -586,7 +576,7 @@
         z-index: 1;
     }
 
-    #menu button::before, #gameOverScreen button::before, #modeSelect button::before, #settingsScreen button::before, #powerSelectMenu button::before, #tutorialContainer button::before, #levelCompleteScreen button::before, #statsScreen button::before, #achievementsScreen button::before, #creditsScreen button::before, #confirmDialog button::before, #puzzleLevelSelectScreen button::before, #puzzleCompleteScreen button::before {
+    #menu button::before, #gameOverScreen button::before, #modeSelect button::before, #settingsScreen button::before, #powerSelectMenu button::before, #tutorialContainer button::before, #levelCompleteScreen button::before, #statsScreen button::before, #achievementsScreen button::before, #creditsScreen button::before, #confirmDialog button::before, #puzzleLevelSelectScreen button::before, #puzzleCompleteScreen button::before, #leaderboardScreen button::before {
         content: "";
         position: absolute;
         z-index: -1;
@@ -600,16 +590,16 @@
         transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
     }
 
-    #menu button:hover, #gameOverScreen button:hover, #modeSelect button:hover, #settingsScreen button:hover, #powerSelectMenu button:hover, #tutorialContainer button:hover, #levelCompleteScreen button:hover, #statsScreen button:hover, #achievementsScreen button:hover, #creditsScreen button:hover, #confirmDialog button:hover, #puzzleLevelSelectScreen button:hover, #puzzleCompleteScreen button:hover {
+    #menu button:hover, #gameOverScreen button:hover, #modeSelect button:hover, #settingsScreen button:hover, #powerSelectMenu button:hover, #tutorialContainer button:hover, #levelCompleteScreen button:hover, #statsScreen button:hover, #achievementsScreen button:hover, #creditsScreen button:hover, #confirmDialog button:hover, #puzzleLevelSelectScreen button:hover, #puzzleCompleteScreen button:hover, #leaderboardScreen button:hover {
         box-shadow: 0 0 25px rgba(0, 249, 255, 0.7);
         transform: translateY(-3px);
     }
 
-    #menu button:hover::before, #gameOverScreen button:hover::before, #modeSelect button:hover::before, #settingsScreen button:hover::before, #powerSelectMenu button:hover::before, #tutorialContainer button:hover::before, #levelCompleteScreen button:hover::before, #statsScreen button:hover::before, #achievementsScreen button:hover::before, #creditsScreen button:hover::before, #confirmDialog button:hover::before, #puzzleLevelSelectScreen button:hover::before, #puzzleCompleteScreen button:hover::before {
+    #menu button:hover::before, #gameOverScreen button:hover::before, #modeSelect button:hover::before, #settingsScreen button:hover::before, #powerSelectMenu button:hover::before, #tutorialContainer button:hover::before, #levelCompleteScreen button:hover::before, #statsScreen button:hover::before, #achievementsScreen button:hover::before, #creditsScreen button:hover::before, #confirmDialog button:hover::before, #puzzleLevelSelectScreen button:hover::before, #puzzleCompleteScreen button:hover::before, #leaderboardScreen button:hover::before {
         transform: scaleX(1);
     }
     
-    #menu button:active, #gameOverScreen button:active, #modeSelect button:active, #settingsScreen button:active, #powerSelectMenu button:active, #tutorialContainer button:active, #levelCompleteScreen button:active, #statsScreen button:active, #achievementsScreen button:active, #creditsScreen button:active, #puzzleLevelSelectScreen button:active, #puzzleCompleteScreen button:active {
+    #menu button:active, #gameOverScreen button:active, #modeSelect button:active, #settingsScreen button:active, #powerSelectMenu button:active, #tutorialContainer button:active, #levelCompleteScreen button:active, #statsScreen button:active, #achievementsScreen button:active, #creditsScreen button:active, #puzzleLevelSelectScreen button:active, #puzzleCompleteScreen button:active, #leaderboardScreen button:active {
         transform: translateY(1px);
         box-shadow: 0 0 10px rgba(0, 249, 255, 0.4);
         transition: transform 0.1s;
@@ -1368,7 +1358,7 @@
     
     /* media query pour petits écrans afin d'éviter le scroll dans le menu de sélection des pouvoirs */
     @media (max-height: 850px), (max-width: 800px) {
-        #gameOverScreen, #levelCompleteScreen, #tutorialContainer, #menu, #settingsScreen, #statsScreen, #creditsScreen, #puzzleLevelSelectScreen, #puzzleCompleteScreen {
+        #gameOverScreen, #levelCompleteScreen, #tutorialContainer, #menu, #settingsScreen, #statsScreen, #creditsScreen, #puzzleLevelSelectScreen, #puzzleCompleteScreen, #leaderboardScreen {
             padding: 10px 15px; /* Réduit l'espacement intérieur */
             max-height: 95vh; /* Permet au menu d'utiliser un peu plus de hauteur */
         }
@@ -1400,7 +1390,7 @@
         }
 
         /* Réduit la taille des titres H1 et leurs marges */
-        #menu h1, #statsScreen h1, #settingsScreen h1, #puzzleLevelSelectScreen h1 {
+        #menu h1, #statsScreen h1, #settingsScreen h1, #puzzleLevelSelectScreen h1, #leaderboardScreen h1 {
             font-size: clamp(1.6em, 6vh, 2em);
             margin-bottom: 8px;
         }
@@ -1425,7 +1415,7 @@
         }
 
         /* Rend les boutons plus petits */
-        #gameOverScreen button, #levelCompleteScreen button, #tutorialContainer button, #puzzleCompleteScreen button {
+        #gameOverScreen button, #levelCompleteScreen button, #tutorialContainer button, #puzzleCompleteScreen button, #leaderboardScreen button {
             font-size: clamp(0.9em, 3vh, 1em);
             padding: 8px 15px;
             margin: 4px;
@@ -2025,7 +2015,6 @@
             transform: translate(-50%, -50%) scale(0.8);
         }
     }
-
 </style>
 </head>
 <body>
@@ -2045,9 +2034,8 @@
 
 
     
-        
     <div id="introScreen">
-        <!-- La balise video est remplacée par la balise img -->
+        <!-- MODIFICATION : La balise video est remplacée par une balise img -->
         <img id="introImage" src="intro.jpg" alt="Gyro-Bricks Title Screen">
         <canvas id="introCanvas"></canvas>
         <div id="introContent">
@@ -2055,8 +2043,6 @@
              <p class="click-to-start" data-lang-key="click_to_start">Cliquez pour commencer</p>
         </div>
     </div>
-
-  
 
     <audio id="preIntroAmbience" src="ambience.mp3" loop></audio>
     <audio id="typingSound" src="typing.mp3"></audio>
@@ -2174,6 +2160,7 @@
             <button id="bossModeBtn" class="boss-mode-btn" data-lang-key="boss_mode">Mode Boss Fight</button>
             <button id="survivalModeBtn" class="extra-life-btn" data-lang-key="survival_mode">Mode Survie</button>
             <button id="puzzleModeBtn" class="puzzle-mode-btn" data-lang-key="puzzle_mode">Mode Puzzle</button>
+            <button id="leaderboardBtn">Classement Mondial</button> <!-- AJOUT DU BOUTON CLASSEMENT -->
             <button id="statsBtn" data-lang-key="stats">Statistiques</button>
             <button id="achievementsBtn" data-lang-key="achievements">Succès</button>
             <button id="tutorialBtn" data-lang-key="tutorial">Tutoriel</button>
@@ -2413,6 +2400,19 @@
         </div>
 
   
+        <!-- AJOUT DE L'ECRAN DE CLASSEMENT -->
+          <div id="leaderboardScreen" style="display: none; text-align: left; max-width: 800px;">
+            <h1>Classement Mondial</h1>
+            <!-- La sélection du niveau a été retirée -->
+            <div id="leaderboardControls" style="display: flex; gap: 10px; align-items: center; margin-bottom: 15px; flex-wrap: wrap;">
+                <button id="leaderboardNormalBtn">Mode Normal</button>
+                <button id="leaderboardBossBtn" class="boss-mode-btn">Mode Boss</button>
+            </div>
+            <div id="leaderboardContent" style="margin-top: 15px; max-height: 60vh; overflow-y: auto;">
+                <!-- Les scores seront insérés ici par JavaScript -->
+            </div>
+            <button id="backToMenuFromLeaderboardBtn" style="margin-top: 20px;">Retour au Menu</button>
+        </div>
 
             
         <div id="confirmDialog" style="display: none;">
@@ -2427,7 +2427,25 @@
   
     </div>
 
+    <!-- AJOUT DES SCRIPTS FIREBASE (version compatibilité pour la syntaxe existante) -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+
     <script>
+        // === INITIALISATION DE FIREBASE (avec vos identifiants) ===
+        const firebaseConfig = {
+            apiKey: "AIzaSyD792_SH6CvU4d4m4wVzWiTYnyIDNR9sZg",
+            authDomain: "gyrobricks-scores.firebaseapp.com",
+            projectId: "gyrobricks-scores",
+            storageBucket: "gyrobricks-scores.firebasestorage.app",
+            messagingSenderId: "909545240813",
+            appId: "1:909545240813:web:5e290eba41d7edbe7634e4"
+        };
+        // Initialiser Firebase
+        const app = firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+
+
         // === TRANSLATION DATA ===
        const translations = {
             'fr': {
@@ -4112,7 +4130,7 @@
                 { title: "収集するボーナス", content: "フィールドには時々ボーナスが出現します。ボールでキャッチして一時的な効果を発動させましょう！", visual: '<div class="tutorial-visuals"><div class="tutorial-bonus"><div class="tutorial-bonus-shape" style="color: #00ffcc; border-color: #00ffcc;"><i class="fas fa-expand-arrows-alt"></i></div><p>パドル+</p></div><div class="tutorial-bonus"><div class="tutorial-bonus-shape" style="color: #ffff00; border-color: #ffff00;"><i class="fas fa-circle"></i></div><p>ボール+</p></div><div class="tutorial-bonus"><div class="tutorial-bonus-shape" style="color: #0096ff; border-color: #0096ff;">❤</div><p>一時ライフ</p></div><div class="tutorial-bonus"><div class="tutorial-bonus-shape" style="color: #ff00ff; border-color: #ff00ff;"><i class="fas fa-clone"></i></div><p>ダブルボール</p></div><div class="tutorial-bonus"><div class="tutorial-bonus-shape" style="color: #ff00ff; border-color: #ff00ff;"><i class="fas fa-crosshairs"></i></div><p>ホーミング</p></div><div class="tutorial-bonus"><div class="tutorial-bonus-shape" style="color: #ffeb3b; border-color: #ffeb3b;"><i class="fas fa-hand-sparkles"></i></div><p>ボーナス誘引</p></div><div class="tutorial-bonus"><div class="tutorial-bonus-shape" style="color: #e91e63; border-color: #e91e63;"><i class="fas fa-bolt"></i></div><p>マナMAX</p></div></div>' },
                 { title: "アンロックするパワー", content: "MPコストの順に、4レベルごとに新しいパワーをアンロックします。", visual: '<ul class="tutorial-power-list"><li><i class="fas fa-hand-sparkles" style="color: #ffeb3b;"></i> ボーナス誘引 (Lv 4)</li><li><i class="fas fa-magnet" style="color: #9c27b0;"></i> ボール誘引 (Lv 8)</li><li><i class="fas fa-fist-raised" style="color: #ff4444;"></i> スーパーショット (Lv 12)</li><li><i class="fas fa-heart" style="color: #ff00ff;"></i> 追加ライフ (Lv 16)</li><li><i class="fas fa-bomb" style="color: #ff5722;"></i> 爆発 (Lv 20)</li><li><i class="fas fa-compress-arrows-alt" style="color: #8eff2b;"></i> 反発 (Lv 24)</li><li><i class="fas fa-random" style="color: #ffc107;"></i> カオス (Lv 28)</li></ul>' },
                 { title: "ボスファイトモード", content: "究極の挑戦に備えましょう！このモードではブロックではなく、手ごわいボスと対決します。<br>各レベルではユニークな攻撃を持つさまざまなタイプのボスが組み合わされます。すべて倒して進みましょう！<br><strong>注意：</strong>各ボス戦は<strong>150秒</strong>に制限されています！", visual: '<i class="fas fa-dragon" style="font-size: 60px; color: var(--danger-glow-color);"></i>' },
-                { title: "サバイバルモード（タイムリフト）", content: "目標は、無限に続くブロックの波からできるだけ長く生き残ることです。<br>アリーナは絶えず縮小します！ブロックを破壊して押し返し、一息つく時間を作りましょう。<br>20秒ごとに新しい波が現れます。時間は経つにつれて難易度が上がり、ミニボスが挑戦を盛り上げます！<br>幸運を祈ります、司令官！", visual: '<i class="fas fa-hourglass-half" style="font-size: 60px; color: #ff00ff;"></i>' },
+                 { title: "サバイバルモード（タイムリフト）", content: "目標は、無限に続くブロックの波からできるだけ長く生き残ることです。<br>アリーナは絶えず縮小します！ブロックを破壊して押し返し、一息つく時間を作りましょう。<br>20秒ごとに新しい波が現れます。時間は経つにつれて難易度が上がり、ミニボスが挑戦を盛り上げます！<br>幸運を祈ります、司令官！", visual: '<i class="fas fa-hourglass-half" style="font-size: 60px; color: #ff00ff;"></i>' },
                  { title: "パズルモード", content: "ここでは反射神経よりも思考力が重要です！<br>目標は、一回のショットでターゲットブロックに当てることです。ボールは障害物に跳ね返ることができますが、一度発射されるとパドルには跳ね返りません。<br>バウンドが少ないほど、より多くの星を獲得できます！パワーもボーナスもありません。完璧な軌道を見つけ出してください！", visual: '<i class="fas fa-puzzle-piece" style="font-size: 60px; color: #4caf50;"></i>' }
             ]
         };
@@ -5576,6 +5594,10 @@
         const confirmPowersBtn = document.getElementById('confirmPowersBtn');
         const backToMenuFromPowerSelectBtn = document.getElementById('backToMenuFromPowerSelectBtn');
         
+        // --- NOUVELLES VARIABLES POUR LE CLASSEMENT ---
+        const leaderboardBtn = document.getElementById("leaderboardBtn");
+        const leaderboardScreen = document.getElementById("leaderboardScreen");
+        const backToMenuFromLeaderboardBtn = document.getElementById("backToMenuFromLeaderboardBtn");
         
         // UI de bureau
         const leftUI = document.getElementById("leftUI");
@@ -5946,7 +5968,7 @@
             
             // Sauvegarde de la préférence
             localStorage.setItem('gyrobricks_volume', volume);
-}
+        }
 
         const BOSS_TYPES = {
             WALL: { name_key: "boss_wall_name", color: "#4a90e2", health: 8, speed: 0.008, radius: 50, attackInterval: 3000, behavior: "shockwave", shape: "triangle", movePattern: 'orbit' },
@@ -8058,6 +8080,7 @@
         statsBossModeBtn.addEventListener("click", () => { displayLevelStats("boss"); statsBossModeBtn.classList.add("active"); statsNormalModeBtn.classList.remove("active"); statsSurvivalModeBtn.classList.remove("active"); });
         statsSurvivalModeBtn.addEventListener("click", () => { displayLevelStats("survival"); statsSurvivalModeBtn.classList.add("active"); statsNormalModeBtn.classList.remove("active"); statsBossModeBtn.classList.remove("active"); });
         
+        
         function populateStatsScreen() {
             document.getElementById('totalPlayTimeStat').textContent = formatTime(globalStats.totalPlayTime); document.getElementById('totalBricksDestroyedStat').textContent = globalStats.totalBricksDestroyed; document.getElementById('totalBossesDefeatedStat').textContent = globalStats.totalBossesDefeated; document.getElementById('totalBonusesCollectedStat').textContent = globalStats.totalBonusesCollected; document.getElementById('totalPowersUsedStat').textContent = globalStats.totalPowersUsed; document.getElementById('totalDeathsStat').textContent = globalStats.totalDeaths;
             displayLevelStats("normal"); statsNormalModeBtn.classList.add("active"); statsBossModeBtn.classList.remove("active"); statsSurvivalModeBtn.classList.remove("active");
@@ -8126,6 +8149,31 @@
             modeSelect.style.display = 'block'; 
             updateMenuFocus(modeSelect); 
         });
+        
+        // GESTIONNAIRES D'ÉVÉNEMENTS POUR LE CLASSEMENT MONDIAL (VERSION SIMPLIFIÉE)
+        if (leaderboardBtn) {
+            leaderboardBtn.addEventListener('click', () => {
+                modeSelect.style.display = 'none';
+                leaderboardScreen.style.display = 'block';
+                showFullScreenMenuParticles();
+                updateMenuFocus(leaderboardScreen);
+                fetchLeaderboard('normal'); // Affiche les meilleurs scores du mode Normal par défaut
+            });
+        }
+
+        if (backToMenuFromLeaderboardBtn) {
+            backToMenuFromLeaderboardBtn.addEventListener('click', () => {
+                leaderboardScreen.style.display = 'none';
+                modeSelect.style.display = 'block';
+                updateMenuFocus(modeSelect);
+            });
+        }
+
+        // Logique pour les boutons de changement de mode
+        if(leaderboardScreen) {
+            document.getElementById('leaderboardNormalBtn').addEventListener('click', () => fetchLeaderboard('normal'));
+            document.getElementById('leaderboardBossBtn').addEventListener('click', () => fetchLeaderboard('boss'));
+        }
         
         function populateAchievementsScreen() { 
             achievementsListContainer.innerHTML = ''; 
@@ -8231,7 +8279,7 @@
             }
         }
 
-        const menuIds = ['modeSelect', 'settingsScreen', 'tutorialContainer', 'menu', 'powerSelectMenu', 'gameOverScreen', 'levelCompleteScreen', 'statsScreen', 'achievementsScreen', 'creditsScreen', 'puzzleLevelSelectScreen', 'puzzleCompleteScreen'];
+        const menuIds = ['modeSelect', 'settingsScreen', 'tutorialContainer', 'menu', 'powerSelectMenu', 'gameOverScreen', 'levelCompleteScreen', 'statsScreen', 'achievementsScreen', 'creditsScreen', 'puzzleLevelSelectScreen', 'puzzleCompleteScreen', 'leaderboardScreen'];
         menuIds.forEach(id => { const container = document.getElementById(id); if (container) { container.addEventListener('click', (e) => { if (e.target.closest('button')) playMenuClick(); }); container.addEventListener('wheel', (e) => { if (container.scrollHeight > container.clientHeight) { e.preventDefault(); container.scrollTop += e.deltaY; } }, { passive: false }); } });
         
         function getCurrentVisibleMenu() { for (const id of menuIds) { const menu = document.getElementById(id); if (menu && window.getComputedStyle(menu).display !== 'none') return menu; } return null; }
@@ -8307,7 +8355,10 @@
         function introAnimationLoop() {
              if (!introScreen || introScreen.style.display === 'none') { cancelAnimationFrame(introAnimationId); return; }
             introCtx.clearRect(0, 0, introCanvas.width, introCanvas.height);
-            if (introParticles.length < 300 && Math.random() < 0.8) { const x = Math.random() * introCanvas.width, y = Math.random() * introCanvas.height, color = `hsl(${Math.random() * 60 + 200}, 100%, 80%)`; introParticles.push(new IntroParticle(x, y, color, Math.random() * 2.5 + 1)); }
+            if (introParticles.length < 300 && Math.random() < 0.8) { // OPTIONNEL : Augmenté pour un effet plus dense
+                const x = Math.random() * introCanvas.width, y = Math.random() * introCanvas.height, color = `hsl(${Math.random() * 60 + 200}, 100%, 80%)`; 
+                introParticles.push(new IntroParticle(x, y, color, Math.random() * 2.5 + 1)); 
+            }
             for (let i = introParticles.length - 1; i >= 0; i--) { const p = introParticles[i]; p.update(); p.draw(introCtx); if (p.life <= 0) introParticles.splice(i, 1); }
             introAnimationId = requestAnimationFrame(introAnimationLoop);
         }
@@ -8494,7 +8545,7 @@
         }
         
         // --- LEVEL COMPLETE SCREEN ---
-                        function showLevelCompleteScreen() {
+        function showLevelCompleteScreen() {
             gameRunning = false;
             backgroundMusic.volume = 0.25;
             victoryMusic.currentTime = 0;
@@ -8522,7 +8573,7 @@
 
             const wasBossLevel = isBossMode || bosses.length > 0;
 
-            // Logique de calcul du score (inchangée)
+            // Logique de calcul du score
             if (wasBossLevel) {
                 const timeScore = Math.max(0, 15000 - (timeInSeconds * 150)), livesScore = livesAtEnd * 2500, bossHitsScore = levelBossBounces * 200, bonusScore = levelBonusesCollected * 500;
                 finalScore = Math.round(timeScore + livesScore + bossHitsScore + bonusScore); optimalScore = 30000;
@@ -8547,7 +8598,35 @@
             const scorePercentage = finalScore / optimalScore;
             if (scorePercentage > 0.20) stars = 1; if (scorePercentage > 0.35) stars = 2; if (scorePercentage > 0.50) stars = 3; if (scorePercentage > 0.70) stars = 4; if (scorePercentage > 0.85) stars = 5;
 
-            // Logique de sauvegarde des stats et succès (inchangée)
+            // --- BLOC D'ENVOI FIREBASE ---
+            if (typeof db !== 'undefined' && finalScore > 0) {
+                const modeCollection = wasBossLevel ? 'leaderboards_boss' : 'leaderboards_normal';
+                const levelIdentifier = isBossMode ? completedLevel : (wasBossLevel ? Math.floor(completedLevel / 5) : completedLevel);
+
+                let playerName = localStorage.getItem('gyrobricks_playerName');
+                if (!playerName || playerName.trim().length < 3) {
+                    playerName = prompt("Entrez votre nom pour le classement mondial (3 caractères min.) :", "");
+                    if (playerName && playerName.trim().length >= 3) {
+                        localStorage.setItem('gyrobricks_playerName', playerName.trim());
+                    } else {
+                        playerName = "Anonymous";
+                    }
+                }
+
+                const scoreData = {
+                    level: levelIdentifier,
+                    playerName: playerName.trim(),
+                    score: finalScore,
+                    stars: stars,
+                    timestamp: firebase.firestore.FieldValue.serverTimestamp()
+                };
+
+                db.collection(modeCollection).add(scoreData)
+                    .then((docRef) => console.log("Score mondial enregistré avec l'ID : ", docRef.id))
+                    .catch((error) => console.error("Erreur lors de l'enregistrement du score mondial : ", error));
+            }
+            
+            // Logique de sauvegarde des stats locales et succès
             const key = wasBossLevel ? STATS_KEY_LEVEL_BOSS : STATS_KEY_LEVEL_NORMAL;
             try {
                 const levelToSaveStatsFor = isBossMode ? completedLevel : (wasBossLevel ? Math.floor(completedLevel / 5) : completedLevel);
@@ -8572,16 +8651,15 @@
 
             level++;
 
-            const starContainer = document.getElementById('levelStarRatingContainer'); // On cible le nouvel ID
-
+            const starContainer = document.getElementById('levelStarRatingContainer');
             finalLevelScoreSpan.textContent = "0";
-            starContainer.innerHTML = ''; // On utilise la nouvelle variable
+            starContainer.innerHTML = '';
             for (let i = 0; i < 5; i++) starContainer.innerHTML += `<i class="fas fa-star star star-empty"></i>`;
 
             const animateStarsAndButton = () => {
                 countSound.pause();
                 countSound.currentTime = 0;
-                const starElements = starContainer.querySelectorAll('.star'); // On utilise la nouvelle variable
+                const starElements = starContainer.querySelectorAll('.star');
                 if (stars > 0) {
                     for (let i = 0; i < stars; i++) {
                         setTimeout(() => {
@@ -8615,7 +8693,7 @@
             showPowerSelectionMenu();
         });
 
-                        function animateCounter(element, start, end, duration, decimals = 0, suffix = '', onCompleteCallback = null) {
+        function animateCounter(element, start, end, duration, decimals = 0, suffix = '', onCompleteCallback = null) {
             if (!element) {
                 if (onCompleteCallback) onCompleteCallback();
                 return;
@@ -8650,6 +8728,77 @@
                 }
             });
         }
+        
+        // --- NOUVELLES FONCTIONS POUR LE CLASSEMENT MONDIAL ---
+          async function fetchLeaderboard(mode = 'normal') {
+            const contentDiv = document.getElementById('leaderboardContent');
+            const normalBtn = document.getElementById('leaderboardNormalBtn');
+            const bossBtn = document.getElementById('leaderboardBossBtn');
+            
+            contentDiv.innerHTML = `<p>${getTranslation('loading')}</p>`;
+
+            // Met en évidence le bouton du mode actif
+            normalBtn.classList.toggle('active', mode === 'normal');
+            bossBtn.classList.toggle('active', mode === 'boss');
+
+            const modeCollection = mode === 'boss' ? 'leaderboards_boss' : 'leaderboards_normal';
+
+            try {
+                // === LA LIGNE IMPORTANTE A ÉTÉ MODIFIÉE ICI ===
+                // On trie d'abord par niveau (décroissant), PUIS par score (décroissant).
+                const querySnapshot = await db.collection(modeCollection)
+                    .orderBy("level", "desc")  // 1. Trier par niveau
+                    .orderBy("score", "desc")  // 2. Puis par score
+                    .limit(50)
+                    .get();
+                
+                if (querySnapshot.empty) {
+                    contentDiv.innerHTML = `<p>Aucun score pour ce mode. Soyez le premier !</p>`;
+                    return;
+                }
+
+                // Le reste de l'affichage du tableau est identique
+                let html = '<table style="width: 100%; border-collapse: collapse;">';
+                html += `<thead><tr><th>#</th><th>Joueur</th><th>Score</th><th>Niveau</th><th>Étoiles</th></tr></thead><tbody>`;
+                
+                let rank = 1;
+                querySnapshot.forEach(doc => {
+                    const data = doc.data();
+                    
+                    let starsHTML = '';
+                    for (let i = 0; i < 5; i++) {
+                        starsHTML += i < data.stars ? '<i class="fas fa-star" style="color:#ffd700;"></i>' : '<i class="far fa-star" style="color:#444;"></i>';
+                    }
+
+                    html += `
+                        <tr style="border-bottom: 1px solid var(--ui-border-color);">
+                            <td style="padding: 8px;">${rank++}</td>
+                            <td style="padding: 8px;">${escapeHtml(data.playerName)}</td>
+                            <td style="padding: 8px;">${data.score.toLocaleString()}</td>
+                            <td style="padding: 8px; text-align: center;">${data.level}</td>
+                            <td style="padding: 8px;">${starsHTML}</td>
+                        </tr>
+                    `;
+                });
+
+                html += '</tbody></table>';
+                contentDiv.innerHTML = html;
+
+            } catch (error) {
+                console.error("Erreur lors de la récupération du classement : ", error);
+                contentDiv.innerHTML = `<p>Impossible de charger le classement. Veuillez réessayer.</p>`;
+            }
+        }
+
+        // Petite fonction utilitaire pour éviter les injections XSS
+        function escapeHtml(unsafe) {
+            return unsafe
+                 .replace(/&/g, "&amp;")
+                 .replace(/</g, "&lt;")
+                 .replace(/>/g, "&gt;")
+                 .replace(/"/g, "&quot;")
+                 .replace(/'/g, "&#039;");
+         }
     </script>
 </body>
 </html>
