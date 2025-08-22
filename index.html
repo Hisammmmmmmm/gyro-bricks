@@ -179,8 +179,7 @@
         overflow: hidden; /* Ensures video doesn't bleed out */
     }
     
-    /* MODIFICATION : Remplacement de #introVideo par #introImage */
-    #introImage {
+    #introVideo {
         position: absolute;
         top: 50%;
         left: 50%;
@@ -2097,9 +2096,9 @@
 
 
     
-    <div id="introScreen">
-        <!-- MODIFICATION : La balise video est remplacée par une balise img -->
-        <img id="introImage" src="intro.jpg" alt="Gyro-Bricks Title Screen">
+        
+<div id="introScreen">
+        <video id="introVideo" src="intro.mp4" autoplay muted loop playsinline></video>
         <canvas id="introCanvas"></canvas>
         <div id="introContent">
              <h1>Gyro-Bricks</h1>
