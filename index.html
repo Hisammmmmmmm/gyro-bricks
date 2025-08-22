@@ -422,6 +422,47 @@
         position: relative;
     }
 
+        /* --- STYLES POUR LE DIALOGUE DE SAISIE DU NOM --- */
+    #namePromptDialog {
+        max-width: 500px; /* Un peu plus petit pour un pop-up */
+    }
+
+    #playerNameInput {
+        width: 80%;
+        padding: 12px 15px;
+        font-family: 'Orbitron', sans-serif;
+        font-size: 1.2em;
+        color: var(--primary-glow-color);
+        background-color: rgba(0, 0, 0, 0.4);
+        border: 2px solid var(--ui-border-color);
+        border-radius: 5px;
+        text-align: center;
+        outline: none;
+        transition: all 0.3s ease;
+        box-shadow: 0 0 15px rgba(0, 249, 255, 0.3) inset;
+    }
+
+    #playerNameInput::placeholder {
+        color: rgba(0, 249, 255, 0.4);
+    }
+
+    #playerNameInput:focus {
+        box-shadow: 0 0 15px rgba(0, 249, 255, 0.7), 0 0 25px rgba(0, 249, 255, 0.5) inset;
+        border-color: #fff;
+    }
+
+    /* Animation pour une entrée invalide */
+    @keyframes shake-anim {
+      10%, 90% { transform: translate3d(-1px, 0, 0); }
+      20%, 80% { transform: translate3d(2px, 0, 0); }
+      30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+      40%, 60% { transform: translate3d(4px, 0, 0); }
+    }
+    .shake-error {
+        animation: shake-anim 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    }
+
+
     /* Scrollbar styling for menus */
     #menu::-webkit-scrollbar, #gameOverScreen::-webkit-scrollbar, #modeSelect::-webkit-scrollbar, #settingsScreen::-webkit-scrollbar, #powerSelectMenu::-webkit-scrollbar, #tutorialContainer::-webkit-scrollbar, #levelCompleteScreen::-webkit-scrollbar, #statsScreen::-webkit-scrollbar, #achievementsScreen::-webkit-scrollbar, #puzzleLevelSelectScreen::-webkit-scrollbar, #puzzleCompleteScreen::-webkit-scrollbar, #leaderboardScreen::-webkit-scrollbar {
         width: 8px;
@@ -543,7 +584,7 @@
     }
 
 
-    #menu p, #modeSelect p, #powerSelectMenu p, .tutorial-slide p, #menu ul, .tutorial-slide ul, #levelCompleteScreen p, #puzzleLevelSelectScreen p, #puzzleCompleteScreen p {
+    #menu p, #modeSelect p, #powerSelectMenu p, .tutorial-slide p, #menu ul, .tutorial-slide ul, #levelCompleteScreen p, #puzzleLevelSelectScreen p, #puzzleCompleteScreen p, #namePromptDialog p {
         font-size: clamp(1em, 2vw, 1.2em); 
         margin-bottom: 15px;
         line-height: 1.5;
@@ -558,7 +599,7 @@
         text-shadow: 0 0 5px rgba(255, 100, 100, 0.5);
     }
 
-    #menu button, #gameOverScreen button, #modeSelect button, #settingsScreen button, #powerSelectMenu button, #tutorialContainer button, #levelCompleteScreen button, #statsScreen button, #achievementsScreen button, #creditsScreen button, #confirmDialog button, #puzzleLevelSelectScreen button, #puzzleCompleteScreen button, #leaderboardScreen button {
+    #menu button, #gameOverScreen button, #modeSelect button, #settingsScreen button, #powerSelectMenu button, #tutorialContainer button, #levelCompleteScreen button, #statsScreen button, #achievementsScreen button, #creditsScreen button, #confirmDialog button, #puzzleLevelSelectScreen button, #puzzleCompleteScreen button, #leaderboardScreen button, #namePromptDialog button {
         background: linear-gradient(45deg, var(--primary-glow-color), #00aaff);
         border: 1px solid transparent;
         padding: 12px 25px; 
@@ -576,7 +617,7 @@
         z-index: 1;
     }
 
-    #menu button::before, #gameOverScreen button::before, #modeSelect button::before, #settingsScreen button::before, #powerSelectMenu button::before, #tutorialContainer button::before, #levelCompleteScreen button::before, #statsScreen button::before, #achievementsScreen button::before, #creditsScreen button::before, #confirmDialog button::before, #puzzleLevelSelectScreen button::before, #puzzleCompleteScreen button::before, #leaderboardScreen button::before {
+    #menu button::before, #gameOverScreen button::before, #modeSelect button::before, #settingsScreen button::before, #powerSelectMenu button::before, #tutorialContainer button::before, #levelCompleteScreen button::before, #statsScreen button::before, #achievementsScreen button::before, #creditsScreen button::before, #confirmDialog button::before, #puzzleLevelSelectScreen button::before, #puzzleCompleteScreen button::before, #leaderboardScreen button::before, #namePromptDialog button::before {
         content: "";
         position: absolute;
         z-index: -1;
@@ -590,16 +631,16 @@
         transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
     }
 
-    #menu button:hover, #gameOverScreen button:hover, #modeSelect button:hover, #settingsScreen button:hover, #powerSelectMenu button:hover, #tutorialContainer button:hover, #levelCompleteScreen button:hover, #statsScreen button:hover, #achievementsScreen button:hover, #creditsScreen button:hover, #confirmDialog button:hover, #puzzleLevelSelectScreen button:hover, #puzzleCompleteScreen button:hover, #leaderboardScreen button:hover {
+    #menu button:hover, #gameOverScreen button:hover, #modeSelect button:hover, #settingsScreen button:hover, #powerSelectMenu button:hover, #tutorialContainer button:hover, #levelCompleteScreen button:hover, #statsScreen button:hover, #achievementsScreen button:hover, #creditsScreen button:hover, #confirmDialog button:hover, #puzzleLevelSelectScreen button:hover, #puzzleCompleteScreen button:hover, #leaderboardScreen button:hover, #namePromptDialog button:hover {
         box-shadow: 0 0 25px rgba(0, 249, 255, 0.7);
         transform: translateY(-3px);
     }
 
-    #menu button:hover::before, #gameOverScreen button:hover::before, #modeSelect button:hover::before, #settingsScreen button:hover::before, #powerSelectMenu button:hover::before, #tutorialContainer button:hover::before, #levelCompleteScreen button:hover::before, #statsScreen button:hover::before, #achievementsScreen button:hover::before, #creditsScreen button:hover::before, #confirmDialog button:hover::before, #puzzleLevelSelectScreen button:hover::before, #puzzleCompleteScreen button:hover::before, #leaderboardScreen button:hover::before {
+    #menu button:hover::before, #gameOverScreen button:hover::before, #modeSelect button:hover::before, #settingsScreen button:hover::before, #powerSelectMenu button:hover::before, #tutorialContainer button:hover::before, #levelCompleteScreen button:hover::before, #statsScreen button:hover::before, #achievementsScreen button:hover::before, #creditsScreen button:hover::before, #confirmDialog button:hover::before, #puzzleLevelSelectScreen button:hover::before, #puzzleCompleteScreen button:hover::before, #leaderboardScreen button:hover::before, #namePromptDialog button:hover::before {
         transform: scaleX(1);
     }
-    
-    #menu button:active, #gameOverScreen button:active, #modeSelect button:active, #settingsScreen button:active, #powerSelectMenu button:active, #tutorialContainer button:active, #levelCompleteScreen button:active, #statsScreen button:active, #achievementsScreen button:active, #creditsScreen button:active, #puzzleLevelSelectScreen button:active, #puzzleCompleteScreen button:active, #leaderboardScreen button:active {
+
+    #menu button:active, #gameOverScreen button:active, #modeSelect button:active, #settingsScreen button:active, #powerSelectMenu button:active, #tutorialContainer button:active, #levelCompleteScreen button:active, #statsScreen button:active, #achievementsScreen button:active, #creditsScreen button:active, #puzzleLevelSelectScreen button:active, #puzzleCompleteScreen button:active, #leaderboardScreen button:active, #namePromptDialog button:active {
         transform: translateY(1px);
         box-shadow: 0 0 10px rgba(0, 249, 255, 0.4);
         transition: transform 0.1s;
@@ -1305,6 +1346,27 @@
         font-size: 0.9em;
     }
 
+    /* --- STYLES POUR L'OVERLAY ET LE DIALOGUE MODAL --- */
+    #dialogOverlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(13, 0, 26, 0.85); /* Fond sombre semi-transparent */
+        backdrop-filter: blur(8px); /* Effet de flou sur l'arrière-plan */
+        z-index: 2000; /* Doit être au-dessus des menus mais en dessous du dialogue */
+        display: none; /* Caché par défaut */
+    }
+
+    #namePromptDialog {
+        position: fixed; /* Positionnement par rapport à la fenêtre du navigateur */
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); /* Centrage parfait */
+        z-index: 2001; /* Au-dessus de l'overlay */
+        max-width: 500px;
+    }
 
     /* --- MEDIA QUERIES FOR RESPONSIVENESS --- */
     
@@ -2018,6 +2080,7 @@
 </style>
 </head>
 <body>
+    <div id="dialogOverlay" style="display: none;"></div>
     <div id="stars"></div>
 
     <div id="orientation-prompt">
@@ -2403,11 +2466,20 @@
         <!-- AJOUT DE L'ECRAN DE CLASSEMENT -->
           <div id="leaderboardScreen" style="display: none; text-align: left; max-width: 800px;">
             <h1>Classement Mondial</h1>
-            <!-- La sélection du niveau a été retirée -->
+            <!-- La sélection du niveau a été retirée -->       
             <div id="leaderboardControls" style="display: flex; gap: 10px; align-items: center; margin-bottom: 15px; flex-wrap: wrap;">
+                <!-- Groupe pour le sélecteur de niveau, caché par défaut -->
+                <div id="levelFilterGroup" style="display: none;">
+                    <label for="levelSelect" style="font-size: 1.1em;">Niveau :</label>
+                    <input type="number" id="levelSelect" value="1" min="1" max="50" style="width: 60px; background: rgba(0,0,0,0.3); color: white; border: 1px solid var(--ui-border-color); padding: 5px; font-family: 'Orbitron';">
+                </div>
                 <button id="leaderboardNormalBtn">Mode Normal</button>
                 <button id="leaderboardBossBtn" class="boss-mode-btn">Mode Boss</button>
+                <button id="leaderboardSurvivalBtn" class="extra-life-btn">Mode Survie</button>
             </div>
+
+  
+  
             <div id="leaderboardContent" style="margin-top: 15px; max-height: 60vh; overflow-y: auto;">
                 <!-- Les scores seront insérés ici par JavaScript -->
             </div>
@@ -2424,6 +2496,15 @@
             </div>
         </div>
 
+         <!-- NOUVEAU DIALOGUE POUR LA SAISIE DU NOM -->
+        <div id="namePromptDialog" style="display: none;">
+            <h2 data-lang-key="name_prompt_title">Classement Mondial</h2>
+            <p data-lang-key="name_prompt_desc">Entrez votre nom pour enregistrer votre score (3-15 caractères).</p>
+            <input type="text" id="playerNameInput" maxlength="15" placeholder="Votre Nom..." autocomplete="off">
+            <div style="margin-top: 20px;">
+                <button id="confirmNameBtn" data-lang-key="confirm_name">Confirmer</button>
+            </div>
+        </div>
   
     </div>
 
@@ -2595,6 +2676,9 @@
                 'puzzle_retry': "Réessayer",
                 'puzzle_back_select': "Retour aux Puzzles",
                 'puzzle_failed': "Échec de la résolution du puzzle.",
+                'name_prompt_title': "Classement Mondial",
+                'name_prompt_desc': "Entrez votre nom pour enregistrer votre score (3-15 caractères).",
+                'confirm_name': "Confirmer",
 
                 // Boss Names
                 'boss_wall_name': "Onde de Choc",
@@ -2864,6 +2948,9 @@
                 'puzzle_retry': "Retry",
                 'puzzle_back_select': "Back to Puzzles",
                 'puzzle_failed': "Failed to solve the puzzle.",
+                'name_prompt_title': "World Leaderboard",
+                'name_prompt_desc': "Enter your name to save your score (3-15 characters).",
+                'confirm_name': "Confirm",
 
                 // Boss Names
                 'boss_wall_name': "Shockwave",
@@ -3133,6 +3220,9 @@
                 'puzzle_retry': "Reintentar",
                 'puzzle_back_select': "Volver a Puzles",
                 'puzzle_failed': "No se pudo resolver el puzle.",
+                'name_prompt_title': "Clasificación Mundial",
+                'name_prompt_desc': "Ingresa tu nombre para guardar tu puntuación (3-15 caracteres).",
+                'confirm_name': "Confirmar",
 
                 // Boss Names
                 'boss_wall_name': "Onda de Choque",
@@ -3402,6 +3492,9 @@
                 'puzzle_retry': "Riprova",
                 'puzzle_back_select': "Torna ai Puzzle",
                 'puzzle_failed': "Impossibile risolvere il puzzle.",
+                'name_prompt_title': "Classifica Mondiale",
+                'name_prompt_desc': "Inserisci il tuo nome per salvare il punteggio (3-15 caratteri).",
+                'confirm_name': "Conferma",
 
                 // Boss Names
                 'boss_wall_name': "Onda d'Urto",
@@ -3671,6 +3764,9 @@
                 'puzzle_retry': "リトライ",
                 'puzzle_back_select': "パズル選択に戻る",
                 'puzzle_failed': "パズルを解けませんでした。",
+                'name_prompt_title': "世界ランキング",
+                'name_prompt_desc': "スコアを登録するために名前を入力してください（3〜15文字）。",
+                'confirm_name': "決定",
 
                 // Boss Names
                 'boss_wall_name': "衝撃波",
@@ -3940,6 +4036,9 @@
                 'puzzle_retry': "Erneut versuchen",
                 'puzzle_back_select': "Zur Puzzle-Auswahl",
                 'puzzle_failed': "Puzzle nicht gelöst.",
+                'name_prompt_title': "Weltweite Bestenliste",
+                'name_prompt_desc': "Gib deinen Namen ein, um deine Punktzahl zu speichern (3-15 Zeichen).",
+                'confirm_name': "Bestätigen",
 
                 // Boss Names
                 'boss_wall_name': "Schockwelle",
@@ -5598,6 +5697,8 @@
         const leaderboardBtn = document.getElementById("leaderboardBtn");
         const leaderboardScreen = document.getElementById("leaderboardScreen");
         const backToMenuFromLeaderboardBtn = document.getElementById("backToMenuFromLeaderboardBtn");
+        const namePromptDialog = document.getElementById('namePromptDialog');
+        const dialogOverlay = document.getElementById('dialogOverlay');
         
         // UI de bureau
         const leftUI = document.getElementById("leftUI");
@@ -6582,8 +6683,7 @@
             updateMenuFocus(puzzleCompleteScreen);
         }
 
-            function showGameOver() {
-            // CORRIGÉ : Assure que le son se joue au moment du Game Over, pas au clic
+             async function showGameOver() {
             playGameOver();
 
             backgroundMusic.volume = 0.25;
@@ -6592,14 +6692,13 @@
             saveGlobalStats();
             if (autoSaveInterval) clearInterval(autoSaveInterval);
             
-            // Masque tous les contenus spécifiques par défaut
             normalGameOverContent.style.display = 'none';
             survivalGameOverContent.style.display = 'none';
             puzzleGameOverContent.style.display = 'none';
             
             if (isPuzzleMode) {
                 puzzleGameOverContent.style.display = 'block';
-                restartLevelBtn.style.display = 'none'; // Pas de "recommencer le niveau" pour les puzzles
+                restartLevelBtn.style.display = 'none';
                 restartGameBtn.dataset.langKey = 'puzzle_retry';
                 backToMenuBtn.dataset.langKey = 'puzzle_back_select';
             }
@@ -6613,6 +6712,7 @@
                 restartLevelBtn.style.display = 'none';
                 restartGameBtn.dataset.langKey = 'restart_survival';
                 
+                // Sauvegarde locale (inchangée)
                 let survivalStats = [];
                 try {
                     const saved = localStorage.getItem(STATS_KEY_SURVIVAL);
@@ -6623,11 +6723,35 @@
                 if (survivalStats.length > 20) survivalStats.length = 20;
                 localStorage.setItem(STATS_KEY_SURVIVAL, JSON.stringify(survivalStats));
 
+                // --- NOUVEAU BLOC : ENVOI DU SCORE DE SURVIE À FIREBASE ---
+                if (typeof db !== 'undefined' && score > 0) {
+                    let playerName = localStorage.getItem('gyrobricks_playerName');
+                    if (!playerName || playerName.trim().length < 3) {
+                        playerName = await promptForPlayerName(); // On attend que le joueur entre son nom
+                        localStorage.setItem('gyrobricks_playerName', playerName);
+                    }
+                    
+                    const scoreData = {
+                        time: survivalTime,
+                        score: score,
+                        wave: waveNumber,
+                        bosses: survivalBossesDefeated,
+                        playerName: playerName.trim(),
+                        timestamp: firebase.firestore.FieldValue.serverTimestamp()
+                    };
+
+                    db.collection('leaderboards_survival').add(scoreData)
+                        .then(docRef => console.log("Score de survie mondial enregistré avec l'ID: ", docRef.id))
+                        .catch(error => console.error("Erreur lors de l'enregistrement du score de survie: ", error));
+                }
+                // --- FIN DU NOUVEAU BLOC ---
+
                 if (survivalTime >= 120000) unlockAchievement('b_42');
                 if (survivalTime >= 300000) unlockAchievement('s_31');
                 if (survivalTime >= 600000) unlockAchievement('g_21');
                 if (survivalBossesDefeated >= 1) unlockAchievement('b_44');
                 if (survivalBossesDefeated >= 5) unlockAchievement('g_22');
+
             } else {
                 normalGameOverContent.style.display = 'block';
                 gameOverScreen.querySelector('h2').dataset.langKey = 'game_over';
@@ -8170,9 +8294,20 @@
         }
 
         // Logique pour les boutons de changement de mode
-        if(leaderboardScreen) {
+         if(leaderboardScreen) {
+            const levelSelect = document.getElementById('levelSelect');
+
             document.getElementById('leaderboardNormalBtn').addEventListener('click', () => fetchLeaderboard('normal'));
             document.getElementById('leaderboardBossBtn').addEventListener('click', () => fetchLeaderboard('boss'));
+            document.getElementById('leaderboardSurvivalBtn').addEventListener('click', () => fetchLeaderboard('survival'));
+            
+            // L'écouteur sur le champ de niveau doit maintenant redéclencher la recherche pour le bon mode
+            levelSelect.addEventListener('change', () => {
+                const normalBtn = document.getElementById('leaderboardNormalBtn');
+                const bossBtn = document.getElementById('leaderboardBossBtn');
+                const currentMode = bossBtn.classList.contains('active') ? 'boss' : 'normal';
+                fetchLeaderboard(currentMode);
+            });
         }
         
         function populateAchievementsScreen() { 
@@ -8544,8 +8679,53 @@
             }
         }
         
+        // NOUVELLE FONCTION POUR GÉRER LE DIALOGUE PERSONNALISÉ
+        function promptForPlayerName() {
+            const nameInput = document.getElementById('playerNameInput');
+            const confirmBtn = document.getElementById('confirmNameBtn');
+            
+            // Affiche l'overlay ET le dialogue
+            dialogOverlay.style.display = 'block';
+            namePromptDialog.style.display = 'block';
+
+            updateUIText(namePromptDialog);
+            nameInput.value = localStorage.getItem('gyrobricks_playerName') || '';
+            nameInput.focus();
+            updateMenuFocus(namePromptDialog);
+
+            return new Promise(resolve => {
+                const submitName = () => {
+                    let name = nameInput.value.trim();
+                    if (name.length < 3) {
+                        namePromptDialog.classList.add('shake-error');
+                        setTimeout(() => namePromptDialog.classList.remove('shake-error'), 820);
+                        nameInput.focus();
+                        return;
+                    }
+
+                    confirmBtn.removeEventListener('click', submitName);
+                    nameInput.removeEventListener('keydown', handleKey);
+
+                    // Cache l'overlay ET le dialogue
+                    dialogOverlay.style.display = 'none';
+                    namePromptDialog.style.display = 'none';
+                    resolve(name);
+                };
+
+                const handleKey = (e) => {
+                    if (e.key === 'Enter') {
+                        submitName();
+                    }
+                };
+
+                confirmBtn.addEventListener('click', submitName);
+                nameInput.addEventListener('keydown', handleKey);
+            });
+        }
+
+
         // --- LEVEL COMPLETE SCREEN ---
-        function showLevelCompleteScreen() {
+        async function showLevelCompleteScreen() {
             gameRunning = false;
             backgroundMusic.volume = 0.25;
             victoryMusic.currentTime = 0;
@@ -8573,7 +8753,7 @@
 
             const wasBossLevel = isBossMode || bosses.length > 0;
 
-            // Logique de calcul du score
+            // Logique de calcul du score (inchangée)
             if (wasBossLevel) {
                 const timeScore = Math.max(0, 15000 - (timeInSeconds * 150)), livesScore = livesAtEnd * 2500, bossHitsScore = levelBossBounces * 200, bonusScore = levelBonusesCollected * 500;
                 finalScore = Math.round(timeScore + livesScore + bossHitsScore + bonusScore); optimalScore = 30000;
@@ -8598,35 +8778,27 @@
             const scorePercentage = finalScore / optimalScore;
             if (scorePercentage > 0.20) stars = 1; if (scorePercentage > 0.35) stars = 2; if (scorePercentage > 0.50) stars = 3; if (scorePercentage > 0.70) stars = 4; if (scorePercentage > 0.85) stars = 5;
 
-            // --- BLOC D'ENVOI FIREBASE ---
+            // === BLOC FIREBASE MODIFIÉ ===
             if (typeof db !== 'undefined' && finalScore > 0) {
                 const modeCollection = wasBossLevel ? 'leaderboards_boss' : 'leaderboards_normal';
                 const levelIdentifier = isBossMode ? completedLevel : (wasBossLevel ? Math.floor(completedLevel / 5) : completedLevel);
 
                 let playerName = localStorage.getItem('gyrobricks_playerName');
                 if (!playerName || playerName.trim().length < 3) {
-                    playerName = prompt("Entrez votre nom pour le classement mondial (3 caractères min.) :", "");
-                    if (playerName && playerName.trim().length >= 3) {
-                        localStorage.setItem('gyrobricks_playerName', playerName.trim());
-                    } else {
-                        playerName = "Anonymous";
-                    }
+                    // MODIFICATION : On utilise notre nouvelle fonction au lieu de prompt()
+                    playerName = await promptForPlayerName();
+                    localStorage.setItem('gyrobricks_playerName', playerName);
                 }
 
-                const scoreData = {
-                    level: levelIdentifier,
-                    playerName: playerName.trim(),
-                    score: finalScore,
-                    stars: stars,
-                    timestamp: firebase.firestore.FieldValue.serverTimestamp()
-                };
+                const scoreData = { level: levelIdentifier, playerName: playerName, score: finalScore, stars: stars, timestamp: firebase.firestore.FieldValue.serverTimestamp() };
 
                 db.collection(modeCollection).add(scoreData)
-                    .then((docRef) => console.log("Score mondial enregistré avec l'ID : ", docRef.id))
-                    .catch((error) => console.error("Erreur lors de l'enregistrement du score mondial : ", error));
+                    .then(docRef => console.log("Score mondial enregistré avec l'ID : ", docRef.id))
+                    .catch(error => console.error("Erreur lors de l'enregistrement du score mondial : ", error));
             }
+            // === FIN DU BLOC FIREBASE ===
             
-            // Logique de sauvegarde des stats locales et succès
+            // La suite de la fonction reste identique...
             const key = wasBossLevel ? STATS_KEY_LEVEL_BOSS : STATS_KEY_LEVEL_NORMAL;
             try {
                 const levelToSaveStatsFor = isBossMode ? completedLevel : (wasBossLevel ? Math.floor(completedLevel / 5) : completedLevel);
@@ -8641,7 +8813,6 @@
                     if (key === STATS_KEY_LEVEL_BOSS && levelToSaveStatsFor === 1 && !isBossMode) { unlockAchievement('b_04'); }
                 }
             } catch(e) { console.error("Erreur lors de la sauvegarde du meilleur score:", e); }
-
             if (levelUsedSpeedChange) unlockAchievement('b_24');
             if (livesAtEnd === MAX_LIVES) { if(wasBossLevel) unlockAchievement('b_35'); else unlockAchievement('b_22'); }
             if (stars >= 3) unlockAchievement('b_23'); if (stars >= 5) unlockAchievement('s_11'); if (livesAtEnd === 1) unlockAchievement('s_13');
@@ -8730,55 +8901,86 @@
         }
         
         // --- NOUVELLES FONCTIONS POUR LE CLASSEMENT MONDIAL ---
-          async function fetchLeaderboard(mode = 'normal') {
+        async function fetchLeaderboard(mode = 'normal') {
             const contentDiv = document.getElementById('leaderboardContent');
+            const levelFilterGroup = document.getElementById('levelFilterGroup');
+            const levelSelect = document.getElementById('levelSelect');
+            
             const normalBtn = document.getElementById('leaderboardNormalBtn');
             const bossBtn = document.getElementById('leaderboardBossBtn');
+            const survivalBtn = document.getElementById('leaderboardSurvivalBtn');
             
             contentDiv.innerHTML = `<p>${getTranslation('loading')}</p>`;
 
             // Met en évidence le bouton du mode actif
             normalBtn.classList.toggle('active', mode === 'normal');
             bossBtn.classList.toggle('active', mode === 'boss');
+            survivalBtn.classList.toggle('active', mode === 'survival');
+            
+            let query;
+            let tableHeaderHTML = '';
+            const isSurvival = (mode === 'survival');
 
-            const modeCollection = mode === 'boss' ? 'leaderboards_boss' : 'leaderboards_normal';
+            // Gère la visibilité du filtre par niveau
+            if (isSurvival) {
+                levelFilterGroup.style.display = 'none'; // On cache le filtre pour le mode Survie
+            } else {
+                levelFilterGroup.style.display = 'inline-block'; // On affiche le filtre pour Normal et Boss
+            }
+
+            // On configure la requête et l'en-tête du tableau en fonction du mode
+            if (isSurvival) {
+                query = db.collection('leaderboards_survival')
+                    .orderBy("time", "desc")
+                    .orderBy("score", "desc")
+                    .limit(50);
+                tableHeaderHTML = `<thead><tr><th>#</th><th>Joueur</th><th>Temps</th><th>Score</th><th>Vague</th></tr></thead>`;
+            } else {
+                const levelToFilter = parseInt(levelSelect.value, 10);
+                if (isNaN(levelToFilter)) {
+                    contentDiv.innerHTML = `<p>Veuillez entrer un numéro de niveau valide.</p>`;
+                    return;
+                }
+                
+                const modeCollection = mode === 'boss' ? 'leaderboards_boss' : 'leaderboards_normal';
+                query = db.collection(modeCollection)
+                    .where("level", "==", levelToFilter) // On filtre par le niveau sélectionné
+                    .orderBy("score", "desc")
+                    .limit(50);
+                tableHeaderHTML = `<thead><tr><th>#</th><th>Joueur</th><th>Score</th><th>Étoiles</th></tr></thead>`;
+            }
 
             try {
-                // === LA LIGNE IMPORTANTE A ÉTÉ MODIFIÉE ICI ===
-                // On trie d'abord par niveau (décroissant), PUIS par score (décroissant).
-                const querySnapshot = await db.collection(modeCollection)
-                    .orderBy("level", "desc")  // 1. Trier par niveau
-                    .orderBy("score", "desc")  // 2. Puis par score
-                    .limit(50)
-                    .get();
+                const querySnapshot = await query.get();
                 
                 if (querySnapshot.empty) {
-                    contentDiv.innerHTML = `<p>Aucun score pour ce mode. Soyez le premier !</p>`;
+                    contentDiv.innerHTML = `<p>Aucun score pour cette sélection. Soyez le premier !</p>`;
                     return;
                 }
 
-                // Le reste de l'affichage du tableau est identique
-                let html = '<table style="width: 100%; border-collapse: collapse;">';
-                html += `<thead><tr><th>#</th><th>Joueur</th><th>Score</th><th>Niveau</th><th>Étoiles</th></tr></thead><tbody>`;
+                let html = `<table style="width: 100%; border-collapse: collapse;">${tableHeaderHTML}<tbody>`;
                 
                 let rank = 1;
                 querySnapshot.forEach(doc => {
                     const data = doc.data();
+                    html += `<tr style="border-bottom: 1px solid var(--ui-border-color);">`;
+                    html += `<td style="padding: 8px;">${rank++}</td>`;
+                    html += `<td style="padding: 8px;">${escapeHtml(data.playerName)}</td>`;
                     
-                    let starsHTML = '';
-                    for (let i = 0; i < 5; i++) {
-                        starsHTML += i < data.stars ? '<i class="fas fa-star" style="color:#ffd700;"></i>' : '<i class="far fa-star" style="color:#444;"></i>';
+                    if (isSurvival) {
+                        html += `<td style="padding: 8px;">${formatTime(data.time)}</td>`;
+                        html += `<td style="padding: 8px;">${data.score.toLocaleString()}</td>`;
+                        html += `<td style="padding: 8px; text-align: center;">${data.wave}</td>`;
+                    } else {
+                        let starsHTML = '';
+                        for (let i = 0; i < 5; i++) {
+                            starsHTML += i < data.stars ? '<i class="fas fa-star" style="color:#ffd700;"></i>' : '<i class="far fa-star" style="color:#444;"></i>';
+                        }
+                        html += `<td style="padding: 8px;">${data.score.toLocaleString()}</td>`;
+                        html += `<td style="padding: 8px;">${starsHTML}</td>`;
                     }
-
-                    html += `
-                        <tr style="border-bottom: 1px solid var(--ui-border-color);">
-                            <td style="padding: 8px;">${rank++}</td>
-                            <td style="padding: 8px;">${escapeHtml(data.playerName)}</td>
-                            <td style="padding: 8px;">${data.score.toLocaleString()}</td>
-                            <td style="padding: 8px; text-align: center;">${data.level}</td>
-                            <td style="padding: 8px;">${starsHTML}</td>
-                        </tr>
-                    `;
+                    
+                    html += `</tr>`;
                 });
 
                 html += '</tbody></table>';
