@@ -4287,7 +4287,7 @@
         const puzzleCompleteScreen = document.getElementById("puzzleCompleteScreen");
         const PUZZLE_MAX_BOUNCES = 100;
         const PUZZLE_LEVELS = [
-            // NIVEAU 1
+            // NIVEAU 1 
             {
                 name: "Le U Simple",
                 targets: [{ angle: Math.PI*1.25, radius: 0, width: 20, height: 20 }],
@@ -4299,7 +4299,7 @@
                 stars: [1, 2, 3] 
             },
 
-            // NIVEAU 2
+            // NIVEAU 2 
             {
                 name: "Portail 1",
                 targets: [
@@ -4314,7 +4314,7 @@
                 stars: [3, 4, 5]
             },
         
-            // NIVEAU 3
+            // NIVEAU 3 
             {
                 name: "Le Labyrinthe Statique",
                 targets: [{ angle: 43, radius: 100, width: 15, height: 15 }],
@@ -4330,7 +4330,7 @@
                 stars: [3, 4, 5]
             },
 
-            // NIVEAU 4
+            // NIVEAU 4 
             {
                 name: "Destructible 1",
                 targets: [
@@ -4346,7 +4346,7 @@
                 stars: [3, 4, 5]
             },
 
-            // NIVEAU 5
+            // NIVEAU 5 
             {
                 name: "Double tourniquet",
                 targets: [
@@ -4364,7 +4364,7 @@
                 stars: [3, 4, 5]
             },
 
-            // NIVEAU 6
+            // NIVEAU 6 
             {
                 name: "Ricochet 1 (facile)",
                 targets: [{ angle: -1.5599, radius: 55, width: 20, height: 20, rotation: 0.0000 }],
@@ -4379,7 +4379,7 @@
                 stars: [3, 4, 5]
             },
 
-            // NIVEAU 7
+            // NIVEAU 7 
             {
                 name: "Ricochet 2",
                 targets: [
@@ -4394,7 +4394,7 @@
                 stars: [3, 4, 5]
             },
 
-            // NIVEAU 8
+            // NIVEAU 8 
             {
                 name: "Le Labyrinthe Statique", // Dupliqué, mais conservé pour respecter l'ordre
                 targets: [{ angle: 43, radius: 100, width: 15, height: 15 }],
@@ -4410,7 +4410,7 @@
                 stars: [3, 4, 5]
             },
             
-            // NIVEAU 9
+            // NIVEAU 9 
             {
                 name: "Ricochet 3",
                 targets: [{ angle: 0.9229, radius: 144, width: 20, height: 20, rotation: 0.0000 }],
@@ -4427,7 +4427,7 @@
                 stars: [3, 4, 5]
             },
             
-            // NIVEAU 10
+            // NIVEAU 10 
             {
                 name: "Labyrinthe 2",
                 targets: [{ angle: -1.8695, radius: 66, width: 20, height: 20, rotation: 0.0000 }],
@@ -4457,96 +4457,193 @@
 
             // NIVEAU 11
             {
-                name: "Portail 2",
+                name: "Viser 1",
                 targets: [
-                    { angle: 1.9402, radius: 170, width: 30, height: 30, rotation: 0.0000 },
+                    { angle: 0.2611, radius: 136, width: 20, height: 20, rotation: 0.0000 },
                 ],
                 obstacles: [
-                    { angle: 2.5664, radius: 152, rotation: 1.5708, width: 80, height: 10, isPortal: true, portalId: 1 },
-                    { angle: -0.9354, radius: 94, rotation: 1.5708, width: 80, height: 10, isPortal: true, portalId: 1 },
-                    { angle: 0.5890, radius: 163, rotation: 1.5708, width: 15, height: 150, isPortal: true, portalId: 2 },
-                    { angle: -1.9083, radius: 176, rotation: 1.5708, width: 15, height: 80, isPortal: true, portalId: 2 },
-                    { angle: -1.6989, radius: 27, rotation: 1.5500, width: 300, height: 30 },
-                    { angle: 0.7757, radius: 219, rotation: 0.0000, width: 80, height: 30 },
-                    { angle: -2.6322, radius: 112, rotation: 0.0000, width: 200, height: 30 },
-                    { angle: 1.9557, radius: 219, rotation: 0.4800, width: 100, height: 30 },
-                    { angle: -2.2708, radius: 108, rotation: 1.5708, width: 15, height: 90, isPortal: true, portalId: 3 },
-                    { angle: 2.1256, radius: 134, rotation: 1.5708, width: 15, height: 90, isPortal: true, portalId: 3 },
-                    { angle: -0.7385, radius: 229, rotation: 0.6400, width: 80, height: 30 },
+                    { angle: -1.5596, radius: 89, rotation: 0.0000, width: 400, height: 30 },
+                    { angle: 1.5708, radius: 89, rotation: 0.0000, width: 400, height: 30 },
+                    { angle: -0.0054, radius: 184, rotation: 1.5600, width: 200, height: 30 },
+                    { angle: 3.1416, radius: 163, rotation: 0.0000, width: 80, height: 15, isPortal: true, portalId: 1, isMobile: true, move: { type: 'rotate', speed: 0.2000 } },
+                    { angle: -1.5762, radius: 186, rotation: 1.5708, width: 15, height: 40, isPortal: true, portalId: 1 },
+                    { angle: -2.8189, radius: 195, rotation: 1.5500, width: 80, height: 30 },
                 ],
-                stars: [3, 4, 5]
+                stars: [3, 4, 5] 
             },
 
             // NIVEAU 12
             {
-                name: "Labyrinthe 2 (difficile)",
-                targets: [{ angle: -1.7278, radius: 73, width: 20, height: 20, rotation: 0.0000 }],
+                name: "Ricochet 2 (facile)",
+                targets: [
+                    { angle: 1.8805, radius: 157, width: 20, height: 20, rotation: 0.0000 },
+                ],
                 obstacles: [
-                    { angle: -0.7566, radius: 211, rotation: -0.3000, width: 50, height: 30 },
-                    { angle: -0.3406, radius: 117, rotation: -0.3000, width: 80, height: 30 },
-                    { angle: 1.7184, radius: 68, rotation: -0.3000, width: 80, height: 30 },
-                    { angle: 2.1289, radius: 165, rotation: -0.3000, width: 80, height: 30 },
-                    { angle: 2.3119, radius: 33, rotation: 1.3000, width: 80, height: 30 },
-                    { angle: 3.1416, radius: 88, rotation: 1.3000, width: 80, height: 30 },
-                    { angle: -0.3244, radius: 116, rotation: 1.3000, width: 80, height: 30 },
-                    { angle: 2.2211, radius: 166, rotation: 1.3000, width: 80, height: 30 },
-                    { angle: -1.5391, radius: 145, rotation: 1.3000, width: 150, height: 30 },
-                    { angle: 1.3928, radius: 162, rotation: 1.3000, width: 80, height: 30 },
-                    { angle: 0.7127, radius: 142, rotation: 1.3000, width: 80, height: 30 },
-                    { angle: 0.2937, radius: 176, rotation: 1.3000, width: 80, height: 30 },
-                    { angle: 0.2815, radius: 209, rotation: -0.3000, width: 50, height: 30 },
-                    { angle: 1.3871, radius: 200, rotation: -0.3000, width: 80, height: 30 },
-                    { angle: -1.8128, radius: 198, rotation: -0.3000, width: 80, height: 30 },
-                    { angle: -2.8652, radius: 128, rotation: -0.3000, width: 80, height: 30 },
-                    { angle: -1.7835, radius: 116, rotation: -0.3000, width: 80, height: 30 },
-                    { angle: -1.0402, radius: 209, rotation: -0.3000, width: 50, height: 30 },
-                    { angle: 2.7922, radius: 190, rotation: -0.3000, width: 80, height: 30 },
-                    { angle: -2.7863, radius: 175, rotation: 1.3000, width: 150, height: 30 },
-                    { angle: 0.6736, radius: 200, rotation: -0.3000, width: 80, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.0900 } },
-                    { angle: -2.4254, radius: 137, rotation: -0.3000, width: 80, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.0900 } },
-                    { angle: -0.8675, radius: 98, rotation: -0.3000, width: 80, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.0900 } },
-                    { angle: -1.4730, radius: 211, rotation: -0.3000, width: 60, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.0900 } },
-                    { angle: 2.7177, radius: 61, rotation: -0.3000, width: 50, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.0500 } },
-                    { angle: 0.6158, radius: 78, rotation: -0.3000, width: 70, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.0900 } },
+                    { angle: -1.3018, radius: 192, rotation: 0.0000, width: 80, height: 20 },
+                    { angle: -2.2455, radius: 147, rotation: 0.0000, width: 80, height: 20 },
+                    { angle: -3.1219, radius: 203, rotation: 1.5500, width: 120, height: 20 },
+                    { angle: 2.2950, radius: 139, rotation: 0.0000, width: 120, height: 20 },
+                    { angle: -0.0207, radius: 193, rotation: 1.5500, width: 120, height: 20 },
+                    { angle: 1.6453, radius: 202, rotation: 0.0000, width: 120, height: 20 },
+                    { angle: 2.0784, radius: 183, rotation: 0.9600, width: 120, height: 20 },
                 ],
                 stars: [3, 4, 5]
             },
 
             // NIVEAU 13
             {
-                name: "Labyrinthe 3 (difficile)",
-                targets: [{ angle: -1.8326, radius: 52, width: 20, height: 20, rotation: 0.0000 }],
+                name: "Viser 2 (moyen)",
+                targets: [
+                    { angle: 0.4202, radius: 103, width: 20, height: 20, rotation: 0.0000 },
+                ],
                 obstacles: [
-                    { angle: 1.8035, radius: 28, rotation: -0.3000, width: 80, height: 30 },
-                    { angle: -0.3406, radius: 117, rotation: -0.3000, width: 80, height: 30 },
-                    { angle: -2.9607, radius: 195, rotation: -0.3000, width: 80, height: 30 },
-                    { angle: 2.2152, radius: 196, rotation: -0.3000, width: 80, height: 30 },
-                    { angle: -1.3765, radius: 114, rotation: 1.3000, width: 80, height: 30 },
-                    { angle: -1.9917, radius: 179, rotation: 1.3000, width: 80, height: 30 },
-                    { angle: -0.3244, radius: 116, rotation: 1.3000, width: 80, height: 30 },
-                    { angle: 2.1968, radius: 196, rotation: 1.3000, width: 80, height: 30 },
-                    { angle: 2.9346, radius: 175, rotation: 1.3000, width: 150, height: 30 },
-                    { angle: 1.5606, radius: 157, rotation: 1.3000, width: 80, height: 30 },
-                    { angle: -0.5571, radius: 208, rotation: 1.3000, width: 80, height: 30 },
-                    { angle: 0.3071, radius: 142, rotation: 1.3000, width: 80, height: 30 },
-                    { angle: 0.3529, radius: 197, rotation: -0.3000, width: 80, height: 30 },
-                    { angle: 1.6724, radius: 211, rotation: -0.3000, width: 80, height: 30 },
-                    { angle: -2.3472, radius: 205, rotation: -0.3000, width: 80, height: 30 },
-                    { angle: -1.8103, radius: 139, rotation: -0.3000, width: 80, height: 30 },
-                    { angle: -1.7942, radius: 218, rotation: -0.3000, width: 80, height: 30 },
-                    { angle: 3.0817, radius: 134, rotation: -0.3000, width: 80, height: 30 },
-                    { angle: 0.8567, radius: 143, rotation: 1.3000, width: 150, height: 30 },
-                    { angle: 0.6043, radius: 169, rotation: -0.3000, width: 80, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.0500 } },
-                    { angle: -2.3833, radius: 156, rotation: -0.3000, width: 80, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.0500 } },
-                    { angle: -0.8125, radius: 182, rotation: -0.3000, width: 80, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.0500 } },
-                    { angle: -1.3110, radius: 170, rotation: -0.3000, width: 80, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.0500 } },
-                    { angle: 2.5894, radius: 99, rotation: -0.3000, width: 80, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.0500 } },
-                    { angle: -0.3157, radius: 209, rotation: -0.3000, width: 80, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.0500 } },
+                    { angle: 3.1416, radius: 163, rotation: 0.0000, width: 80, height: 15, isPortal: true, portalId: 1, isMobile: true, move: { type: 'rotate', speed: 0.2000 } },
+                    { angle: -1.5762, radius: 186, rotation: 1.5708, width: 15, height: 40, isPortal: true, portalId: 1 },
+                    { angle: 0.4932, radius: 182, rotation: -0.9300, width: 80, height: 30 },
+                    { angle: -2.3165, radius: 178, rotation: -0.9300, width: 120, height: 30 },
                 ],
                 stars: [3, 4, 5]
             },
 
             // NIVEAU 14
+            {
+                name: "Curseur souris (facile)",
+                targets: [
+                    { angle: -0.6548, radius: 71, width: 20, height: 20, rotation: 0.0000 },
+                ],
+                obstacles: [
+                    { angle: 1.5198, radius: 98, rotation: 1.0000, width: 120, height: 20 },
+                    { angle: 0.4191, radius: 111, rotation: 1.0000, width: 120, height: 20 },
+                    { angle: -0.1301, radius: 108, rotation: -0.3200, width: 100, height: 20 },
+                    { angle: 2.2058, radius: 94, rotation: -0.6700, width: 100, height: 20 },
+                    { angle: -1.3149, radius: 111, rotation: 0.5500, width: 300, height: 20 },
+                    { angle: -2.7979, radius: 101, rotation: 1.5500, width: 300, height: 20 },
+                ],
+                stars: [3, 4, 5]
+            },
+
+            // NIVEAU 15
+            {
+                name: "Viser 3 (moyen)",
+                targets: [
+                    { angle: 0.4202, radius: 103, width: 20, height: 20, rotation: 0.0000 },
+                ],
+                obstacles: [
+                    { angle: 3.1194, radius: 180, rotation: 1.5500, width: 80, height: 15, isPortal: true, portalId: 1, isMobile: true, move: { type: 'orbit', speed: 0.2000 } },
+                    { angle: -2.2112, radius: 127, rotation: 1.5708, width: 15, height: 40, isPortal: true, portalId: 1 },
+                    { angle: 0.4932, radius: 182, rotation: -0.9300, width: 80, height: 30 },
+                ],
+                stars: [3, 4, 5]
+            },
+
+            // NIVEAU 16
+            {
+                name: "Penalty (Facile)",
+                targets: [
+                    { angle: 0.0000, radius: 128, width: 20, height: 20, rotation: 0.0000 },
+                ],
+                obstacles: [
+                    { angle: -0.3574, radius: 177, rotation: 0.0000, width: 80, height: 20 },
+                    { angle: 2.8036, radius: 175, rotation: 0.0000, width: 80, height: 20 },
+                    { angle: 0.3218, radius: 177, rotation: 0.0000, width: 80, height: 20 },
+                    { angle: -2.8092, radius: 178, rotation: 0.0000, width: 80, height: 20 },
+                    { angle: -0.0100, radius: 199, rotation: 1.5500, width: 140, height: 20, isDestructible: true },
+                    { angle: 3.1416, radius: 199, rotation: 1.5500, width: 140, height: 20, isDestructible: true, isPortal: true, portalId: 1 },
+                    { angle: -3.1012, radius: 99, rotation: 0.0000, width: 80, height: 15, isPortal: true, portalId: 1, isMobile: true, move: { type: 'rotate', speed: 0.2000 } },
+                ],
+                stars: [3, 4, 5]
+            },
+
+            // NIVEAU 17
+            {
+                name: "Ricochet 4 (moyen)",
+                targets: [
+                    { angle: 0.7670, radius: 115, width: 20, height: 20, rotation: 0.0000 },
+                ],
+                obstacles: [
+                    { angle: 1.5768, radius: 167, rotation: 0.0000, width: 300, height: 30 },
+                    { angle: -2.3496, radius: 129, rotation: 0.1000, width: 200, height: 30 },
+                    { angle: 0.4365, radius: 76, rotation: 0.0000, width: 300, height: 30 },
+                    { angle: -2.8644, radius: 216, rotation: -0.8800, width: 113, height: 30 },
+                    { angle: 0.0578, radius: 225, rotation: 1.5500, width: 250, height: 30 },
+                    { angle: 2.5322, radius: 182, rotation: 0.0000, width: 80, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.1000 } },
+                    { angle: -1.5666, radius: 144, rotation: 1.7000, width: 150, height: 30 },
+                ],
+                stars: [3, 4, 5]
+            },
+
+            // NIVEAU 18
+            {
+                name: "Ricochet orbit 1 (moyen)",
+                targets: [
+                    { angle: 1.5042, radius: 150, width: 20, height: 20, rotation: 0.0000 },
+                ],
+                obstacles: [
+                    { angle: -1.3018, radius: 192, rotation: 0.0000, width: 80, height: 20 },
+                    { angle: -2.2455, radius: 147, rotation: 0.0000, width: 120, height: 20 },
+                    { angle: -3.1219, radius: 203, rotation: 1.5500, width: 120, height: 20 },
+                    { angle: 0.9915, radius: 128, rotation: 0.0000, width: 80, height: 20 },
+                    { angle: -0.9447, radius: 144, rotation: 0.0000, width: 120, height: 20 },
+                    { angle: 1.4914, radius: 202, rotation: 0.0000, width: 80, height: 20 },
+                    { angle: 1.1020, radius: 173, rotation: -0.9600, width: 120, height: 20 },
+                    { angle: -0.0278, radius: 180, rotation: 1.5500, width: 80, height: 10, isMobile: true, move: { type: 'orbit', speed: 0.4000 } },
+                ],
+                stars: [3, 4, 5]
+            },
+
+            // NIVEAU 19
+            {
+                name: "Ricochet rotatif 1 (moyen)",
+                targets: [{ angle: 1.5042, radius: 150, width: 20, height: 20, rotation: 0.0000 }],
+                obstacles: [
+                    { angle: -1.3018, radius: 192, rotation: 0.0000, width: 80, height: 20 },
+                    { angle: -2.0319, radius: 173, rotation: 0.0000, width: 80, height: 20 },
+                    { angle: -3.1245, radius: 175, rotation: 1.5500, width: 80, height: 20 },
+                    { angle: 1.4914, radius: 202, rotation: 0.0000, width: 80, height: 20 },
+                    { angle: 1.1020, radius: 173, rotation: -0.9600, width: 120, height: 20 },
+                    { angle: -0.0614, radius: 179, rotation: -0.8000, width: 80, height: 20 },
+                    { angle: -0.6577, radius: 211, rotation: 0.8000, width: 80, height: 20 },
+                    { angle: -2.3952, radius: 181, rotation: -0.8000, width: 80, height: 20 },
+                    { angle: 1.8977, radius: 184, rotation: 0.8000, width: 80, height: 20 },
+                    { angle: 0.4636, radius: 7, rotation: 0.0000, width: 80, height: 10, isMobile: true, move: { type: 'rotate', speed: 0.4000 } },
+                ],
+                stars: [3, 4, 5]
+            },
+
+            // NIVEAU 20
+            {
+                name: "Diamant (moyen)",
+                targets: [{ angle: 1.4438, radius: 95, width: 20, height: 20, rotation: 0.0000 }],
+                obstacles: [
+                    { angle: -2.4892, radius: 112, rotation: 0.0000, width: 80, height: 20 },
+                    { angle: -0.5903, radius: 120, rotation: 0.0000, width: 80, height: 20 },
+                    { angle: 0.7221, radius: 145, rotation: -0.8000, width: 250, height: 20 },
+                    { angle: -2.9292, radius: 157, rotation: -0.9000, width: 100, height: 20 },
+                    { angle: 0.4636, radius: 7, rotation: 0.0000, width: 80, height: 10, isMobile: true, move: { type: 'rotate', speed: 0.4000 } },
+                    { angle: 2.2394, radius: 127, rotation: 0.8000, width: 280, height: 20 },
+                    { angle: -0.1377, radius: 168, rotation: 0.9000, width: 100, height: 20 },
+                ],
+                stars: [3, 4, 5]
+            },
+
+            // NIVEAU 21
+            {
+                name: "Coeur (moyen)",
+                targets: [{ angle: 3.0292, radius: 62, width: 20, height: 20, rotation: 0.0000 }],
+                obstacles: [
+                    { angle: -2.3173, radius: 109, rotation: 0.0000, width: 80, height: 20 },
+                    { angle: -0.8449, radius: 107, rotation: 0.0000, width: 50, height: 20 },
+                    { angle: 0.9291, radius: 114, rotation: -0.8000, width: 230, height: 20 },
+                    { angle: -2.8109, radius: 142, rotation: -0.9000, width: 100, height: 20 },
+                    { angle: -0.2928, radius: 142, rotation: 0.9000, width: 80, height: 10, isMobile: true, move: { type: 'rotate', speed: 0.4000 } },
+                    { angle: 2.3854, radius: 121, rotation: 0.8000, width: 250, height: 20 },
+                    { angle: -1.1071, radius: 58, rotation: -0.8500, width: 80, height: 20 },
+                    { angle: -1.8818, radius: 59, rotation: 0.8500, width: 80, height: 20 },
+                ],
+                stars: [3, 4, 5]
+            },
+
+            // NIVEAU 22
             {
                 name: "Porte 1 (moyen)",
                 targets: [
@@ -4572,67 +4669,7 @@
                 stars: [3, 4, 5]
             },
 
-            // NIVEAU 15
-            {
-                name: "Labyrinthe 2 cibles 1",
-                targets: [
-                    { angle: 0.5779, radius: 170, width: 20, height: 20, rotation: 0.0000 },
-                    { angle: -1.8000, radius: 99, width: 20, height: 20, rotation: 0.0000 },
-                ],
-                obstacles: [
-                    { angle: -1.1396, radius: 226, rotation: 0.4400, width: 80, height: 20 },
-                    { angle: -0.3406, radius: 117, rotation: -0.3000, width: 80, height: 20 },
-                    { angle: 1.7226, radius: 155, rotation: 0.0800, width: 92, height: 20 },
-                    { angle: 2.1523, radius: 196, rotation: -0.3000, width: 80, height: 20 },
-                    { angle: -2.7190, radius: 111, rotation: 1.0500, width: 80, height: 20 },
-                    { angle: -0.3244, radius: 116, rotation: 1.3000, width: 80, height: 20 },
-                    { angle: 2.4278, radius: 217, rotation: 0.8400, width: 80, height: 20 },
-                    { angle: -1.5551, radius: 166, rotation: 1.3000, width: 140, height: 20 },
-                    { angle: 1.3925, radius: 189, rotation: 1.3000, width: 80, height: 20 },
-                    { angle: 0.8606, radius: 154, rotation: 0.9400, width: 80, height: 20 },
-                    { angle: 0.4401, radius: 205, rotation: 1.3000, width: 80, height: 20 },
-                    { angle: 0.2674, radius: 206, rotation: -0.3000, width: 50, height: 20 },
-                    { angle: 0.7302, radius: 207, rotation: -0.3000, width: 80, height: 20 },
-                    { angle: -1.8511, radius: 197, rotation: -0.3000, width: 80, height: 20 },
-                    { angle: -2.8463, radius: 146, rotation: -0.3000, width: 80, height: 20 },
-                    { angle: -1.8253, radius: 133, rotation: -0.3000, width: 80, height: 20 },
-                    { angle: 2.8222, radius: 191, rotation: -0.3000, width: 80, height: 20 },
-                    { angle: -2.7647, radius: 193, rotation: 1.3000, width: 100, height: 20 },
-                    { angle: -0.4074, radius: 226, rotation: 1.3000, width: 80, height: 20 },
-                    { angle: 3.0572, radius: 218, rotation: -1.4000, width: 80, height: 20 },
-                ],
-                stars: [3, 4, 5] // À ajuster manuellement
-            },
-
-            // NIVEAU 16
-            {
-                name: "Football (moyen)",
-                targets: [
-                    { angle: 2.9375, radius: 165, width: 20, height: 20, rotation: 0.0000 },
-                ],
-                obstacles: [
-                    { angle: -0.5634, radius: 203, rotation: -0.3000, width: 50, height: 20 },
-                    { angle: -1.8853, radius: 140, rotation: 1.3000, width: 180, height: 20 },
-                    { angle: 2.9778, radius: 119, rotation: -1.9000, width: 50, height: 15, isMobile: true, move: { type: 'orbit', speed: -0.4000 } },
-                    { angle: 2.9826, radius: 48, rotation: 1.2600, width: 80, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.0500 } },
-                    { angle: 2.5805, radius: 181, rotation: -0.3000, width: 50, height: 20 },
-                    { angle: -1.9069, radius: 62, rotation: -0.3000, width: 80, height: 20 },
-                    { angle: 1.2705, radius: 56, rotation: -0.3000, width: 80, height: 20 },
-                    { angle: -0.0118, radius: 203, rotation: -0.3000, width: 50, height: 20 },
-                    { angle: 0.2364, radius: 203, rotation: 1.3000, width: 100, height: 20 },
-                    { angle: 2.1960, radius: 182, rotation: 1.3000, width: 150, height: 20 },
-                    { angle: 1.3262, radius: 139, rotation: 1.3000, width: 180, height: 20 },
-                    { angle: -0.8025, radius: 198, rotation: 1.3000, width: 100, height: 20 },
-                    { angle: -2.7006, radius: 182, rotation: 1.3000, width: 100, height: 20 },
-                    { angle: -2.9816, radius: 186, rotation: -0.3000, width: 50, height: 20 },
-                    { angle: -0.3913, radius: 48, rotation: 1.2600, width: 80, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.0500 } },
-                    { angle: -0.2949, radius: 146, rotation: -1.9000, width: 50, height: 15, isMobile: true, move: { type: 'orbit', speed: -0.4000 } },
-                    { angle: 2.9365, radius: 193, rotation: 1.2700, width: 80, height: 10, isDestructible: true },
-                ],
-                stars: [3, 4, 5]
-            },
-            
-            // NIVEAU 17
+            // NIVEAU 23
             {
                 name: "Orbite 2 (moyen)",
                 targets: [
@@ -4661,7 +4698,501 @@
                 stars: [3, 4, 5]
             },
 
-            // NIVEAU 18
+            // NIVEAU 24
+            {
+                name: "Star (moyen)",
+                targets: [{ angle: 3.0292, radius: 62, width: 20, height: 20, rotation: 0.0000 }],
+                obstacles: [
+                    { angle: -2.2528, radius: 151, rotation: 0.0000, width: 80, height: 20 },
+                    { angle: -0.1818, radius: 138, rotation: -0.9000, width: 80, height: 20 },
+                    { angle: -1.7943, radius: 158, rotation: -0.8500, width: 80, height: 20 },
+                    { angle: -1.4425, radius: 156, rotation: 0.8500, width: 100, height: 20 },
+                    { angle: -0.9259, radius: 146, rotation: 0.0000, width: 80, height: 20 },
+                    { angle: -3.0371, radius: 144, rotation: 0.8500, width: 80, height: 20 },
+                    { angle: 1.9498, radius: 122, rotation: -0.7000, width: 150, height: 20 },
+                    { angle: 1.1141, radius: 129, rotation: 0.7000, width: 150, height: 20 },
+                    { angle: 2.6992, radius: 147, rotation: -1.3100, width: 120, height: 20 },
+                    { angle: 0.5658, radius: 162, rotation: 1.2400, width: 100, height: 20 },
+                    { angle: -1.5969, radius: 115, rotation: 0.0000, width: 80, height: 10, isMobile: true, move: { type: 'orbit', speed: 0.3000 } },
+                ],
+                stars: [3, 4, 5]
+            },
+
+            // NIVEAU 25
+            {
+                name: "Anime",
+                targets: [
+                    { angle: -0.4769, radius: 108, width: 20, height: 20, rotation: 1.0000 },
+                ],
+                obstacles: [
+                    { angle: -2.1262, radius: 158, rotation: 0.3900, width: 120, height: 10 },
+                    { angle: 1.5644, radius: 94, rotation: 0.0000, width: 200, height: 10 },
+                    { angle: 1.5961, radius: 135, rotation: 0.0000, width: 50, height: 10 },
+                    { angle: -1.9522, radius: 41, rotation: 1.6800, width: 135, height: 10 },
+                    { angle: -0.9845, radius: 160, rotation: -0.3900, width: 120, height: 10 },
+                    { angle: -2.5899, radius: 104, rotation: 1.0000, width: 20, height: 20 },
+                    { angle: 1.5505, radius: 30, rotation: 0.4700, width: 20, height: 10 },
+                    { angle: -0.2178, radius: 100, rotation: 0.0000, width: 80, height: 10, isDestructible: true },
+                    { angle: -0.6717, radius: 125, rotation: 0.0000, width: 80, height: 10, isDestructible: true },
+                    { angle: -2.8685, radius: 95, rotation: 0.0000, width: 80, height: 10, isDestructible: true },
+                    { angle: -2.4189, radius: 122, rotation: 0.0000, width: 80, height: 10, isDestructible: true },
+                ],
+                stars: [3, 4, 5]
+            },
+
+            // NIVEAU 26
+            {
+                name: "Orbite 4 (moyen)",
+                targets: [{ angle: -1.6324, radius: 0, width: 20, height: 20, rotation: 0.0000 }],
+                obstacles: [
+                    { angle: 2.9174, radius: 256, rotation: 1.3000, width: 80, height: 30 },
+                    { angle: -1.9165, radius: 263, rotation: -0.3000, width: 80, height: 30 },
+                    { angle: 1.1440, radius: 230, rotation: -0.3000, width: 80, height: 30 },
+                    { angle: 2.1235, radius: 95, rotation: -1.9000, width: 50, height: 50, isMobile: true, move: { type: 'orbit', speed: 0.2000 } },
+                    { angle: 0.2639, radius: 115, rotation: -1.9000, width: 50, height: 50, isMobile: true, move: { type: 'orbit', speed: 0.2000 } },
+                    { angle: -1.1773, radius: 146, rotation: -1.9000, width: 50, height: 50, isMobile: true, move: { type: 'orbit', speed: 0.2000 } },
+                    { angle: -2.4448, radius: 136, rotation: -1.9000, width: 50, height: 50, isMobile: true, move: { type: 'orbit', speed: 0.2000 } },
+                    { angle: -1.8378, radius: 197, rotation: -1.9000, width: 50, height: 50, isMobile: true, move: { type: 'orbit', speed: 0.1000 } },
+                    { angle: 1.2063, radius: 149, rotation: -1.9000, width: 50, height: 50, isMobile: true, move: { type: 'orbit', speed: 0.1000 } },
+                    { angle: 3.0412, radius: 150, rotation: -1.9000, width: 50, height: 50, isMobile: true, move: { type: 'orbit', speed: 0.1000 } },
+                    { angle: -0.4040, radius: 173, rotation: -1.9000, width: 50, height: 50, isMobile: true, move: { type: 'orbit', speed: 0.1000 } },
+                ],
+                stars: [3, 4, 5]
+            },
+
+            // NIVEAU 27
+            {
+                name: "Gameboy (moyen)",
+                targets: [{ angle: 0.9018, radius: 110, width: 20, height: 20, rotation: 0.0000 }],
+                obstacles: [
+                    { angle: 0.9154, radius: 185, rotation: -0.7900, width: 80, height: 20 },
+                    { angle: 1.4853, radius: 176, rotation: 0.0000, width: 150, height: 20 },
+                    { angle: 2.9876, radius: 117, rotation: -1.5800, width: 300, height: 20 },
+                    { angle: 2.1341, radius: 67, rotation: 0.0000, width: 50, height: 10, isMobile: true, move: { type: 'rotate', speed: 0.3000 } },
+                    { angle: -2.1897, radius: 179, rotation: -0.7900, width: 50, height: 20 },
+                    { angle: -1.6890, radius: 161, rotation: 0.0000, width: 150, height: 20 },
+                    { angle: -0.1663, radius: 139, rotation: -1.5800, width: 180, height: 20 },
+                    { angle: 2.1466, radius: 68, rotation: 1.5500, width: 50, height: 10, isMobile: true, move: { type: 'rotate', speed: 0.3000 } },
+                    { angle: 0.6048, radius: 83, rotation: 0.0000, width: 20, height: 20 },
+                    { angle: -2.3198, radius: 78, rotation: -1.5800, width: 100, height: 20 },
+                    { angle: -0.6629, radius: 93, rotation: -1.5800, width: 100, height: 20 },
+                    { angle: -1.4721, radius: 101, rotation: 0.0000, width: 150, height: 20 },
+                    { angle: -0.8288, radius: 16, rotation: 0.0000, width: 150, height: 20 },
+                ],
+                stars: [3, 4, 5]
+            },
+
+            // NIVEAU 28
+            {
+                name: "Manette (moyen)",
+                targets: [{ angle: 0.8844, radius: 107, width: 20, height: 20, rotation: 0.0000 }],
+                obstacles: [
+                    { angle: 1.5416, radius: 137, rotation: 0.0000, width: 100, height: 20 },
+                    { angle: 2.6406, radius: 96, rotation: 0.0000, width: 80, height: 10, isMobile: true, move: { type: 'rotate', speed: 0.3000 } },
+                    { angle: 2.6365, radius: 97, rotation: 1.5500, width: 80, height: 10, isMobile: true, move: { type: 'rotate', speed: 0.3000 } },
+                    { angle: 0.1889, radius: 69, rotation: 0.0000, width: 20, height: 20 },
+                    { angle: 2.8485, radius: 177, rotation: -1.5800, width: 100, height: 20 },
+                    { angle: -1.6464, radius: 66, rotation: 0.0000, width: 100, height: 20 },
+                    { angle: 0.3271, radius: 177, rotation: -1.5800, width: 100, height: 20 },
+                    { angle: 1.0273, radius: 56, rotation: 0.0000, width: 20, height: 20 },
+                    { angle: 0.4324, radius: 115, rotation: 0.0000, width: 20, height: 20 },
+                    { angle: 2.1028, radius: 183, rotation: 0.4800, width: 50, height: 20 },
+                    { angle: -0.2814, radius: 133, rotation: 0.7900, width: 50, height: 20 },
+                    { angle: -2.8220, radius: 146, rotation: -0.7900, width: 50, height: 20 },
+                    { angle: -1.6400, radius: 101, rotation: -1.5800, width: 80, height: 20 },
+                    { angle: 1.9513, radius: 162, rotation: -0.7900, width: 50, height: 20 },
+                    { angle: 1.1580, radius: 167, rotation: 0.7900, width: 50, height: 20 },
+                    { angle: 0.9783, radius: 184, rotation: -0.4800, width: 50, height: 20 },
+                    { angle: -1.5945, radius: 211, rotation: 0.0000, width: 80, height: 10, isMobile: true, move: { type: 'rotate', speed: 0.3000 } },
+                ],
+                stars: [3, 4, 5]
+            },
+
+            // NIVEAU 29
+            {
+                name: "Skull (moyen)",
+                targets: [{ angle: -0.3760, radius: 41, width: 20, height: 20, rotation: 0.0000 }],
+                obstacles: [
+                    { angle: 1.5332, radius: 186, rotation: 0.0000, width: 100, height: 20 },
+                    { angle: -2.9833, radius: 121, rotation: -1.5800, width: 100, height: 20 },
+                    { angle: -1.4915, radius: 151, rotation: 0.0000, width: 120, height: 20 },
+                    { angle: 2.6053, radius: 123, rotation: 1.1100, width: 80, height: 20 },
+                    { angle: 0.4096, radius: 141, rotation: -0.7900, width: 50, height: 20 },
+                    { angle: -0.2615, radius: 147, rotation: -1.5800, width: 80, height: 20 },
+                    { angle: -1.0199, radius: 164, rotation: 0.5700, width: 50, height: 20 },
+                    { angle: 0.9783, radius: 184, rotation: -0.4800, width: 50, height: 20 },
+                    { angle: -1.5945, radius: 211, rotation: 0.0000, width: 80, height: 10, isMobile: true, move: { type: 'rotate', speed: 0.3000 } },
+                    { angle: 0.7412, radius: 160, rotation: -1.5800, width: 80, height: 20 },
+                    { angle: -2.3966, radius: 140, rotation: -1.1000, width: 80, height: 20 },
+                    { angle: -0.6184, radius: 64, rotation: 0.0000, width: 50, height: 20 },
+                    { angle: -2.4559, radius: 57, rotation: 0.0000, width: 50, height: 20 },
+                    { angle: -2.8966, radius: 58, rotation: 0.0000, width: 20, height: 20 },
+                    { angle: 1.2032, radius: 186, rotation: -0.8000, width: 40, height: 20 },
+                    { angle: 1.6760, radius: 162, rotation: -1.5800, width: 30, height: 20 },
+                    { angle: 1.4228, radius: 163, rotation: -1.5800, width: 30, height: 20 },
+                    { angle: 1.7033, radius: 45, rotation: -1.5800, width: 30, height: 20 },
+                    { angle: 1.8730, radius: 178, rotation: -1.5800, width: 50, height: 20 },
+                ],
+                stars: [3, 4, 5]
+            },
+
+            // NIVEAU 30
+            {
+                name: "Mystery Box (moyen)",
+                targets: [{ angle: 1.6100, radius: 102, width: 20, height: 20, rotation: 0.0000 }],
+                obstacles: [
+                    { angle: 1.5764, radius: 178, rotation: 0.0000, width: 120, height: 20 },
+                    { angle: 3.1293, radius: 163, rotation: -1.5800, width: 250, height: 20 },
+                    { angle: -1.5708, radius: 178, rotation: 0.0000, width: 150, height: 20 },
+                    { angle: -2.4055, radius: 201, rotation: -0.7900, width: 50, height: 20 },
+                    { angle: 0.0000, radius: 160, rotation: -1.5800, width: 250, height: 20 },
+                    { angle: -1.5945, radius: 211, rotation: 0.0000, width: 80, height: 10, isMobile: true, move: { type: 'rotate', speed: 0.3000 } },
+                    { angle: -0.6747, radius: 58, rotation: 1.5600, width: 50, height: 20 },
+                    { angle: -1.6615, radius: 88, rotation: 0.0000, width: 50, height: 20 },
+                    { angle: 1.6522, radius: 49, rotation: -1.5800, width: 30, height: 20 },
+                    { angle: 2.3880, radius: 200, rotation: 0.7900, width: 50, height: 20 },
+                    { angle: 0.5404, radius: 23, rotation: -0.7900, width: 80, height: 20 },
+                    { angle: -1.2178, radius: 81, rotation: 0.7900, width: 50, height: 20 },
+                    { angle: -2.1031, radius: 85, rotation: -0.7900, width: 50, height: 20 },
+                    { angle: 0.7500, radius: 200, rotation: -0.7900, width: 50, height: 20 },
+                    { angle: 1.5708, radius: 211, rotation: 0.0000, width: 80, height: 10, isMobile: true, move: { type: 'rotate', speed: 0.3000 } },
+                ],
+                stars: [3, 4, 5]
+            },
+
+            // NIVEAU 31
+            {
+                name: "Tasse (moyen)",
+                targets: [{ angle: 1.5847, radius: 72, width: 20, height: 20, rotation: 0.0000 }],
+                obstacles: [
+                    { angle: 1.5537, radius: 117, rotation: 0.0000, width: 180, height: 20 },
+                    { angle: 2.4393, radius: 136, rotation: 0.9900, width: 80, height: 20 },
+                    { angle: 0.2811, radius: 148, rotation: -0.6200, width: 80, height: 20 },
+                    { angle: -0.5334, radius: 122, rotation: 1.5600, width: 80, height: 20 },
+                    { angle: -1.5806, radius: 203, rotation: 0.0000, width: 50, height: 50, isMobile: true, move: { type: 'rotate', speed: 0.3000 } },
+                    { angle: -3.0380, radius: 126, rotation: 1.5600, width: 150, height: 20 },
+                    { angle: -1.6768, radius: 95, rotation: 0.0000, width: 250, height: 20 },
+                    { angle: -0.3041, radius: 144, rotation: 0.0000, width: 80, height: 20 },
+                    { angle: 1.5908, radius: 150, rotation: 0.0000, width: 280, height: 20 },
+                ],
+                stars: [3, 4, 5]
+            },
+
+            // NIVEAU 32
+            {
+                name: "Sapin (moyen)",
+                targets: [{ angle: 1.4289, radius: 57, width: 20, height: 20, rotation: 0.0000 }],
+                obstacles: [
+                    { angle: 1.4861, radius: 106, rotation: 0.0000, width: 250, height: 20 },
+                    { angle: -1.3760, radius: 150, rotation: 0.6200, width: 80, height: 20 },
+                    { angle: -0.7938, radius: 84, rotation: 0.6200, width: 80, height: 20 },
+                    { angle: 0.2890, radius: 77, rotation: 0.6200, width: 80, height: 20 },
+                    { angle: -1.7459, radius: 149, rotation: -0.6200, width: 80, height: 20 },
+                    { angle: 2.8462, radius: 72, rotation: -0.6200, width: 80, height: 20 },
+                    { angle: 1.5199, radius: 157, rotation: 1.5600, width: 80, height: 20 },
+                    { angle: -2.3390, radius: 82, rotation: -0.6200, width: 80, height: 20, isMobile: true, move: { type: 'slide', speed: 0.0300, axis: 'y', range: 50 } },
+                ],
+                stars: [3, 4, 5]
+            },
+
+            // NIVEAU 33
+            {
+                name: "Portail 2",
+                targets: [
+                    { angle: 1.9402, radius: 170, width: 30, height: 30, rotation: 0.0000 },
+                ],
+                obstacles: [
+                    { angle: 2.5664, radius: 152, rotation: 1.5708, width: 80, height: 10, isPortal: true, portalId: 1 },
+                    { angle: -0.9354, radius: 94, rotation: 1.5708, width: 80, height: 10, isPortal: true, portalId: 1 },
+                    { angle: 0.5890, radius: 163, rotation: 1.5708, width: 15, height: 150, isPortal: true, portalId: 2 },
+                    { angle: -1.9083, radius: 176, rotation: 1.5708, width: 15, height: 80, isPortal: true, portalId: 2 },
+                    { angle: -1.6989, radius: 27, rotation: 1.5500, width: 300, height: 30 },
+                    { angle: 0.7757, radius: 219, rotation: 0.0000, width: 80, height: 30 },
+                    { angle: -2.6322, radius: 112, rotation: 0.0000, width: 200, height: 30 },
+                    { angle: 1.9557, radius: 219, rotation: 0.4800, width: 100, height: 30 },
+                    { angle: -2.2708, radius: 108, rotation: 1.5708, width: 15, height: 90, isPortal: true, portalId: 3 },
+                    { angle: 2.1256, radius: 134, rotation: 1.5708, width: 15, height: 90, isPortal: true, portalId: 3 },
+                    { angle: -0.7385, radius: 229, rotation: 0.6400, width: 80, height: 30 },
+                ],
+                stars: [3, 4, 5]
+            },
+
+            // NIVEAU 34
+            {
+                name: "Viser 4 (Difficile)",
+                targets: [
+                    { angle: 1.2402, radius: 108, width: 20, height: 20, rotation: 0.0000 },
+                ],
+                obstacles: [
+                    { angle: -0.1747, radius: 155, rotation: 0.0000, width: 80, height: 15, isPortal: true, portalId: 1, isMobile: true, move: { type: 'rotate', speed: 0.2000 } },
+                    { angle: 1.9942, radius: 178, rotation: 2.0100, width: 15, height: 80, isPortal: true, portalId: 1 },
+                    { angle: 1.0758, radius: 185, rotation: -0.4400, width: 120, height: 30 },
+                    { angle: -1.9807, radius: 183, rotation: -0.4400, width: 50, height: 30 },
+                    { angle: 2.7499, radius: 100, rotation: -0.7700, width: 120, height: 20 },
+                    { angle: 0.3637, radius: 166, rotation: 0.7700, width: 120, height: 20 },
+                ],
+                stars: [3, 4, 5]
+            },
+
+            // NIVEAU 35
+            {
+                name: "La maison dans la prairie",
+                targets: [
+                    { angle: -0.2105, radius: 14, width: 20, height: 20, rotation: 0.0000 },
+                ],
+                obstacles: [
+                    { angle: 2.7671, radius: 120, rotation: 1.3000, width: 80, height: 20 },
+                    { angle: -2.8878, radius: 112, rotation: -1.1000, width: 80, height: 20 },
+                    { angle: 2.3716, radius: 83, rotation: -0.3000, width: 80, height: 20 },
+                    { angle: -2.5115, radius: 73, rotation: 0.5600, width: 80, height: 20 },
+                    { angle: 2.6095, radius: 25, rotation: 1.3000, width: 80, height: 20 },
+                    { angle: -1.3505, radius: 39, rotation: -0.5300, width: 80, height: 20 },
+                    { angle: -1.4260, radius: 87, rotation: 0.5600, width: 80, height: 20 },
+                    { angle: -2.1837, radius: 99, rotation: -0.5300, width: 80, height: 20 },
+                    { angle: -0.4459, radius: 70, rotation: 1.3000, width: 80, height: 20 },
+                    { angle: 0.7854, radius: 66, rotation: -0.5300, width: 80, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.1000 } },
+                    { angle: 1.1241, radius: 183, rotation: -0.2000, width: 80, height: 50, isMobile: true, move: { type: 'orbit', speed: 0.1000 } },
+                    { angle: -1.6688, radius: 204, rotation: -0.2000, width: 80, height: 50, isMobile: true, move: { type: 'orbit', speed: 0.1000 } },
+                    { angle: -0.2237, radius: 194, rotation: -0.2000, width: 80, height: 50, isMobile: true, move: { type: 'orbit', speed: 0.1000 } },
+                    { angle: 2.8987, radius: 225, rotation: -0.2000, width: 80, height: 50, isMobile: true, move: { type: 'orbit', speed: 0.1000 } },
+                ],
+                stars: [3, 4, 5]
+            },
+
+            // NIVEAU 36
+            {
+                name: "Curseur souris 2 (moyen)",
+                targets: [
+                    { angle: -0.5124, radius: 73, width: 20, height: 20, rotation: 0.0000 },
+                ],
+                obstacles: [
+                    { angle: 1.3098, radius: 167, rotation: 1.0000, width: 120, height: 20 },
+                    { angle: 0.6809, radius: 176, rotation: 1.0000, width: 120, height: 20 },
+                    { angle: 0.3299, radius: 154, rotation: -0.3200, width: 100, height: 20 },
+                    { angle: 1.7430, radius: 140, rotation: -0.6700, width: 100, height: 20 },
+                    { angle: -1.4029, radius: 120, rotation: 0.6000, width: 300, height: 20 },
+                    { angle: -2.5489, radius: 118, rotation: 1.5500, width: 280, height: 20 },
+                    { angle: -0.0389, radius: 180, rotation: 0.6000, width: 100, height: 20, isDestructible: true },
+                    { angle: 2.2285, radius: 155, rotation: 1.5500, width: 100, height: 20, isDestructible: true },
+                ],
+                stars: [3, 4, 5]
+            },
+
+            // NIVEAU 37
+            {
+                name: "Double porte 2 cibles",
+                targets: [
+                    { angle: 2.0860, radius: 19, width: 20, height: 20, rotation: 0.0000 },
+                    { angle: -0.0941, radius: 153, width: 20, height: 20, rotation: 0.0000 },
+                ],
+                obstacles: [
+                    { angle: -1.9775, radius: 115, rotation: 0.0000, width: 100, height: 20 },
+                    { angle: -1.1919, radius: 91, rotation: 0.5300, width: 100, height: 20 },
+                    { angle: -0.2621, radius: 71, rotation: 1.5500, width: 100, height: 20 },
+                    { angle: 2.6511, radius: 97, rotation: 1.5500, width: 100, height: 20 },
+                    { angle: 1.9848, radius: 115, rotation: 0.5300, width: 100, height: 20 },
+                    { angle: 1.2872, radius: 131, rotation: 0.0000, width: 100, height: 20 },
+                    { angle: -2.6222, radius: 100, rotation: 1.5500, width: 80, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.3000 } },
+                    { angle: 0.7992, radius: 103, rotation: 1.5500, width: 80, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.3000 } },
+                ],
+                stars: [3, 4, 5]
+            },
+
+            // NIVEAU 38
+            {
+                name: "Portail 3 (moyen)",
+                targets: [
+                    { angle: 2.2368, radius: 150, width: 20, height: 20, rotation: 0.0000 },
+                    { angle: -0.8285, radius: 115, width: 20, height: 20, rotation: 0.0000 },
+                ],
+                obstacles: [
+                    { angle: -2.2502, radius: 114, rotation: 1.5708, width: 15, height: 40, isPortal: true, portalId: 1 },
+                    { angle: -1.5216, radius: 155, rotation: 1.5708, width: 15, height: 40, isPortal: true, portalId: 1 },
+                    { angle: -0.4986, radius: 130, rotation: 1.5500, width: 80, height: 20, isDestructible: true },
+                    { angle: 1.1153, radius: 22, rotation: 1.5708, width: 15, height: 40, isPortal: true, portalId: 2 },
+                    { angle: 0.1148, radius: 180, rotation: 1.5708, width: 15, height: 40, isPortal: true, portalId: 2 },
+                    { angle: 0.7550, radius: 163, rotation: 0.7600, width: 80, height: 20, isDestructible: true },
+                    { angle: 2.4377, radius: 120, rotation: 0.0000, width: 80, height: 10 },
+                    { angle: 2.1076, radius: 179, rotation: 0.0000, width: 80, height: 10, isPortal: true, portalId: 3 },
+                    { angle: 2.4004, radius: 173, rotation: 1.5500, width: 80, height: 10 },
+                    { angle: 2.0247, radius: 129, rotation: 1.5500, width: 80, height: 10 },
+                    { angle: -0.7652, radius: 182, rotation: 1.5708, width: 15, height: 60, isPortal: true, portalId: 3 },
+                    { angle: -2.9314, radius: 131, rotation: 0.0000, width: 200, height: 20 },
+                ],
+                stars: [3, 4, 5]
+            },
+
+            // NIVEAU 39
+            {
+                name: "Double cage (Difficile)",
+                targets: [
+                    { angle: 2.8593, radius: 104, width: 20, height: 20, rotation: 0.0000 },
+                    { angle: -0.3826, radius: 88, width: 20, height: 20, rotation: 0.0000 },
+                ],
+                obstacles: [
+                    { angle: -0.6885, radius: 102, rotation: 0.0000, width: 80, height: 20 },
+                    { angle: -2.0959, radius: 146, rotation: 0.0000, width: 140, height: 20, isDestructible: true },
+                    { angle: 2.0530, radius: 144, rotation: 0.0000, width: 140, height: 20, isDestructible: true },
+                    { angle: 2.5848, radius: 115, rotation: 0.0000, width: 80, height: 20 },
+                    { angle: 0.6099, radius: 101, rotation: 0.0000, width: 80, height: 20 },
+                    { angle: -2.5848, radius: 115, rotation: 0.0000, width: 80, height: 20 },
+                    { angle: -0.0177, radius: 113, rotation: 1.5500, width: 140, height: 20, isDestructible: true },
+                    { angle: -3.1261, radius: 129, rotation: 1.5500, width: 140, height: 20, isDestructible: true },
+                ],
+                stars: [3, 4, 5]
+            },
+
+            // NIVEAU 40
+            {
+                name: "Krillin",
+                targets: [
+                    { angle: -1.8763, radius: 144, width: 20, height: 20, rotation: 0.0000 },
+                    { angle: -1.3974, radius: 183, width: 20, height: 20, rotation: 0.0000 },
+                ],
+                obstacles: [
+                    { angle: -0.4686, radius: 126, rotation: 0.1300, width: 100, height: 20 },
+                    { angle: -2.6464, radius: 122, rotation: -0.1300, width: 100, height: 20, isPortal: true, portalId: 1 },
+                    { angle: 1.3455, radius: 124, rotation: 0.0000, width: 200, height: 20 },
+                    { angle: 2.3277, radius: 149, rotation: 0.3300, width: 80, height: 20, isPortal: true, portalId: 1 },
+                    { angle: -1.5996, radius: 222, rotation: 0.0000, width: 80, height: 20 },
+                    { angle: -1.2670, radius: 109, rotation: 0.0000, width: 20, height: 20 },
+                    { angle: -1.3494, radius: 144, rotation: 0.0000, width: 20, height: 20 },
+                    { angle: -1.8217, radius: 187, rotation: 0.0000, width: 20, height: 20 },
+                    { angle: -1.9828, radius: 111, rotation: 0.0000, width: 20, height: 20 },
+                ],
+                stars: [3, 4, 5]
+            },
+
+            // NIVEAU 41
+            {
+                name: "Orbite (moyen)",
+                targets: [{ angle: 1.2356, radius: 0, width: 30, height: 30, rotation: 15.0000 }],
+                obstacles: [
+                    { angle: 2.2107, radius: 64, rotation: -0.2000, width: 30, height: 50, isMobile: true, move: { type: 'orbit', speed: 0.2000 } },
+                    { angle: -0.4404, radius: 174, rotation: -0.2000, width: 30, height: 50, isMobile: true, move: { type: 'orbit', speed: 0.2000 } },
+                    { angle: 1.6327, radius: 209, rotation: -0.2000, width: 30, height: 50, isMobile: true, move: { type: 'orbit', speed: 0.2000 } },
+                    { angle: -1.4159, radius: 188, rotation: -0.2000, width: 30, height: 50, isMobile: true, move: { type: 'orbit', speed: 0.2000 } },
+                    { angle: 0.4942, radius: 190, rotation: -0.2000, width: 30, height: 50, isMobile: true, move: { type: 'orbit', speed: -0.1290 } },
+                    { angle: 0.8347, radius: 100, rotation: -0.2000, width: 30, height: 50, isMobile: true, move: { type: 'orbit', speed: 0.2000 } },
+                    { angle: -1.7748, radius: 84, rotation: -0.2000, width: 30, height: 50, isMobile: true, move: { type: 'orbit', speed: -0.1290 } },
+                    { angle: -2.5126, radius: 150, rotation: -0.2000, width: 30, height: 50, isMobile: true, move: { type: 'orbit', speed: 0.2000 } },
+                    { angle: 3.0049, radius: 161, rotation: -0.2000, width: 30, height: 50, isMobile: true, move: { type: 'orbit', speed: -0.1290 } },
+                ],
+                stars: [3, 4, 5]
+            },
+
+            // NIVEAU 42
+            {
+                name: "Ricochet 5 (moyen)",
+                targets: [
+                    { angle: -2.0391, radius: 95, width: 20, height: 20, rotation: 0.0000 },
+                ],
+                obstacles: [
+                    { angle: 0.9828, radius: 75, rotation: -0.0600, width: 300, height: 30 },
+                    { angle: -2.7569, radius: 98, rotation: 0.0600, width: 200, height: 30 },
+                    { angle: -1.3276, radius: 137, rotation: 0.0000, width: 300, height: 30 },
+                    { angle: -2.5942, radius: 171, rotation: -0.9000, width: 113, height: 30 },
+                    { angle: 2.4539, radius: 174, rotation: -0.9000, width: 113, height: 30 },
+                    { angle: -0.2145, radius: 183, rotation: 1.6400, width: 184, height: 30 },
+                    { angle: -0.8551, radius: 102, rotation: 0.0000, width: 80, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.1000 } },
+                ],
+                stars: [3, 4, 5]
+            },
+
+            // NIVEAU 43
+            {
+                name: "Roochet slide",
+                targets: [
+                    { angle: 3.1297, radius: 134, width: 20, height: 20, rotation: 0.0000 },
+                    { angle: 0.1319, radius: 0, width: 20, height: 20, rotation: 0.0000 },
+                    { angle: 0.0046, radius: 132, width: 20, height: 20, rotation: 0.0000 },
+                ],
+                obstacles: [
+                    { angle: 2.6003, radius: 149, rotation: 0.0000, width: 80, height: 15, isMobile: true, move: { type: 'slide', speed: 0.3000, axis: 'x', range: 50 } },
+                    { angle: 1.3601, radius: 79, rotation: 0.0000, width: 80, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.5000 } },
+                    { angle: 0.4815, radius: 165, rotation: 0.0000, width: 80, height: 15, isMobile: true, move: { type: 'orbit', speed: -0.3000 } },
+                    { angle: -2.6389, radius: 142, rotation: 0.0000, width: 80, height: 15, isMobile: true, move: { type: 'orbit', speed: 0.5000 } },
+                    { angle: -1.3433, radius: 69, rotation: 0.0000, width: 80, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.5000 } },
+                    { angle: -0.4222, radius: 160, rotation: 0.0000, width: 80, height: 15, isMobile: true, move: { type: 'orbit', speed: -0.5000 } },
+                ],
+                stars: [3, 4, 5]
+            },
+
+            // NIVEAU 44
+            {
+                name: "Castle (moyen)",
+                targets: [
+                    { angle: -1.4520, radius: 67, width: 20, height: 20, rotation: 0.0000 },
+                ],
+                obstacles: [
+                    { angle: 1.5027, radius: 132, rotation: 0.0000, width: 120, height: 20 },
+                    { angle: -1.5708, radius: 178, rotation: 0.0000, width: 150, height: 20 },
+                    { angle: 0.0000, radius: 160, rotation: -1.5800, width: 200, height: 20 },
+                    { angle: -1.5945, radius: 211, rotation: 0.0000, width: 80, height: 10, isMobile: true, move: { type: 'orbit', speed: 0.3000 } },
+                    { angle: 2.5741, radius: 95, rotation: -1.5800, width: 30, height: 20 },
+                    { angle: -0.4544, radius: 146, rotation: -0.7900, width: 80, height: 20 },
+                    { angle: 1.5708, radius: 211, rotation: 0.0000, width: 80, height: 10, isMobile: true, move: { type: 'orbit', speed: 0.3000 } },
+                    { angle: 3.1345, radius: 141, rotation: -1.5800, width: 200, height: 20 },
+                    { angle: -0.9386, radius: 107, rotation: 0.7900, width: 150, height: 20 },
+                    { angle: -2.0032, radius: 100, rotation: -0.7900, width: 150, height: 20 },
+                    { angle: -2.6025, radius: 131, rotation: 0.7900, width: 80, height: 20 },
+                    { angle: 1.3361, radius: 47, rotation: -1.5800, width: 80, height: 40 },
+                    { angle: 0.5124, radius: 110, rotation: -1.5800, width: 30, height: 20 },
+                ],
+                stars: [3, 4, 5]
+            },
+
+            // NIVEAU 45
+            {
+                name: "Free kick (Moyen)",
+                targets: [
+                    { angle: -0.0067, radius: 149, width: 20, height: 20, rotation: 0.0000 },
+                ],
+                obstacles: [
+                    { angle: -0.3303, radius: 185, rotation: 0.0000, width: 60, height: 20 },
+                    { angle: 2.8036, radius: 175, rotation: 0.0000, width: 80, height: 20 },
+                    { angle: -2.8092, radius: 178, rotation: 0.0000, width: 80, height: 20 },
+                    { angle: -0.0100, radius: 199, rotation: 1.5500, width: 140, height: 20, isDestructible: true },
+                    { angle: 3.1416, radius: 199, rotation: 1.5500, width: 140, height: 20, isDestructible: true, isPortal: true, portalId: 1 },
+                    { angle: 1.9710, radius: 113, rotation: 0.0000, width: 60, height: 15, isPortal: true, portalId: 1, isMobile: true, move: { type: 'rotate', speed: 0.2000 } },
+                    { angle: 0.3133, radius: 188, rotation: 0.0000, width: 60, height: 20 },
+                    { angle: 0.8943, radius: 91, rotation: 0.0000, width: 20, height: 20 },
+                    { angle: 1.0114, radius: 126, rotation: 0.0000, width: 20, height: 20 },
+                    { angle: -0.8163, radius: 69, rotation: 0.0000, width: 20, height: 20 },
+                    { angle: 1.0547, radius: 162, rotation: 0.0000, width: 20, height: 20 },
+                    { angle: -1.5647, radius: 165, rotation: 0.0000, width: 400, height: 20, isDestructible: true },
+                    { angle: 1.5361, radius: 173, rotation: 0.0000, width: 400, height: 20, isDestructible: true },
+                ],
+                stars: [3, 4, 5]
+            },
+
+            // NIVEAU 46
+            {
+                name: "Croix (Moyen)",
+                targets: [
+                    { angle: 2.8593, radius: 104, width: 20, height: 20, rotation: 0.0000 },
+                ],
+                obstacles: [
+                    { angle: -2.0339, radius: 151, rotation: 1.5500, width: 80, height: 20 },
+                    { angle: -0.4553, radius: 139, rotation: 0.0000, width: 80, height: 20 },
+                    { angle: -1.6267, radius: 168, rotation: 0.0000, width: 140, height: 20, isDestructible: true },
+                    { angle: 1.2000, radius: 153, rotation: 1.5500, width: 80, height: 20 },
+                    { angle: 1.9848, radius: 155, rotation: 1.5500, width: 80, height: 20 },
+                    { angle: -1.2114, radius: 141, rotation: 1.5500, width: 80, height: 20 },
+                    { angle: 1.5845, radius: 175, rotation: 0.0000, width: 140, height: 20, isDestructible: true },
+                    { angle: 2.7291, radius: 152, rotation: 0.0000, width: 80, height: 20 },
+                    { angle: 0.4179, radius: 143, rotation: 0.0000, width: 80, height: 20 },
+                    { angle: -2.7412, radius: 151, rotation: 0.0000, width: 80, height: 20 },
+                    { angle: -0.0125, radius: 161, rotation: 1.5500, width: 140, height: 20, isDestructible: true },
+                    { angle: 3.1416, radius: 170, rotation: 1.5500, width: 140, height: 20, isDestructible: true },
+                    { angle: 0.7621, radius: 182, rotation: 0.8100, width: 15, height: 40, isPortal: true, portalId: 1 },
+                    { angle: 3.0172, radius: 8, rotation: 1.5500, width: 80, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.2000 } },
+                    { angle: 2.9078, radius: 9, rotation: 1.5708, width: 15, height: 80, isPortal: true, portalId: 1 },
+                ],
+                stars: [3, 4, 5]
+            },
+
+            // NIVEAU 47
             {
                 name: "Orbite 3 (dure)",
                 targets: [
@@ -4688,73 +5219,7 @@
                 stars: [3, 4, 5]
             },
 
-            // NIVEAU 19
-            {
-                name: "Orbite 4 (moyen)",
-                targets: [{ angle: -1.6324, radius: 0, width: 20, height: 20, rotation: 0.0000 }],
-                obstacles: [
-                    { angle: 2.9174, radius: 256, rotation: 1.3000, width: 80, height: 30 },
-                    { angle: -1.9165, radius: 263, rotation: -0.3000, width: 80, height: 30 },
-                    { angle: 1.1440, radius: 230, rotation: -0.3000, width: 80, height: 30 },
-                    { angle: 2.1235, radius: 95, rotation: -1.9000, width: 50, height: 50, isMobile: true, move: { type: 'orbit', speed: 0.2000 } },
-                    { angle: 0.2639, radius: 115, rotation: -1.9000, width: 50, height: 50, isMobile: true, move: { type: 'orbit', speed: 0.2000 } },
-                    { angle: -1.1773, radius: 146, rotation: -1.9000, width: 50, height: 50, isMobile: true, move: { type: 'orbit', speed: 0.2000 } },
-                    { angle: -2.4448, radius: 136, rotation: -1.9000, width: 50, height: 50, isMobile: true, move: { type: 'orbit', speed: 0.2000 } },
-                    { angle: -1.8378, radius: 197, rotation: -1.9000, width: 50, height: 50, isMobile: true, move: { type: 'orbit', speed: 0.1000 } },
-                    { angle: 1.2063, radius: 149, rotation: -1.9000, width: 50, height: 50, isMobile: true, move: { type: 'orbit', speed: 0.1000 } },
-                    { angle: 3.0412, radius: 150, rotation: -1.9000, width: 50, height: 50, isMobile: true, move: { type: 'orbit', speed: 0.1000 } },
-                    { angle: -0.4040, radius: 173, rotation: -1.9000, width: 50, height: 50, isMobile: true, move: { type: 'orbit', speed: 0.1000 } },
-                ],
-                stars: [3, 4, 5]
-            },
-
-            // NIVEAU 20
-            {
-                name: "La maison dans la prairie",
-                targets: [
-                    { angle: -0.2105, radius: 14, width: 20, height: 20, rotation: 0.0000 },
-                ],
-                obstacles: [
-                    { angle: 2.7671, radius: 120, rotation: 1.3000, width: 80, height: 20 },
-                    { angle: -2.8878, radius: 112, rotation: -1.1000, width: 80, height: 20 },
-                    { angle: 2.3716, radius: 83, rotation: -0.3000, width: 80, height: 20 },
-                    { angle: -2.5115, radius: 73, rotation: 0.5600, width: 80, height: 20 },
-                    { angle: 2.6095, radius: 25, rotation: 1.3000, width: 80, height: 20 },
-                    { angle: -1.3505, radius: 39, rotation: -0.5300, width: 80, height: 20 },
-                    { angle: -1.4260, radius: 87, rotation: 0.5600, width: 80, height: 20 },
-                    { angle: -2.1837, radius: 99, rotation: -0.5300, width: 80, height: 20 },
-                    { angle: -0.4459, radius: 70, rotation: 1.3000, width: 80, height: 20 },
-                    { angle: 0.7854, radius: 66, rotation: -0.5300, width: 80, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.1000 } },
-                    { angle: 1.1241, radius: 183, rotation: -0.2000, width: 80, height: 50, isMobile: true, move: { type: 'orbit', speed: 0.1000 } },
-                    { angle: -1.6688, radius: 204, rotation: -0.2000, width: 80, height: 50, isMobile: true, move: { type: 'orbit', speed: 0.1000 } },
-                    { angle: -0.2237, radius: 194, rotation: -0.2000, width: 80, height: 50, isMobile: true, move: { type: 'orbit', speed: 0.1000 } },
-                    { angle: 2.8987, radius: 225, rotation: -0.2000, width: 80, height: 50, isMobile: true, move: { type: 'orbit', speed: 0.1000 } },
-                ],
-                stars: [3, 4, 5]
-            },
-
-            // NIVEAU 21
-            {
-                name: "Krillin",
-                targets: [
-                    { angle: -1.8763, radius: 144, width: 20, height: 20, rotation: 0.0000 },
-                    { angle: -1.3974, radius: 183, width: 20, height: 20, rotation: 0.0000 },
-                ],
-                obstacles: [
-                    { angle: -0.4686, radius: 126, rotation: 0.1300, width: 100, height: 20 },
-                    { angle: -2.6464, radius: 122, rotation: -0.1300, width: 100, height: 20, isPortal: true, portalId: 1 },
-                    { angle: 1.3455, radius: 124, rotation: 0.0000, width: 200, height: 20 },
-                    { angle: 2.3277, radius: 149, rotation: 0.3300, width: 80, height: 20, isPortal: true, portalId: 1 },
-                    { angle: -1.5996, radius: 222, rotation: 0.0000, width: 80, height: 20 },
-                    { angle: -1.2670, radius: 109, rotation: 0.0000, width: 20, height: 20 },
-                    { angle: -1.3494, radius: 144, rotation: 0.0000, width: 20, height: 20 },
-                    { angle: -1.8217, radius: 187, rotation: 0.0000, width: 20, height: 20 },
-                    { angle: -1.9828, radius: 111, rotation: 0.0000, width: 20, height: 20 },
-                ],
-                stars: [3, 4, 5]
-            },
-            
-            // NIVEAU 22
+            // NIVEAU 48
             {
                 name: "Orbite 4 téléport (dure)",
                 targets: [
@@ -4783,155 +5248,8 @@
                 ],
                 stars: [3, 4, 5]
             },
-            
-            // NIVEAU 23
-            {
-                name: "Chat",
-                targets: [
-                    { angle: 1.6168, radius: 30, width: 30, height: 30, rotation: 15.0000 },
-                ],
-                obstacles: [
-                    { angle: -2.5474, radius: 108, rotation: 1.3000, width: 40, height: 30 },
-                    { angle: 0.2943, radius: 205, rotation: 0.2000, width: 80, height: 50, isMobile: true, move: { type: 'rotate', speed: 0.0900, isPendulum: true, range: 0.3000 } },
-                    { angle: 2.8563, radius: 205, rotation: -0.2000, width: 80, height: 50, isMobile: true, move: { type: 'rotate', speed: 0.0900, isPendulum: true, range: 0.3000 } },
-                    { angle: -1.5729, radius: 186, rotation: 0.0000, width: 80, height: 15, isMobile: true, move: { type: 'slide', speed: 0.9000, axis: 'y', range: 200 } },
-                    { angle: -1.5669, radius: 152, rotation: 0.0000, width: 80, height: 15, isMobile: true, move: { type: 'slide', speed: 0.9000, axis: 'y', range: 200 } },
-                    { angle: -1.5771, radius: 223, rotation: 0.0000, width: 80, height: 15, isMobile: true, move: { type: 'slide', speed: 0.9000, axis: 'y', range: 200 } },
-                    { angle: -0.5735, radius: 115, rotation: -1.3000, width: 40, height: 30 },
-                    { shape: 'curve', radius: 110, angle: 2.0802, curveRadius: 50, startAngle: 0.0000, endAngle: 3.1416, lineWidth: 10 },
-                    { shape: 'curve', radius: 109, angle: 1.1088, curveRadius: 50, startAngle: 0.0000, endAngle: 3.1416, lineWidth: 10 },
-                    { angle: 1.5772, radius: 62, rotation: 0.0000, width: 200, height: 10, isDestructible: true },
-                ],
-                stars: [3, 4, 5]
-            },
 
-            // NIVEAU 24
-            {
-                name: "Orbite (moyen)",
-                targets: [{ angle: 1.2356, radius: 0, width: 30, height: 30, rotation: 15.0000 }],
-                obstacles: [
-                    { angle: 2.2107, radius: 64, rotation: -0.2000, width: 30, height: 50, isMobile: true, move: { type: 'orbit', speed: 0.2000 } },
-                    { angle: -0.4404, radius: 174, rotation: -0.2000, width: 30, height: 50, isMobile: true, move: { type: 'orbit', speed: 0.2000 } },
-                    { angle: 1.6327, radius: 209, rotation: -0.2000, width: 30, height: 50, isMobile: true, move: { type: 'orbit', speed: 0.2000 } },
-                    { angle: -1.4159, radius: 188, rotation: -0.2000, width: 30, height: 50, isMobile: true, move: { type: 'orbit', speed: 0.2000 } },
-                    { angle: 0.4942, radius: 190, rotation: -0.2000, width: 30, height: 50, isMobile: true, move: { type: 'orbit', speed: -0.1290 } },
-                    { angle: 0.8347, radius: 100, rotation: -0.2000, width: 30, height: 50, isMobile: true, move: { type: 'orbit', speed: 0.2000 } },
-                    { angle: -1.7748, radius: 84, rotation: -0.2000, width: 30, height: 50, isMobile: true, move: { type: 'orbit', speed: -0.1290 } },
-                    { angle: -2.5126, radius: 150, rotation: -0.2000, width: 30, height: 50, isMobile: true, move: { type: 'orbit', speed: 0.2000 } },
-                    { angle: 3.0049, radius: 161, rotation: -0.2000, width: 30, height: 50, isMobile: true, move: { type: 'orbit', speed: -0.1290 } },
-                ],
-                stars: [3, 4, 5]
-            },
-
-            // NIVEAU 25
-            {
-                name: "Labyrinthe à 6 portes (difficile)",
-                targets: [
-                    { angle: 1.9919, radius: 128, width: 20, height: 20, rotation: 0.0000 },
-                ],
-                obstacles: [
-                    { angle: -2.9560, radius: 56, rotation: -0.3000, width: 80, height: 30 },
-                    { angle: -0.3406, radius: 117, rotation: -0.3000, width: 80, height: 30 },
-                    { angle: -2.9607, radius: 195, rotation: -0.3000, width: 80, height: 30 },
-                    { angle: 2.2152, radius: 196, rotation: -0.3000, width: 80, height: 30 },
-                    { angle: -2.8619, radius: 99, rotation: 1.3000, width: 80, height: 30 },
-                    { angle: -1.9475, radius: 183, rotation: 1.3000, width: 80, height: 30 },
-                    { angle: -0.7034, radius: 79, rotation: 1.3000, width: 80, height: 30 },
-                    { angle: 2.9795, radius: 202, rotation: 1.3000, width: 150, height: 30 },
-                    { angle: 2.0187, radius: 193, rotation: 1.3000, width: 80, height: 30 },
-                    { angle: -0.5279, radius: 148, rotation: 1.3000, width: 80, height: 30 },
-                    { angle: 0.2292, radius: 188, rotation: 1.3000, width: 80, height: 30 },
-                    { angle: 0.3115, radius: 211, rotation: -0.3000, width: 50, height: 30 },
-                    { angle: 1.8355, radius: 196, rotation: -0.3000, width: 80, height: 30 },
-                    { angle: -2.3894, radius: 213, rotation: -0.3000, width: 50, height: 30 },
-                    { angle: -1.8103, radius: 139, rotation: -0.3000, width: 80, height: 30 },
-                    { angle: -1.8149, radius: 213, rotation: -0.3000, width: 80, height: 30 },
-                    { angle: 3.0672, radius: 116, rotation: -0.3000, width: 80, height: 30 },
-                    { angle: 0.8567, radius: 143, rotation: 1.3000, width: 150, height: 30 },
-                    { angle: 0.6043, radius: 169, rotation: -0.3000, width: 80, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.1000 } },
-                    { angle: -2.3833, radius: 156, rotation: -0.3000, width: 80, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.1000 } },
-                    { angle: 1.1647, radius: 42, rotation: -0.3000, width: 80, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.2000 } },
-                    { angle: -1.2194, radius: 164, rotation: -0.3000, width: 80, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.1000 } },
-                    { angle: 2.3433, radius: 88, rotation: -0.3000, width: 80, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.1000 } },
-                    { angle: -0.2944, radius: 201, rotation: -0.3000, width: 50, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.1000 } },
-                ],
-                stars: [3, 4, 5]
-            },
-
-            // NIVEAU 26
-            {
-                name: "HMZ",
-                targets: [
-                    { angle: 2.3215, radius: 106, width: 20, height: 20, rotation: 0.0000 },
-                    { angle: 0.6924, radius: 129, width: 20, height: 20, rotation: 0.0000 },
-                ],
-                obstacles: [
-                    { angle: -3.1240, radius: 193, rotation: 1.5600, width: 183, height: 30 },
-                    { angle: -3.1318, radius: 143, rotation: 0.0000, width: 80, height: 30 },
-                    { angle: -3.1288, radius: 109, rotation: 1.5500, width: 180, height: 30 },
-                    { angle: 3.1256, radius: 37, rotation: 1.5500, width: 180, height: 30, isDestructible: true },
-                    { angle: -1.8906, radius: 33, rotation: 1.0000, width: 113, height: 30, isDestructible: true },
-                    { angle: -0.7410, radius: 51, rotation: -1.0000, width: 113, height: 30, isDestructible: true },
-                    { angle: 0.0402, radius: 65, rotation: 1.5500, width: 180, height: 30, isDestructible: true },
-                    { angle: -0.3753, radius: 187, rotation: 0.0000, width: 100, height: 30 },
-                    { angle: 0.0694, radius: 173, rotation: -1.0800, width: 180, height: 30 },
-                    { angle: 0.4508, radius: 187, rotation: 0.0000, width: 100, height: 30 },
-                    { angle: 1.4684, radius: 182, rotation: 0.0000, width: 300, height: 30 },
-                ],
-                stars: [3, 4, 5]
-            },
-
-            // NIVEAU 27
-            {
-                name: "Labyrinthe 4 (difficile)",
-                targets: [
-                    { angle: 2.8661, radius: 127, width: 20, height: 20, rotation: 0.0000 },
-                ],
-                obstacles: [
-                    { angle: 1.3529, radius: 206, rotation: 0.0300, width: 80, height: 20 },
-                    { angle: 2.0872, radius: 215, rotation: 0.4300, width: 80, height: 20 },
-                    { angle: 2.5374, radius: 161, rotation: 0.1400, width: 150, height: 20 },
-                    { angle: 0.8286, radius: 164, rotation: 0.1400, width: 80, height: 20 },
-                    { angle: 2.3156, radius: 52, rotation: 0.1400, width: 80, height: 20 },
-                    { angle: 3.0661, radius: 191, rotation: 0.1400, width: 80, height: 20 },
-                    { angle: -2.7883, radius: 128, rotation: 0.0600, width: 200, height: 10 },
-                    { angle: -0.0214, radius: 187, rotation: 0.2700, width: 80, height: 10 },
-                    { angle: -2.4452, radius: 205, rotation: 0.1400, width: 80, height: 20 },
-                    { angle: -0.7323, radius: 200, rotation: 0.1400, width: 80, height: 20 },
-                    { angle: -1.4253, radius: 218, rotation: 0.1400, width: 80, height: 20 },
-                    { angle: -1.6076, radius: 190, rotation: 1.7000, width: 80, height: 20 },
-                    { angle: 2.8989, radius: 189, rotation: 1.7000, width: 80, height: 20 },
-                    { angle: 0.8193, radius: 204, rotation: 1.7000, width: 80, height: 20 },
-                    { angle: 2.4062, radius: 96, rotation: 1.7000, width: 80, height: 20 },
-                    { angle: -2.2461, radius: 181, rotation: 2.0900, width: 50, height: 20 },
-                    { angle: -0.5083, radius: 202, rotation: 1.7000, width: 80, height: 20 },
-                    { angle: 0.3767, radius: 157, rotation: 0.1400, width: 150, height: 20 },
-                    { angle: -1.0556, radius: 95, rotation: 0.2000, width: 150, height: 20 },
-                    { angle: -1.7888, radius: 162, rotation: 0.1400, width: 150, height: 20 },
-                    { angle: -3.0517, radius: 218, rotation: 1.7000, width: 80, height: 20 },
-                ],
-                stars: [3, 4, 5]
-            },
-
-            // NIVEAU 28
-            {
-                name: "Ricochet 4 (moyen)",
-                targets: [
-                    { angle: 0.7670, radius: 115, width: 20, height: 20, rotation: 0.0000 },
-                ],
-                obstacles: [
-                    { angle: 1.5768, radius: 167, rotation: 0.0000, width: 300, height: 30 },
-                    { angle: -2.3496, radius: 129, rotation: 0.1000, width: 200, height: 30 },
-                    { angle: 0.4365, radius: 76, rotation: 0.0000, width: 300, height: 30 },
-                    { angle: -2.8644, radius: 216, rotation: -0.8800, width: 113, height: 30 },
-                    { angle: 0.0578, radius: 225, rotation: 1.5500, width: 250, height: 30 },
-                    { angle: 2.5322, radius: 182, rotation: 0.0000, width: 80, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.1000 } },
-                    { angle: -1.5666, radius: 144, rotation: 1.7000, width: 150, height: 30 },
-                ],
-                stars: [3, 4, 5] // À ajuster manuellement
-            },
-
-            // NIVEAU 29
+            // NIVEAU 49
             {
                 name: "Labyrinthe 4 (moyen)",
                 targets: [
@@ -4960,496 +5278,7 @@
                 stars: [3, 4, 5]
             },
 
-            // NIVEAU 30
-            {
-                name: "Ricochet 5 (moyen)",
-                targets: [
-                    { angle: -2.0391, radius: 95, width: 20, height: 20, rotation: 0.0000 },
-                ],
-                obstacles: [
-                    { angle: 0.9828, radius: 75, rotation: -0.0600, width: 300, height: 30 },
-                    { angle: -2.7569, radius: 98, rotation: 0.0600, width: 200, height: 30 },
-                    { angle: -1.3276, radius: 137, rotation: 0.0000, width: 300, height: 30 },
-                    { angle: -2.5942, radius: 171, rotation: -0.9000, width: 113, height: 30 },
-                    { angle: 2.4539, radius: 174, rotation: -0.9000, width: 113, height: 30 },
-                    { angle: -0.2145, radius: 183, rotation: 1.6400, width: 184, height: 30 },
-                    { angle: -0.8551, radius: 102, rotation: 0.0000, width: 80, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.1000 } },
-                ],
-                stars: [3, 4, 5]
-            },
-
-            // NIVEAU 31
-            {
-                name: "Roochet slide + destructible",
-                targets: [
-                    { angle: -2.4098, radius: 119, width: 20, height: 20, rotation: 0.0000 },
-                    { angle: 0.1319, radius: 0, width: 20, height: 20, rotation: 0.0000 },
-                    { angle: 0.7567, radius: 98, width: 20, height: 20, rotation: 0.0000 },
-                ],
-                obstacles: [
-                    { angle: -0.4969, radius: 137, rotation: 1.5500, width: 80, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.5000 } },
-                    { angle: -2.3653, radius: 62, rotation: 1.5500, width: 80, height: 20, isDestructible: true },
-                    { angle: 0.8094, radius: 53, rotation: 1.5500, width: 80, height: 20, isDestructible: true },
-                    { angle: 0.5080, radius: 147, rotation: 1.5500, width: 80, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.5000 } },
-                    { angle: 2.6374, radius: 152, rotation: 1.5500, width: 80, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.5000 } },
-                    { angle: -2.6797, radius: 153, rotation: 1.5500, width: 80, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.5000 } },
-                ],
-                stars: [3, 4, 5]
-            },
-
-            // NIVEAU 32
-            {
-                name: "Labyrinthe 5 (difficile)",
-                targets: [
-                    { angle: 1.0248, radius: 161, width: 20, height: 20, rotation: 0.0000 },
-                ],
-                obstacles: [
-                    { angle: 1.1282, radius: 200, rotation: 0.1400, width: 80, height: 20 },
-                    { angle: 2.1557, radius: 182, rotation: 0.1400, width: 120, height: 20 },
-                    { angle: -3.0473, radius: 81, rotation: 0.1400, width: 150, height: 30, isDestructible: true },
-                    { angle: 0.7739, radius: 135, rotation: 0.1400, width: 80, height: 20 },
-                    { angle: -2.5261, radius: 192, rotation: 0.1400, width: 80, height: 20 },
-                    { angle: -3.0203, radius: 187, rotation: 0.1400, width: 80, height: 30 },
-                    { angle: -0.7005, radius: 200, rotation: 0.1400, width: 80, height: 20 },
-                    { angle: -1.4612, radius: 216, rotation: 0.1400, width: 80, height: 20 },
-                    { angle: -1.6076, radius: 190, rotation: 1.7000, width: 80, height: 30 },
-                    { angle: 2.9466, radius: 165, rotation: 1.7000, width: 80, height: 20 },
-                    { angle: 0.8890, radius: 191, rotation: 1.7000, width: 80, height: 20 },
-                    { angle: -0.5175, radius: 118, rotation: 1.7000, width: 50, height: 30 },
-                    { angle: -0.4876, radius: 198, rotation: 1.7000, width: 80, height: 30 },
-                    { angle: 0.1397, radius: 155, rotation: 0.1400, width: 150, height: 20 },
-                    { angle: -1.0556, radius: 95, rotation: 0.1400, width: 150, height: 20 },
-                    { angle: -1.7888, radius: 162, rotation: 0.1400, width: 150, height: 20 },
-                    { angle: 0.2047, radius: 37, rotation: 0.1300, width: 80, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.4000 } },
-                    { angle: 1.3657, radius: 194, rotation: 1.7000, width: 50, height: 20 },
-                ],
-                stars: [3, 4, 5]
-            },
-
-            // NIVEAU 33
-            {
-                name: "Flipper",
-                targets: [
-                    { angle: -0.9579, radius: 185, width: 20, height: 20, rotation: 0.0000 },
-                ],
-                obstacles: [
-                    { angle: -2.3192, radius: 191, rotation: 1.1000, width: 80, height: 30 },
-                    { angle: 2.8854, radius: 130, rotation: 1.6800, width: 280, height: 30 },
-                    { angle: 0.2832, radius: 140, rotation: -1.6800, width: 280, height: 30 },
-                    { angle: 2.1361, radius: 146, rotation: 0.3600, width: 114, height: 20, isMobile: true, move: { type: 'rotate', speed: 0.6000, isPendulum: true, range: 50.0000 } },
-                    { angle: 0.9672, radius: 153, rotation: -0.3600, width: 114, height: 20, isMobile: true, move: { type: 'rotate', speed: 0.6000, isPendulum: true, range: 50.0000 } },
-                    { angle: -2.3069, radius: 115, rotation: 0.3600, width: 50, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.6000, isPendulum: true, range: 50.0000 } },
-                    { angle: 1.5459, radius: 185, rotation: 1.5708, width: 20, height: 300, isPortal: true, portalId: 1 },
-                    { angle: -2.0044, radius: 218, rotation: 1.2100, width: 20, height: 100, isPortal: true, portalId: 1 },
-                    { angle: -0.5047, radius: 57, rotation: 0.0000, width: 30, height: 30, isDestructible: true },
-                    { angle: 2.6809, radius: 31, rotation: 0.0000, width: 30, height: 30, isDestructible: true },
-                    { angle: -1.4120, radius: 99, rotation: 0.0000, width: 30, height: 30, isDestructible: true },
-                    { angle: -1.7048, radius: 190, rotation: 1.1000, width: 80, height: 30 },
-                    { angle: -1.2725, radius: 237, rotation: 1.1000, width: 80, height: 30 },
-                    { angle: -1.0597, radius: 157, rotation: 1.1600, width: 80, height: 20, isDestructible: true },
-                    { angle: -0.8594, radius: 220, rotation: 1.1000, width: 80, height: 30 },
-                ],
-                stars: [3, 4, 5]
-            },
-
-            // NIVEAU 34
-            {
-                name: "Ricochet 5 (difficile)",
-                targets: [
-                    { angle: 1.3765, radius: 102, width: 20, height: 20, rotation: 0.0000 },
-                    { angle: -2.3890, radius: 159, width: 20, height: 20, rotation: 0.0000 },
-                ],
-                obstacles: [
-                    { angle: 1.5768, radius: 167, rotation: 0.0000, width: 300, height: 30 },
-                    { angle: 0.3017, radius: 104, rotation: 0.0000, width: 250, height: 30 },
-                    { angle: -2.3055, radius: 120, rotation: -0.9000, width: 350, height: 30 },
-                    { angle: -0.0721, radius: 208, rotation: 1.4300, width: 250, height: 30 },
-                    { angle: 2.4002, radius: 167, rotation: 0.0000, width: 80, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.1000 } },
-                    { angle: 0.6230, radius: 213, rotation: 0.8400, width: 15, height: 60, isPortal: true, portalId: 1 },
-                    { angle: -2.3853, radius: 204, rotation: 0.8400, width: 15, height: 40, isPortal: true, portalId: 1 },
-                ],
-                stars: [3, 4, 5] // À ajuster manuellement
-            },
-
-            // NIVEAU 35
-            {
-                name: "Anime",
-                targets: [
-                    { angle: -0.4769, radius: 108, width: 20, height: 20, rotation: 1.0000 },
-                ],
-                obstacles: [
-                    { angle: -2.1262, radius: 158, rotation: 0.3900, width: 120, height: 10 },
-                    { angle: 1.5644, radius: 94, rotation: 0.0000, width: 200, height: 10 },
-                    { angle: 1.5961, radius: 135, rotation: 0.0000, width: 50, height: 10 },
-                    { angle: -1.9522, radius: 41, rotation: 1.6800, width: 135, height: 10 },
-                    { angle: -0.9845, radius: 160, rotation: -0.3900, width: 120, height: 10 },
-                    { angle: -2.5899, radius: 104, rotation: 1.0000, width: 20, height: 20 },
-                    { angle: 1.5505, radius: 30, rotation: 0.4700, width: 20, height: 10 },
-                    { angle: -0.2178, radius: 100, rotation: 0.0000, width: 80, height: 10, isDestructible: true },
-                    { angle: -0.6717, radius: 125, rotation: 0.0000, width: 80, height: 10, isDestructible: true },
-                    { angle: -2.8685, radius: 95, rotation: 0.0000, width: 80, height: 10, isDestructible: true },
-                    { angle: -2.4189, radius: 122, rotation: 0.0000, width: 80, height: 10, isDestructible: true },
-                ],
-                stars: [3, 4, 5]
-            },
-
-            // NIVEAU 36
-            {
-                name: "Portail 3 (moyen)",
-                targets: [
-                    { angle: 2.2368, radius: 150, width: 20, height: 20, rotation: 0.0000 },
-                    { angle: -0.8285, radius: 115, width: 20, height: 20, rotation: 0.0000 },
-                ],
-                obstacles: [
-                    { angle: -2.2502, radius: 114, rotation: 1.5708, width: 15, height: 40, isPortal: true, portalId: 1 },
-                    { angle: -1.5216, radius: 155, rotation: 1.5708, width: 15, height: 40, isPortal: true, portalId: 1 },
-                    { angle: -0.4986, radius: 130, rotation: 1.5500, width: 80, height: 20, isDestructible: true },
-                    { angle: 1.1153, radius: 22, rotation: 1.5708, width: 15, height: 40, isPortal: true, portalId: 2 },
-                    { angle: 0.1148, radius: 180, rotation: 1.5708, width: 15, height: 40, isPortal: true, portalId: 2 },
-                    { angle: 0.7550, radius: 163, rotation: 0.7600, width: 80, height: 20, isDestructible: true },
-                    { angle: 2.4377, radius: 120, rotation: 0.0000, width: 80, height: 10 },
-                    { angle: 2.1076, radius: 179, rotation: 0.0000, width: 80, height: 10, isPortal: true, portalId: 3 },
-                    { angle: 2.4004, radius: 173, rotation: 1.5500, width: 80, height: 10 },
-                    { angle: 2.0247, radius: 129, rotation: 1.5500, width: 80, height: 10 },
-                    { angle: -0.7652, radius: 182, rotation: 1.5708, width: 15, height: 60, isPortal: true, portalId: 3 },
-                    { angle: -2.9314, radius: 131, rotation: 0.0000, width: 200, height: 20 },
-                ],
-                stars: [3, 4, 5]
-            },
-
-                        // NIVEAU 37
-            {
-                name: "Roochet slide",
-                targets: [
-                    { angle: 3.1297, radius: 134, width: 20, height: 20, rotation: 0.0000 },
-                    { angle: 0.1319, radius: 0, width: 20, height: 20, rotation: 0.0000 },
-                    { angle: 0.0046, radius: 132, width: 20, height: 20, rotation: 0.0000 },
-                ],
-                obstacles: [
-                    { angle: 2.6003, radius: 149, rotation: 0.0000, width: 80, height: 15, isMobile: true, move: { type: 'slide', speed: 0.3000, axis: 'x', range: 50 } },
-                    { angle: 1.3601, radius: 79, rotation: 0.0000, width: 80, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.5000 } },
-                    { angle: 0.4815, radius: 165, rotation: 0.0000, width: 80, height: 15, isMobile: true, move: { type: 'orbit', speed: -0.3000 } },
-                    { angle: -2.6389, radius: 142, rotation: 0.0000, width: 80, height: 15, isMobile: true, move: { type: 'orbit', speed: 0.5000 } },
-                    { angle: -1.3433, radius: 69, rotation: 0.0000, width: 80, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.5000 } },
-                    { angle: -0.4222, radius: 160, rotation: 0.0000, width: 80, height: 15, isMobile: true, move: { type: 'orbit', speed: -0.5000 } },
-                ],
-                stars: [3, 4, 5] // À ajuster manuellement
-            },
-
-            // NIVEAU 38
-            {
-                name: "Double porte 2 cibles",
-                targets: [
-                    { angle: 2.0860, radius: 19, width: 20, height: 20, rotation: 0.0000 },
-                    { angle: -0.0941, radius: 153, width: 20, height: 20, rotation: 0.0000 },
-                ],
-                obstacles: [
-                    { angle: -1.9775, radius: 115, rotation: 0.0000, width: 100, height: 20 },
-                    { angle: -1.1919, radius: 91, rotation: 0.5300, width: 100, height: 20 },
-                    { angle: -0.2621, radius: 71, rotation: 1.5500, width: 100, height: 20 },
-                    { angle: 2.6511, radius: 97, rotation: 1.5500, width: 100, height: 20 },
-                    { angle: 1.9848, radius: 115, rotation: 0.5300, width: 100, height: 20 },
-                    { angle: 1.2872, radius: 131, rotation: 0.0000, width: 100, height: 20 },
-                    { angle: -2.6222, radius: 100, rotation: 1.5500, width: 80, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.3000 } },
-                    { angle: 0.7992, radius: 103, rotation: 1.5500, width: 80, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.3000 } },
-                ],
-                stars: [3, 4, 5]
-            },
-
-            // NIVEAU 39
-            {
-                name: "Ricochet 2 (facile)",
-                targets: [
-                    { angle: 1.8805, radius: 157, width: 20, height: 20, rotation: 0.0000 },
-                ],
-                obstacles: [
-                    { angle: -1.3018, radius: 192, rotation: 0.0000, width: 80, height: 20 },
-                    { angle: -2.2455, radius: 147, rotation: 0.0000, width: 80, height: 20 },
-                    { angle: -3.1219, radius: 203, rotation: 1.5500, width: 120, height: 20 },
-                    { angle: 2.2950, radius: 139, rotation: 0.0000, width: 120, height: 20 },
-                    { angle: -0.0207, radius: 193, rotation: 1.5500, width: 120, height: 20 },
-                    { angle: 1.6453, radius: 202, rotation: 0.0000, width: 120, height: 20 },
-                    { angle: 2.0784, radius: 183, rotation: 0.9600, width: 120, height: 20 },
-                ],
-                stars: [3, 4, 5] // À ajuster manuellement
-},
-
-            // NIVEAU 40
-            {
-                name: "Ricochet orbit 1 (moyen)",
-                targets: [
-                    { angle: 1.5042, radius: 150, width: 20, height: 20, rotation: 0.0000 },
-                ],
-                obstacles: [
-                    { angle: -1.3018, radius: 192, rotation: 0.0000, width: 80, height: 20 },
-                    { angle: -2.2455, radius: 147, rotation: 0.0000, width: 120, height: 20 },
-                    { angle: -3.1219, radius: 203, rotation: 1.5500, width: 120, height: 20 },
-                    { angle: 0.9915, radius: 128, rotation: 0.0000, width: 80, height: 20 },
-                    { angle: -0.9447, radius: 144, rotation: 0.0000, width: 120, height: 20 },
-                    { angle: 1.4914, radius: 202, rotation: 0.0000, width: 80, height: 20 },
-                    { angle: 1.1020, radius: 173, rotation: -0.9600, width: 120, height: 20 },
-                    { angle: -0.0278, radius: 180, rotation: 1.5500, width: 80, height: 10, isMobile: true, move: { type: 'orbit', speed: 0.4000 } },
-                ],
-                stars: [3, 4, 5] // À ajuster manuellement
-            },
-
-            // NIVEAU 41
-            {
-                name: "Ricochet rotatif 1 (moyen)",
-                targets: [{ angle: 1.5042, radius: 150, width: 20, height: 20, rotation: 0.0000 }],
-                obstacles: [
-                    { angle: -1.3018, radius: 192, rotation: 0.0000, width: 80, height: 20 },
-                    { angle: -2.0319, radius: 173, rotation: 0.0000, width: 80, height: 20 },
-                    { angle: -3.1245, radius: 175, rotation: 1.5500, width: 80, height: 20 },
-                    { angle: 1.4914, radius: 202, rotation: 0.0000, width: 80, height: 20 },
-                    { angle: 1.1020, radius: 173, rotation: -0.9600, width: 120, height: 20 },
-                    { angle: -0.0614, radius: 179, rotation: -0.8000, width: 80, height: 20 },
-                    { angle: -0.6577, radius: 211, rotation: 0.8000, width: 80, height: 20 },
-                    { angle: -2.3952, radius: 181, rotation: -0.8000, width: 80, height: 20 },
-                    { angle: 1.8977, radius: 184, rotation: 0.8000, width: 80, height: 20 },
-                    { angle: 0.4636, radius: 7, rotation: 0.0000, width: 80, height: 10, isMobile: true, move: { type: 'rotate', speed: 0.4000 } },
-                ],
-                stars: [3, 4, 5]
-            },
-
-            // NIVEAU 42
-            {
-                name: "Diamant (moyen)",
-                targets: [{ angle: 1.4438, radius: 95, width: 20, height: 20, rotation: 0.0000 }],
-                obstacles: [
-                    { angle: -2.4892, radius: 112, rotation: 0.0000, width: 80, height: 20 },
-                    { angle: -0.5903, radius: 120, rotation: 0.0000, width: 80, height: 20 },
-                    { angle: 0.7221, radius: 145, rotation: -0.8000, width: 250, height: 20 },
-                    { angle: -2.9292, radius: 157, rotation: -0.9000, width: 100, height: 20 },
-                    { angle: 0.4636, radius: 7, rotation: 0.0000, width: 80, height: 10, isMobile: true, move: { type: 'rotate', speed: 0.4000 } },
-                    { angle: 2.2394, radius: 127, rotation: 0.8000, width: 280, height: 20 },
-                    { angle: -0.1377, radius: 168, rotation: 0.9000, width: 100, height: 20 },
-                ],
-                stars: [3, 4, 5]
-            },
-
-            // NIVEAU 43
-            {
-                name: "Coeur (moyen)",
-                targets: [{ angle: 3.0292, radius: 62, width: 20, height: 20, rotation: 0.0000 }],
-                obstacles: [
-                    { angle: -2.3173, radius: 109, rotation: 0.0000, width: 80, height: 20 },
-                    { angle: -0.8449, radius: 107, rotation: 0.0000, width: 50, height: 20 },
-                    { angle: 0.9291, radius: 114, rotation: -0.8000, width: 230, height: 20 },
-                    { angle: -2.8109, radius: 142, rotation: -0.9000, width: 100, height: 20 },
-                    { angle: -0.2928, radius: 142, rotation: 0.9000, width: 80, height: 10, isMobile: true, move: { type: 'rotate', speed: 0.4000 } },
-                    { angle: 2.3854, radius: 121, rotation: 0.8000, width: 250, height: 20 },
-                    { angle: -1.1071, radius: 58, rotation: -0.8500, width: 80, height: 20 },
-                    { angle: -1.8818, radius: 59, rotation: 0.8500, width: 80, height: 20 },
-                ],
-                stars: [3, 4, 5]
-            },
-
-            // NIVEAU 44
-            {
-                name: "Star (moyen)",
-                targets: [{ angle: 3.0292, radius: 62, width: 20, height: 20, rotation: 0.0000 }],
-                obstacles: [
-                    { angle: -2.2528, radius: 151, rotation: 0.0000, width: 80, height: 20 },
-                    { angle: -0.1818, radius: 138, rotation: -0.9000, width: 80, height: 20 },
-                    { angle: -1.7943, radius: 158, rotation: -0.8500, width: 80, height: 20 },
-                    { angle: -1.4425, radius: 156, rotation: 0.8500, width: 100, height: 20 },
-                    { angle: -0.9259, radius: 146, rotation: 0.0000, width: 80, height: 20 },
-                    { angle: -3.0371, radius: 144, rotation: 0.8500, width: 80, height: 20 },
-                    { angle: 1.9498, radius: 122, rotation: -0.7000, width: 150, height: 20 },
-                    { angle: 1.1141, radius: 129, rotation: 0.7000, width: 150, height: 20 },
-                    { angle: 2.6992, radius: 147, rotation: -1.3100, width: 120, height: 20 },
-                    { angle: 0.5658, radius: 162, rotation: 1.2400, width: 100, height: 20 },
-                    { angle: -1.5969, radius: 115, rotation: 0.0000, width: 80, height: 10, isMobile: true, move: { type: 'orbit', speed: 0.3000 } },
-                ],
-                stars: [3, 4, 5]
-            },
-
-            // NIVEAU 45
-            {
-                name: "Gameboy (moyen)",
-                targets: [{ angle: 0.9018, radius: 110, width: 20, height: 20, rotation: 0.0000 }],
-                obstacles: [
-                    { angle: 0.9154, radius: 185, rotation: -0.7900, width: 80, height: 20 },
-                    { angle: 1.4853, radius: 176, rotation: 0.0000, width: 150, height: 20 },
-                    { angle: 2.9876, radius: 117, rotation: -1.5800, width: 300, height: 20 },
-                    { angle: 2.1341, radius: 67, rotation: 0.0000, width: 50, height: 10, isMobile: true, move: { type: 'rotate', speed: 0.3000 } },
-                    { angle: -2.1897, radius: 179, rotation: -0.7900, width: 50, height: 20 },
-                    { angle: -1.6890, radius: 161, rotation: 0.0000, width: 150, height: 20 },
-                    { angle: -0.1663, radius: 139, rotation: -1.5800, width: 180, height: 20 },
-                    { angle: 2.1466, radius: 68, rotation: 1.5500, width: 50, height: 10, isMobile: true, move: { type: 'rotate', speed: 0.3000 } },
-                    { angle: 0.6048, radius: 83, rotation: 0.0000, width: 20, height: 20 },
-                    { angle: -2.3198, radius: 78, rotation: -1.5800, width: 100, height: 20 },
-                    { angle: -0.6629, radius: 93, rotation: -1.5800, width: 100, height: 20 },
-                    { angle: -1.4721, radius: 101, rotation: 0.0000, width: 150, height: 20 },
-                    { angle: -0.8288, radius: 16, rotation: 0.0000, width: 150, height: 20 },
-                ],
-                stars: [3, 4, 5]
-            },
-
-            // NIVEAU 46
-            {
-                name: "Manette (moyen)",
-                targets: [{ angle: 0.8844, radius: 107, width: 20, height: 20, rotation: 0.0000 }],
-                obstacles: [
-                    { angle: 1.5416, radius: 137, rotation: 0.0000, width: 100, height: 20 },
-                    { angle: 2.6406, radius: 96, rotation: 0.0000, width: 80, height: 10, isMobile: true, move: { type: 'rotate', speed: 0.3000 } },
-                    { angle: 2.6365, radius: 97, rotation: 1.5500, width: 80, height: 10, isMobile: true, move: { type: 'rotate', speed: 0.3000 } },
-                    { angle: 0.1889, radius: 69, rotation: 0.0000, width: 20, height: 20 },
-                    { angle: 2.8485, radius: 177, rotation: -1.5800, width: 100, height: 20 },
-                    { angle: -1.6464, radius: 66, rotation: 0.0000, width: 100, height: 20 },
-                    { angle: 0.3271, radius: 177, rotation: -1.5800, width: 100, height: 20 },
-                    { angle: 1.0273, radius: 56, rotation: 0.0000, width: 20, height: 20 },
-                    { angle: 0.4324, radius: 115, rotation: 0.0000, width: 20, height: 20 },
-                    { angle: 2.1028, radius: 183, rotation: 0.4800, width: 50, height: 20 },
-                    { angle: -0.2814, radius: 133, rotation: 0.7900, width: 50, height: 20 },
-                    { angle: -2.8220, radius: 146, rotation: -0.7900, width: 50, height: 20 },
-                    { angle: -1.6400, radius: 101, rotation: -1.5800, width: 80, height: 20 },
-                    { angle: 1.9513, radius: 162, rotation: -0.7900, width: 50, height: 20 },
-                    { angle: 1.1580, radius: 167, rotation: 0.7900, width: 50, height: 20 },
-                    { angle: 0.9783, radius: 184, rotation: -0.4800, width: 50, height: 20 },
-                    { angle: -1.5945, radius: 211, rotation: 0.0000, width: 80, height: 10, isMobile: true, move: { type: 'rotate', speed: 0.3000 } },
-                ],
-                stars: [3, 4, 5]
-            },
-
-            // NIVEAU 47
-            {
-                name: "Skull (moyen)",
-                targets: [{ angle: -0.3760, radius: 41, width: 20, height: 20, rotation: 0.0000 }],
-                obstacles: [
-                    { angle: 1.5332, radius: 186, rotation: 0.0000, width: 100, height: 20 },
-                    { angle: -2.9833, radius: 121, rotation: -1.5800, width: 100, height: 20 },
-                    { angle: -1.4915, radius: 151, rotation: 0.0000, width: 120, height: 20 },
-                    { angle: 2.6053, radius: 123, rotation: 1.1100, width: 80, height: 20 },
-                    { angle: 0.4096, radius: 141, rotation: -0.7900, width: 50, height: 20 },
-                    { angle: -0.2615, radius: 147, rotation: -1.5800, width: 80, height: 20 },
-                    { angle: -1.0199, radius: 164, rotation: 0.5700, width: 50, height: 20 },
-                    { angle: 0.9783, radius: 184, rotation: -0.4800, width: 50, height: 20 },
-                    { angle: -1.5945, radius: 211, rotation: 0.0000, width: 80, height: 10, isMobile: true, move: { type: 'rotate', speed: 0.3000 } },
-                    { angle: 0.7412, radius: 160, rotation: -1.5800, width: 80, height: 20 },
-                    { angle: -2.3966, radius: 140, rotation: -1.1000, width: 80, height: 20 },
-                    { angle: -0.6184, radius: 64, rotation: 0.0000, width: 50, height: 20 },
-                    { angle: -2.4559, radius: 57, rotation: 0.0000, width: 50, height: 20 },
-                    { angle: -2.8966, radius: 58, rotation: 0.0000, width: 20, height: 20 },
-                    { angle: 1.2032, radius: 186, rotation: -0.8000, width: 40, height: 20 },
-                    { angle: 1.6760, radius: 162, rotation: -1.5800, width: 30, height: 20 },
-                    { angle: 1.4228, radius: 163, rotation: -1.5800, width: 30, height: 20 },
-                    { angle: 1.7033, radius: 45, rotation: -1.5800, width: 30, height: 20 },
-                    { angle: 1.8730, radius: 178, rotation: -1.5800, width: 50, height: 20 },
-                ],
-                stars: [3, 4, 5]
-            },
-
-            // NIVEAU 48
-            {
-                name: "Mystery Box (moyen)",
-                targets: [{ angle: 1.6100, radius: 102, width: 20, height: 20, rotation: 0.0000 }],
-                obstacles: [
-                    { angle: 1.5764, radius: 178, rotation: 0.0000, width: 120, height: 20 },
-                    { angle: 3.1293, radius: 163, rotation: -1.5800, width: 250, height: 20 },
-                    { angle: -1.5708, radius: 178, rotation: 0.0000, width: 150, height: 20 },
-                    { angle: -2.4055, radius: 201, rotation: -0.7900, width: 50, height: 20 },
-                    { angle: 0.0000, radius: 160, rotation: -1.5800, width: 250, height: 20 },
-                    { angle: -1.5945, radius: 211, rotation: 0.0000, width: 80, height: 10, isMobile: true, move: { type: 'rotate', speed: 0.3000 } },
-                    { angle: -0.6747, radius: 58, rotation: 1.5600, width: 50, height: 20 },
-                    { angle: -1.6615, radius: 88, rotation: 0.0000, width: 50, height: 20 },
-                    { angle: 1.6522, radius: 49, rotation: -1.5800, width: 30, height: 20 },
-                    { angle: 2.3880, radius: 200, rotation: 0.7900, width: 50, height: 20 },
-                    { angle: 0.5404, radius: 23, rotation: -0.7900, width: 80, height: 20 },
-                    { angle: -1.2178, radius: 81, rotation: 0.7900, width: 50, height: 20 },
-                    { angle: -2.1031, radius: 85, rotation: -0.7900, width: 50, height: 20 },
-                    { angle: 0.7500, radius: 200, rotation: -0.7900, width: 50, height: 20 },
-                    { angle: 1.5708, radius: 211, rotation: 0.0000, width: 80, height: 10, isMobile: true, move: { type: 'rotate', speed: 0.3000 } },
-                ],
-                stars: [3, 4, 5]
-            },
-
-            // NIVEAU 49
-            {
-                name: "Castle (moyen)",
-                targets: [
-                    { angle: -1.4520, radius: 67, width: 20, height: 20, rotation: 0.0000 },
-                ],
-                obstacles: [
-                    { angle: 1.5027, radius: 132, rotation: 0.0000, width: 120, height: 20 },
-                    { angle: -1.5708, radius: 178, rotation: 0.0000, width: 150, height: 20 },
-                    { angle: 0.0000, radius: 160, rotation: -1.5800, width: 200, height: 20 },
-                    { angle: -1.5945, radius: 211, rotation: 0.0000, width: 80, height: 10, isMobile: true, move: { type: 'orbit', speed: 0.3000 } },
-                    { angle: 2.5741, radius: 95, rotation: -1.5800, width: 30, height: 20 },
-                    { angle: -0.4544, radius: 146, rotation: -0.7900, width: 80, height: 20 },
-                    { angle: 1.5708, radius: 211, rotation: 0.0000, width: 80, height: 10, isMobile: true, move: { type: 'orbit', speed: 0.3000 } },
-                    { angle: 3.1345, radius: 141, rotation: -1.5800, width: 200, height: 20 },
-                    { angle: -0.9386, radius: 107, rotation: 0.7900, width: 150, height: 20 },
-                    { angle: -2.0032, radius: 100, rotation: -0.7900, width: 150, height: 20 },
-                    { angle: -2.6025, radius: 131, rotation: 0.7900, width: 80, height: 20 },
-                    { angle: 1.3361, radius: 47, rotation: -1.5800, width: 80, height: 40 },
-                    { angle: 0.5124, radius: 110, rotation: -1.5800, width: 30, height: 20 },
-                ],
-                stars: [3, 4, 5] // À ajuster manuellement
-            },
-
             // NIVEAU 50
-            {
-                name: "Sapin (moyen)",
-                targets: [{ angle: 1.4289, radius: 57, width: 20, height: 20, rotation: 0.0000 }],
-                obstacles: [
-                    { angle: 1.4861, radius: 106, rotation: 0.0000, width: 250, height: 20 },
-                    { angle: -1.3760, radius: 150, rotation: 0.6200, width: 80, height: 20 },
-                    { angle: -0.7938, radius: 84, rotation: 0.6200, width: 80, height: 20 },
-                    { angle: 0.2890, radius: 77, rotation: 0.6200, width: 80, height: 20 },
-                    { angle: -1.7459, radius: 149, rotation: -0.6200, width: 80, height: 20 },
-                    { angle: 2.8462, radius: 72, rotation: -0.6200, width: 80, height: 20 },
-                    { angle: 1.5199, radius: 157, rotation: 1.5600, width: 80, height: 20 },
-                    { angle: -2.3390, radius: 82, rotation: -0.6200, width: 80, height: 20, isMobile: true, move: { type: 'slide', speed: 0.0300, axis: 'y', range: 50 } },
-                ],
-                stars: [3, 4, 5]
-            },
-
-            // NIVEAU 51
-            {
-                name: "Tasse (moyen)",
-                targets: [{ angle: 1.5847, radius: 72, width: 20, height: 20, rotation: 0.0000 }],
-                obstacles: [
-                    { angle: 1.5537, radius: 117, rotation: 0.0000, width: 180, height: 20 },
-                    { angle: 2.4393, radius: 136, rotation: 0.9900, width: 80, height: 20 },
-                    { angle: 0.2811, radius: 148, rotation: -0.6200, width: 80, height: 20 },
-                    { angle: -0.5334, radius: 122, rotation: 1.5600, width: 80, height: 20 },
-                    { angle: -1.5806, radius: 203, rotation: 0.0000, width: 50, height: 50, isMobile: true, move: { type: 'rotate', speed: 0.3000 } },
-                    { angle: -3.0380, radius: 126, rotation: 1.5600, width: 150, height: 20 },
-                    { angle: -1.6768, radius: 95, rotation: 0.0000, width: 250, height: 20 },
-                    { angle: -0.3041, radius: 144, rotation: 0.0000, width: 80, height: 20 },
-                    { angle: 1.5908, radius: 150, rotation: 0.0000, width: 280, height: 20 },
-                ],
-                stars: [3, 4, 5]
-            },
-
-            // NIVEAU 52
-            {
-                name: "Main teleport (difficile)",
-                targets: [
-                    { angle: -2.0132, radius: 189, width: 20, height: 20, rotation: 0.0000 },
-                ],
-                obstacles: [
-                    { angle: 1.5516, radius: 156, rotation: 0.0000, width: 150, height: 20 },
-                    { angle: 2.4564, radius: 134, rotation: 0.9900, width: 150, height: 20 },
-                    { angle: -2.9868, radius: 143, rotation: -0.6200, width: 80, height: 20 },
-                    { angle: -0.7690, radius: 43, rotation: 1.5600, width: 80, height: 20 },
-                    { angle: -2.0006, radius: 53, rotation: 1.5600, width: 100, height: 20 },
-                    { angle: -2.5202, radius: 100, rotation: 1.5600, width: 180, height: 20 },
-                    { angle: -0.1578, radius: 89, rotation: 1.5600, width: 60, height: 20 },
-                    { angle: 1.5417, radius: 206, rotation: 0.0000, width: 150, height: 20 },
-                    { angle: 1.2120, radius: 197, rotation: 1.5600, width: 80, height: 20 },
-                    { angle: 1.8909, radius: 194, rotation: 1.5600, width: 80, height: 20 },
-                    { angle: 0.6450, radius: 136, rotation: -0.9900, width: 80, height: 20 },
-                    { angle: -2.0152, radius: 47, rotation: 1.5708, width: 15, height: 40, isPortal: true, portalId: 1 },
-                    { angle: -2.0922, radius: 163, rotation: 1.5708, width: 20, height: 20, isPortal: true, portalId: 1 },
-                    { angle: -2.0324, radius: 218, rotation: -0.4100, width: 80, height: 30 },
-                ],
-                stars: [3, 4, 5]
-            },
-
-            // NIVEAU 53
             {
                 name: "Pistolet (difficile)",
                 targets: [
@@ -5470,7 +5299,7 @@
                 stars: [3, 4, 5]
             },
 
-            // NIVEAU 54
+            // NIVEAU 51
             {
                 name: "Méduse (moyen)",
                 targets: [
@@ -5495,7 +5324,7 @@
                 stars: [3, 4, 5]
             },
 
-            // NIVEAU 55
+            // NIVEAU 52
             {
                 name: "Foudre (moyen)",
                 targets: [
@@ -5512,6 +5341,84 @@
                     { angle: -0.9946, radius: 187, rotation: 0.0000, width: 50, height: 20 },
                     { angle: -1.5292, radius: 72, rotation: 1.5708, width: 15, height: 40, isPortal: true, portalId: 1 },
                     { angle: -1.6846, radius: 211, rotation: 1.5708, width: 15, height: 40, isPortal: true, portalId: 1 },
+                ],
+                stars: [3, 4, 5]
+            },
+
+            // NIVEAU 53
+            {
+                name: "Chat",
+                targets: [
+                    { angle: 1.6168, radius: 30, width: 30, height: 30, rotation: 15.0000 },
+                ],
+                obstacles: [
+                    { angle: -2.5474, radius: 108, rotation: 1.3000, width: 40, height: 30 },
+                    { angle: 0.2943, radius: 205, rotation: 0.2000, width: 80, height: 50, isMobile: true, move: { type: 'rotate', speed: 0.0900, isPendulum: true, range: 0.3000 } },
+                    { angle: 2.8563, radius: 205, rotation: -0.2000, width: 80, height: 50, isMobile: true, move: { type: 'rotate', speed: 0.0900, isPendulum: true, range: 0.3000 } },
+                    { angle: -1.5729, radius: 186, rotation: 0.0000, width: 80, height: 15, isMobile: true, move: { type: 'slide', speed: 0.9000, axis: 'y', range: 200 } },
+                    { angle: -1.5669, radius: 152, rotation: 0.0000, width: 80, height: 15, isMobile: true, move: { type: 'slide', speed: 0.9000, axis: 'y', range: 200 } },
+                    { angle: -1.5771, radius: 223, rotation: 0.0000, width: 80, height: 15, isMobile: true, move: { type: 'slide', speed: 0.9000, axis: 'y', range: 200 } },
+                    { angle: -0.5735, radius: 115, rotation: -1.3000, width: 40, height: 30 },
+                    { shape: 'curve', radius: 110, angle: 2.0802, curveRadius: 50, startAngle: 0.0000, endAngle: 3.1416, lineWidth: 10 },
+                    { shape: 'curve', radius: 109, angle: 1.1088, curveRadius: 50, startAngle: 0.0000, endAngle: 3.1416, lineWidth: 10 },
+                    { angle: 1.5772, radius: 62, rotation: 0.0000, width: 200, height: 10, isDestructible: true },
+                ],
+                stars: [3, 4, 5]
+            },
+
+            // NIVEAU 54
+            {
+                name: "Main teleport (difficile)",
+                targets: [
+                    { angle: -2.0132, radius: 189, width: 20, height: 20, rotation: 0.0000 },
+                ],
+                obstacles: [
+                    { angle: 1.5516, radius: 156, rotation: 0.0000, width: 150, height: 20 },
+                    { angle: 2.4564, radius: 134, rotation: 0.9900, width: 150, height: 20 },
+                    { angle: -2.9868, radius: 143, rotation: -0.6200, width: 80, height: 20 },
+                    { angle: -0.7690, radius: 43, rotation: 1.5600, width: 80, height: 20 },
+                    { angle: -2.0006, radius: 53, rotation: 1.5600, width: 100, height: 20 },
+                    { angle: -2.5202, radius: 100, rotation: 1.5600, width: 180, height: 20 },
+                    { angle: -0.1578, radius: 89, rotation: 1.5600, width: 60, height: 20 },
+                    { angle: 1.5417, radius: 206, rotation: 0.0000, width: 150, height: 20 },
+                    { angle: 1.2120, radius: 197, rotation: 1.5600, width: 80, height: 20 },
+                    { angle: 1.8909, radius: 194, rotation: 1.5600, width: 80, height: 20 },
+                    { angle: 0.6450, radius: 136, rotation: -0.9900, width: 80, height: 20 },
+                    { angle: -2.0152, radius: 47, rotation: 1.5708, width: 15, height: 40, isPortal: true, portalId: 1 },
+                    { angle: -2.0922, radius: 163, rotation: 1.5708, width: 20, height: 20, isPortal: true, portalId: 1 },
+                    { angle: -2.0324, radius: 218, rotation: -0.4100, width: 80, height: 30 },
+                ],
+                stars: [3, 4, 5]
+            },
+
+            // NIVEAU 55
+            {
+                name: "Labyrinthe 4 (difficile)",
+                targets: [
+                    { angle: 2.8661, radius: 127, width: 20, height: 20, rotation: 0.0000 },
+                ],
+                obstacles: [
+                    { angle: 1.3529, radius: 206, rotation: 0.0300, width: 80, height: 20 },
+                    { angle: 2.0872, radius: 215, rotation: 0.4300, width: 80, height: 20 },
+                    { angle: 2.5374, radius: 161, rotation: 0.1400, width: 150, height: 20 },
+                    { angle: 0.8286, radius: 164, rotation: 0.1400, width: 80, height: 20 },
+                    { angle: 2.3156, radius: 52, rotation: 0.1400, width: 80, height: 20 },
+                    { angle: 3.0661, radius: 191, rotation: 0.1400, width: 80, height: 20 },
+                    { angle: -2.7883, radius: 128, rotation: 0.0600, width: 200, height: 10 },
+                    { angle: -0.0214, radius: 187, rotation: 0.2700, width: 80, height: 10 },
+                    { angle: -2.4452, radius: 205, rotation: 0.1400, width: 80, height: 20 },
+                    { angle: -0.7323, radius: 200, rotation: 0.1400, width: 80, height: 20 },
+                    { angle: -1.4253, radius: 218, rotation: 0.1400, width: 80, height: 20 },
+                    { angle: -1.6076, radius: 190, rotation: 1.7000, width: 80, height: 20 },
+                    { angle: 2.8989, radius: 189, rotation: 1.7000, width: 80, height: 20 },
+                    { angle: 0.8193, radius: 204, rotation: 1.7000, width: 80, height: 20 },
+                    { angle: 2.4062, radius: 96, rotation: 1.7000, width: 80, height: 20 },
+                    { angle: -2.2461, radius: 181, rotation: 2.0900, width: 50, height: 20 },
+                    { angle: -0.5083, radius: 202, rotation: 1.7000, width: 80, height: 20 },
+                    { angle: 0.3767, radius: 157, rotation: 0.1400, width: 150, height: 20 },
+                    { angle: -1.0556, radius: 95, rotation: 0.2000, width: 150, height: 20 },
+                    { angle: -1.7888, radius: 162, rotation: 0.1400, width: 150, height: 20 },
+                    { angle: -3.0517, radius: 218, rotation: 1.7000, width: 80, height: 20 },
                 ],
                 stars: [3, 4, 5]
             },
@@ -5549,6 +5456,371 @@
             },
 
             // NIVEAU 57
+            {
+                name: "Roochet slide + destructible",
+                targets: [
+                    { angle: -2.4098, radius: 119, width: 20, height: 20, rotation: 0.0000 },
+                    { angle: 0.1319, radius: 0, width: 20, height: 20, rotation: 0.0000 },
+                    { angle: 0.7567, radius: 98, width: 20, height: 20, rotation: 0.0000 },
+                ],
+                obstacles: [
+                    { angle: -0.4969, radius: 137, rotation: 1.5500, width: 80, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.5000 } },
+                    { angle: -2.3653, radius: 62, rotation: 1.5500, width: 80, height: 20, isDestructible: true },
+                    { angle: 0.8094, radius: 53, rotation: 1.5500, width: 80, height: 20, isDestructible: true },
+                    { angle: 0.5080, radius: 147, rotation: 1.5500, width: 80, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.5000 } },
+                    { angle: 2.6374, radius: 152, rotation: 1.5500, width: 80, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.5000 } },
+                    { angle: -2.6797, radius: 153, rotation: 1.5500, width: 80, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.5000 } },
+                ],
+                stars: [3, 4, 5]
+            },
+
+            // NIVEAU 58
+            {
+                name: "Ricochet 5 (difficile)",
+                targets: [
+                    { angle: 1.3765, radius: 102, width: 20, height: 20, rotation: 0.0000 },
+                    { angle: -2.3890, radius: 159, width: 20, height: 20, rotation: 0.0000 },
+                ],
+                obstacles: [
+                    { angle: 1.5768, radius: 167, rotation: 0.0000, width: 300, height: 30 },
+                    { angle: 0.3017, radius: 104, rotation: 0.0000, width: 250, height: 30 },
+                    { angle: -2.3055, radius: 120, rotation: -0.9000, width: 350, height: 30 },
+                    { angle: -0.0721, radius: 208, rotation: 1.4300, width: 250, height: 30 },
+                    { angle: 2.4002, radius: 167, rotation: 0.0000, width: 80, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.1000 } },
+                    { angle: 0.6230, radius: 213, rotation: 0.8400, width: 15, height: 60, isPortal: true, portalId: 1 },
+                    { angle: -2.3853, radius: 204, rotation: 0.8400, width: 15, height: 40, isPortal: true, portalId: 1 },
+                ],
+                stars: [3, 4, 5]
+            },
+
+            // NIVEAU 59
+            {
+                name: "Flipper",
+                targets: [
+                    { angle: -0.9579, radius: 185, width: 20, height: 20, rotation: 0.0000 },
+                ],
+                obstacles: [
+                    { angle: -2.3192, radius: 191, rotation: 1.1000, width: 80, height: 30 },
+                    { angle: 2.8854, radius: 130, rotation: 1.6800, width: 280, height: 30 },
+                    { angle: 0.2832, radius: 140, rotation: -1.6800, width: 280, height: 30 },
+                    { angle: 2.1361, radius: 146, rotation: 0.3600, width: 114, height: 20, isMobile: true, move: { type: 'rotate', speed: 0.6000, isPendulum: true, range: 50.0000 } },
+                    { angle: 0.9672, radius: 153, rotation: -0.3600, width: 114, height: 20, isMobile: true, move: { type: 'rotate', speed: 0.6000, isPendulum: true, range: 50.0000 } },
+                    { angle: -2.3069, radius: 115, rotation: 0.3600, width: 50, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.6000, isPendulum: true, range: 50.0000 } },
+                    { angle: 1.5459, radius: 185, rotation: 1.5708, width: 20, height: 300, isPortal: true, portalId: 1 },
+                    { angle: -2.0044, radius: 218, rotation: 1.2100, width: 20, height: 100, isPortal: true, portalId: 1 },
+                    { angle: -0.5047, radius: 57, rotation: 0.0000, width: 30, height: 30, isDestructible: true },
+                    { angle: 2.6809, radius: 31, rotation: 0.0000, width: 30, height: 30, isDestructible: true },
+                    { angle: -1.4120, radius: 99, rotation: 0.0000, width: 30, height: 30, isDestructible: true },
+                    { angle: -1.7048, radius: 190, rotation: 1.1000, width: 80, height: 30 },
+                    { angle: -1.2725, radius: 237, rotation: 1.1000, width: 80, height: 30 },
+                    { angle: -1.0597, radius: 157, rotation: 1.1600, width: 80, height: 20, isDestructible: true },
+                    { angle: -0.8594, radius: 220, rotation: 1.1000, width: 80, height: 30 },
+                ],
+                stars: [3, 4, 5]
+            },
+
+            // NIVEAU 60
+            {
+                name: "Labyrinthe 5 (difficile)",
+                targets: [
+                    { angle: 1.0248, radius: 161, width: 20, height: 20, rotation: 0.0000 },
+                ],
+                obstacles: [
+                    { angle: 1.1282, radius: 200, rotation: 0.1400, width: 80, height: 20 },
+                    { angle: 2.1557, radius: 182, rotation: 0.1400, width: 120, height: 20 },
+                    { angle: -3.0473, radius: 81, rotation: 0.1400, width: 150, height: 30, isDestructible: true },
+                    { angle: 0.7739, radius: 135, rotation: 0.1400, width: 80, height: 20 },
+                    { angle: -2.5261, radius: 192, rotation: 0.1400, width: 80, height: 20 },
+                    { angle: -3.0203, radius: 187, rotation: 0.1400, width: 80, height: 30 },
+                    { angle: -0.7005, radius: 200, rotation: 0.1400, width: 80, height: 20 },
+                    { angle: -1.4612, radius: 216, rotation: 0.1400, width: 80, height: 20 },
+                    { angle: -1.6076, radius: 190, rotation: 1.7000, width: 80, height: 30 },
+                    { angle: 2.9466, radius: 165, rotation: 1.7000, width: 80, height: 20 },
+                    { angle: 0.8890, radius: 191, rotation: 1.7000, width: 80, height: 20 },
+                    { angle: -0.5175, radius: 118, rotation: 1.7000, width: 50, height: 30 },
+                    { angle: -0.4876, radius: 198, rotation: 1.7000, width: 80, height: 30 },
+                    { angle: 0.1397, radius: 155, rotation: 0.1400, width: 150, height: 20 },
+                    { angle: -1.0556, radius: 95, rotation: 0.1400, width: 150, height: 20 },
+                    { angle: -1.7888, radius: 162, rotation: 0.1400, width: 150, height: 20 },
+                    { angle: 0.2047, radius: 37, rotation: 0.1300, width: 80, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.4000 } },
+                    { angle: 1.3657, radius: 194, rotation: 1.7000, width: 50, height: 20 },
+                ],
+                stars: [3, 4, 5]
+            },
+
+            // NIVEAU 61
+            {
+                name: "HMZ",
+                targets: [
+                    { angle: 2.3215, radius: 106, width: 20, height: 20, rotation: 0.0000 },
+                    { angle: 0.6924, radius: 129, width: 20, height: 20, rotation: 0.0000 },
+                ],
+                obstacles: [
+                    { angle: -3.1240, radius: 193, rotation: 1.5600, width: 183, height: 30 },
+                    { angle: -3.1318, radius: 143, rotation: 0.0000, width: 80, height: 30 },
+                    { angle: -3.1288, radius: 109, rotation: 1.5500, width: 180, height: 30 },
+                    { angle: 3.1256, radius: 37, rotation: 1.5500, width: 180, height: 30, isDestructible: true },
+                    { angle: -1.8906, radius: 33, rotation: 1.0000, width: 113, height: 30, isDestructible: true },
+                    { angle: -0.7410, radius: 51, rotation: -1.0000, width: 113, height: 30, isDestructible: true },
+                    { angle: 0.0402, radius: 65, rotation: 1.5500, width: 180, height: 30, isDestructible: true },
+                    { angle: -0.3753, radius: 187, rotation: 0.0000, width: 100, height: 30 },
+                    { angle: 0.0694, radius: 173, rotation: -1.0800, width: 180, height: 30 },
+                    { angle: 0.4508, radius: 187, rotation: 0.0000, width: 100, height: 30 },
+                    { angle: 1.4684, radius: 182, rotation: 0.0000, width: 300, height: 30 },
+                ],
+                stars: [3, 4, 5]
+            },
+
+            // NIVEAU 62
+            {
+                name: "Viser 6 (Très Difficile)",
+                targets: [
+                    { angle: -2.0577, radius: 173, width: 20, height: 20, rotation: 0.0000 },
+                    { angle: 0.7963, radius: 130, width: 20, height: 20, rotation: 0.0000 },
+                ],
+                obstacles: [
+                    { angle: 0.6435, radius: 15, rotation: 0.0000, width: 80, height: 15, isPortal: true, portalId: 1, isMobile: true, move: { type: 'rotate', speed: 0.5000 } },
+                    { angle: 1.4821, radius: 181, rotation: 0.0000, width: 80, height: 15, isPortal: true, portalId: 1 },
+                    { angle: -1.5042, radius: 75, rotation: 0.0000, width: 300, height: 15, isDestructible: true },
+                    { angle: -1.4913, radius: 113, rotation: 0.0000, width: 300, height: 15, isDestructible: true },
+                    { angle: -1.5445, radius: 190, rotation: 0.0000, width: 300, height: 15, isDestructible: true },
+                    { angle: -1.3191, radius: 36, rotation: 0.0000, width: 300, height: 15, isDestructible: true },
+                    { angle: 1.3387, radius: 57, rotation: 0.0000, width: 300, height: 15, isDestructible: true },
+                    { angle: 1.4853, radius: 141, rotation: 0.0000, width: 300, height: 15, isDestructible: true },
+                    { angle: -3.0923, radius: 162, rotation: 1.5600, width: 400, height: 30 },
+                    { angle: 0.0220, radius: 182, rotation: 1.5600, width: 400, height: 30 },
+                ],
+                stars: [3, 4, 5]
+            },
+
+            // NIVEAU 63
+            {
+                name: "Labyrinthe 3 cibles 1 (Difficile)",
+                targets: [
+                    { angle: 0.5779, radius: 170, width: 20, height: 20, rotation: 0.0000 },
+                    { angle: -1.8000, radius: 99, width: 20, height: 20, rotation: 0.0000 },
+                    { angle: -1.0857, radius: 192, width: 20, height: 20, rotation: 0.0000 },
+                ],
+                obstacles: [
+                    { angle: -1.1396, radius: 226, rotation: 0.4400, width: 80, height: 20 },
+                    { angle: -0.3406, radius: 117, rotation: -0.3000, width: 80, height: 20, isDestructible: true },
+                    { angle: 1.7226, radius: 155, rotation: 0.0800, width: 92, height: 20 },
+                    { angle: 2.1523, radius: 196, rotation: -0.3000, width: 80, height: 20 },
+                    { angle: -2.7230, radius: 113, rotation: 1.0500, width: 80, height: 20, isDestructible: true },
+                    { angle: -0.3244, radius: 116, rotation: 1.3000, width: 80, height: 20, isDestructible: true },
+                    { angle: 2.4278, radius: 217, rotation: 0.8400, width: 80, height: 20 },
+                    { angle: -1.5551, radius: 166, rotation: 1.3000, width: 140, height: 20 },
+                    { angle: 1.3925, radius: 189, rotation: 1.3000, width: 80, height: 20 },
+                    { angle: 0.8606, radius: 154, rotation: 0.9400, width: 80, height: 20 },
+                    { angle: 0.4401, radius: 205, rotation: 1.3000, width: 80, height: 20 },
+                    { angle: 0.2674, radius: 206, rotation: -0.3000, width: 50, height: 20 },
+                    { angle: 0.7302, radius: 207, rotation: -0.3000, width: 80, height: 20 },
+                    { angle: -1.8511, radius: 197, rotation: -0.3000, width: 80, height: 20 },
+                    { angle: -2.8463, radius: 146, rotation: -0.3000, width: 80, height: 20 },
+                    { angle: -1.8253, radius: 133, rotation: -0.3000, width: 80, height: 20, isDestructible: true },
+                    { angle: 2.8222, radius: 191, rotation: -0.3000, width: 80, height: 20 },
+                    { angle: -2.7647, radius: 193, rotation: 1.3000, width: 100, height: 20 },
+                    { angle: -0.4074, radius: 226, rotation: 1.3000, width: 80, height: 20 },
+                    { angle: 3.0572, radius: 218, rotation: -1.4000, width: 80, height: 20 },
+                ],
+                stars: [3, 4, 5]
+            },
+
+            // NIVEAU 64
+            {
+                name: "Triforce (Difficile)",
+                targets: [
+                    { angle: -1.4940, radius: 26, width: 20, height: 20, rotation: 0.0000 },
+                ],
+                obstacles: [
+                    { angle: 1.9208, radius: 67, rotation: 0.9000, width: 140, height: 20, isDestructible: true },
+                    { angle: 1.1659, radius: 69, rotation: -0.9000, width: 140, height: 20, isDestructible: true },
+                    { angle: 0.2187, radius: 74, rotation: 0.9500, width: 260, height: 20 },
+                    { angle: 1.5623, radius: 118, rotation: 0.0000, width: 300, height: 20 },
+                    { angle: 3.0061, radius: 67, rotation: -0.9500, width: 260, height: 20 },
+                    { angle: 1.9296, radius: 9, rotation: 0.0000, width: 120, height: 20, isDestructible: true },
+                    { angle: -1.5607, radius: 199, rotation: 0.0000, width: 80, height: 15, isPortal: true, portalId: 1, isMobile: true, move: { type: 'orbit', speed: 0.5000 } },
+                    { angle: 0.9081, radius: 104, rotation: 0.0000, width: 20, height: 20, isPortal: true, portalId: 1 },
+                    { angle: 2.2201, radius: 104, rotation: -0.1000, width: 20, height: 20, isPortal: true, portalId: 2 },
+                    { angle: 1.5510, radius: 202, rotation: 0.0000, width: 80, height: 15, isPortal: true, portalId: 2, isMobile: true, move: { type: 'orbit', speed: 0.5000 } },
+                ],
+                stars: [3, 4, 5]
+            },
+
+            // NIVEAU 65
+            {
+                name: "Labyrinthe 3 (difficile)",
+                targets: [{ angle: -1.8326, radius: 52, width: 20, height: 20, rotation: 0.0000 }],
+                obstacles: [
+                    { angle: 1.8035, radius: 28, rotation: -0.3000, width: 80, height: 30 },
+                    { angle: -0.3406, radius: 117, rotation: -0.3000, width: 80, height: 30 },
+                    { angle: -2.9607, radius: 195, rotation: -0.3000, width: 80, height: 30 },
+                    { angle: 2.2152, radius: 196, rotation: -0.3000, width: 80, height: 30 },
+                    { angle: -1.3765, radius: 114, rotation: 1.3000, width: 80, height: 30 },
+                    { angle: -1.9917, radius: 179, rotation: 1.3000, width: 80, height: 30 },
+                    { angle: -0.3244, radius: 116, rotation: 1.3000, width: 80, height: 30 },
+                    { angle: 2.1968, radius: 196, rotation: 1.3000, width: 80, height: 30 },
+                    { angle: 2.9346, radius: 175, rotation: 1.3000, width: 150, height: 30 },
+                    { angle: 1.5606, radius: 157, rotation: 1.3000, width: 80, height: 30 },
+                    { angle: -0.5571, radius: 208, rotation: 1.3000, width: 80, height: 30 },
+                    { angle: 0.3071, radius: 142, rotation: 1.3000, width: 80, height: 30 },
+                    { angle: 0.3529, radius: 197, rotation: -0.3000, width: 80, height: 30 },
+                    { angle: 1.6724, radius: 211, rotation: -0.3000, width: 80, height: 30 },
+                    { angle: -2.3472, radius: 205, rotation: -0.3000, width: 80, height: 30 },
+                    { angle: -1.8103, radius: 139, rotation: -0.3000, width: 80, height: 30 },
+                    { angle: -1.7942, radius: 218, rotation: -0.3000, width: 80, height: 30 },
+                    { angle: 3.0817, radius: 134, rotation: -0.3000, width: 80, height: 30 },
+                    { angle: 0.8567, radius: 143, rotation: 1.3000, width: 150, height: 30 },
+                    { angle: 0.6043, radius: 169, rotation: -0.3000, width: 80, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.0500 } },
+                    { angle: -2.3833, radius: 156, rotation: -0.3000, width: 80, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.0500 } },
+                    { angle: -0.8125, radius: 182, rotation: -0.3000, width: 80, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.0500 } },
+                    { angle: -1.3110, radius: 170, rotation: -0.3000, width: 80, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.0500 } },
+                    { angle: 2.5894, radius: 99, rotation: -0.3000, width: 80, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.0500 } },
+                    { angle: -0.3157, radius: 209, rotation: -0.3000, width: 80, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.0500 } },
+                ],
+                stars: [3, 4, 5]
+            },
+
+            // NIVEAU 66
+            {
+                name: "Croix (Difficile)",
+                targets: [
+                    { angle: 2.8593, radius: 104, width: 20, height: 20, rotation: 0.0000 },
+                    { angle: -0.3826, radius: 88, width: 20, height: 20, rotation: 0.0000 },
+                ],
+                obstacles: [
+                    { angle: -2.0089, radius: 161, rotation: 1.5500, width: 80, height: 20 },
+                    { angle: -0.4134, radius: 157, rotation: 0.0000, width: 80, height: 20 },
+                    { angle: -1.6233, radius: 179, rotation: 0.0000, width: 140, height: 20, isDestructible: true },
+                    { angle: 1.2415, radius: 160, rotation: 1.5500, width: 80, height: 20 },
+                    { angle: 1.9660, radius: 165, rotation: 1.5500, width: 80, height: 20 },
+                    { angle: -1.2433, radius: 154, rotation: 1.5500, width: 80, height: 20 },
+                    { angle: 1.6001, radius: 184, rotation: 0.0000, width: 140, height: 20, isDestructible: true },
+                    { angle: 2.7667, radius: 158, rotation: 0.0000, width: 80, height: 20 },
+                    { angle: 0.3567, radius: 158, rotation: 0.0000, width: 80, height: 20 },
+                    { angle: -2.7597, radius: 161, rotation: 0.0000, width: 80, height: 20 },
+                    { angle: -0.0170, radius: 177, rotation: 1.5500, width: 140, height: 20, isDestructible: true },
+                    { angle: 3.1416, radius: 179, rotation: 1.5500, width: 140, height: 20, isDestructible: true },
+                    { angle: 3.0172, radius: 8, rotation: 0.0000, width: 80, height: 15, isPortal: true, portalId: 1, isMobile: true, move: { type: 'rotate', speed: 0.2000 } },
+                    { angle: 2.3640, radius: 181, rotation: -0.8100, width: 15, height: 40, isPortal: true, portalId: 1 },
+                ],
+                stars: [3, 4, 5]
+            },
+
+            // NIVEAU 67
+            {
+                name: "Viser 7 (Difficile)",
+                targets: [
+                    { angle: -3.0303, radius: 162, width: 20, height: 20, rotation: 0.0000 },
+                ],
+                obstacles: [
+                    { angle: -1.2490, radius: 9, rotation: 0.0000, width: 50, height: 20, isPortal: true, portalId: 1, isMobile: true, move: { type: 'rotate', speed: 0.5000 } },
+                    { angle: 1.5377, radius: 181, rotation: 0.0000, width: 80, height: 15, isPortal: true, portalId: 1 },
+                    { angle: -1.0698, radius: 48, rotation: 0.5000, width: 100, height: 15, isDestructible: true },
+                    { angle: 0.7009, radius: 42, rotation: -0.4200, width: 120, height: 15, isDestructible: true },
+                    { angle: -1.1978, radius: 74, rotation: 0.4700, width: 200, height: 15, isDestructible: true },
+                    { angle: -3.0419, radius: 50, rotation: 1.4500, width: 140, height: 15, isDestructible: true },
+                    { angle: 0.6541, radius: 76, rotation: -0.4200, width: 220, height: 15, isDestructible: true },
+                    { angle: -2.9784, radius: 86, rotation: 1.4500, width: 240, height: 15, isDestructible: true },
+                    { angle: -1.0320, radius: 107, rotation: 0.4700, width: 380, height: 15 },
+                    { angle: 0.9528, radius: 102, rotation: -0.4200, width: 380, height: 15 },
+                    { angle: -2.9738, radius: 126, rotation: 1.4500, width: 300, height: 15, isDestructible: true },
+                    { angle: -3.0656, radius: 198, rotation: 1.5500, width: 80, height: 30 },
+                ],
+                stars: [3, 4, 5]
+            },
+
+            // NIVEAU 68
+            {
+                name: "Crocodile (Moyen)",
+                targets: [
+                    { angle: -3.0303, radius: 162, width: 20, height: 20, rotation: 0.0000 },
+                ],
+                obstacles: [
+                    { angle: -0.9098, radius: 103, rotation: 0.4700, width: 380, height: 15 },
+                    { angle: 0.9528, radius: 102, rotation: -0.4200, width: 380, height: 15 },
+                    { angle: -3.0656, radius: 198, rotation: 1.5500, width: 80, height: 30 },
+                    { angle: 2.2577, radius: 180, rotation: 1.0800, width: 50, height: 15 },
+                    { angle: 2.0055, radius: 123, rotation: 1.0800, width: 50, height: 15 },
+                    { angle: 1.4653, radius: 85, rotation: 1.0800, width: 50, height: 15 },
+                    { angle: 0.7074, radius: 91, rotation: 1.0800, width: 50, height: 15 },
+                    { angle: -0.8362, radius: 84, rotation: 2.0000, width: 50, height: 15 },
+                    { angle: -1.5488, radius: 91, rotation: 2.0000, width: 50, height: 15 },
+                    { angle: -2.0070, radius: 130, rotation: 2.0000, width: 50, height: 15 },
+                    { angle: -2.2065, radius: 180, rotation: 2.0000, width: 50, height: 15 },
+                    { angle: -0.6913, radius: 188, rotation: -0.2400, width: 60, height: 60, isDestructible: true },
+                ],
+                stars: [3, 4, 5]
+            },
+
+            // NIVEAU 69
+            {
+                name: "Labyrinthe 2 cibles 1",
+                targets: [
+                    { angle: 0.5779, radius: 170, width: 20, height: 20, rotation: 0.0000 },
+                    { angle: -1.8000, radius: 99, width: 20, height: 20, rotation: 0.0000 },
+                ],
+                obstacles: [
+                    { angle: -1.1396, radius: 226, rotation: 0.4400, width: 80, height: 20 },
+                    { angle: -0.3406, radius: 117, rotation: -0.3000, width: 80, height: 20 },
+                    { angle: 1.7226, radius: 155, rotation: 0.0800, width: 92, height: 20 },
+                    { angle: 2.1523, radius: 196, rotation: -0.3000, width: 80, height: 20 },
+                    { angle: -2.7190, radius: 111, rotation: 1.0500, width: 80, height: 20 },
+                    { angle: -0.3244, radius: 116, rotation: 1.3000, width: 80, height: 20 },
+                    { angle: 2.4278, radius: 217, rotation: 0.8400, width: 80, height: 20 },
+                    { angle: -1.5551, radius: 166, rotation: 1.3000, width: 140, height: 20 },
+                    { angle: 1.3925, radius: 189, rotation: 1.3000, width: 80, height: 20 },
+                    { angle: 0.8606, radius: 154, rotation: 0.9400, width: 80, height: 20 },
+                    { angle: 0.4401, radius: 205, rotation: 1.3000, width: 80, height: 20 },
+                    { angle: 0.2674, radius: 206, rotation: -0.3000, width: 50, height: 20 },
+                    { angle: 0.7302, radius: 207, rotation: -0.3000, width: 80, height: 20 },
+                    { angle: -1.8511, radius: 197, rotation: -0.3000, width: 80, height: 20 },
+                    { angle: -2.8463, radius: 146, rotation: -0.3000, width: 80, height: 20 },
+                    { angle: -1.8253, radius: 133, rotation: -0.3000, width: 80, height: 20 },
+                    { angle: 2.8222, radius: 191, rotation: -0.3000, width: 80, height: 20 },
+                    { angle: -2.7647, radius: 193, rotation: 1.3000, width: 100, height: 20 },
+                    { angle: -0.4074, radius: 226, rotation: 1.3000, width: 80, height: 20 },
+                    { angle: 3.0572, radius: 218, rotation: -1.4000, width: 80, height: 20 },
+                ],
+                stars: [3, 4, 5]
+            },
+
+            // NIVEAU 70
+            {
+                name: "Labyrinthe 2 (difficile)",
+                targets: [{ angle: -1.7278, radius: 73, width: 20, height: 20, rotation: 0.0000 }],
+                obstacles: [
+                    { angle: -0.7566, radius: 211, rotation: -0.3000, width: 50, height: 30 },
+                    { angle: -0.3406, radius: 117, rotation: -0.3000, width: 80, height: 30 },
+                    { angle: 1.7184, radius: 68, rotation: -0.3000, width: 80, height: 30 },
+                    { angle: 2.1289, radius: 165, rotation: -0.3000, width: 80, height: 30 },
+                    { angle: 2.3119, radius: 33, rotation: 1.3000, width: 80, height: 30 },
+                    { angle: 3.1416, radius: 88, rotation: 1.3000, width: 80, height: 30 },
+                    { angle: -0.3244, radius: 116, rotation: 1.3000, width: 80, height: 30 },
+                    { angle: 2.2211, radius: 166, rotation: 1.3000, width: 80, height: 30 },
+                    { angle: -1.5391, radius: 145, rotation: 1.3000, width: 150, height: 30 },
+                    { angle: 1.3928, radius: 162, rotation: 1.3000, width: 80, height: 30 },
+                    { angle: 0.7127, radius: 142, rotation: 1.3000, width: 80, height: 30 },
+                    { angle: 0.2937, radius: 176, rotation: 1.3000, width: 80, height: 30 },
+                    { angle: 0.2815, radius: 209, rotation: -0.3000, width: 50, height: 30 },
+                    { angle: 1.3871, radius: 200, rotation: -0.3000, width: 80, height: 30 },
+                    { angle: -1.8128, radius: 198, rotation: -0.3000, width: 80, height: 30 },
+                    { angle: -2.8652, radius: 128, rotation: -0.3000, width: 80, height: 30 },
+                    { angle: -1.7835, radius: 116, rotation: -0.3000, width: 80, height: 30 },
+                    { angle: -1.0402, radius: 209, rotation: -0.3000, width: 50, height: 30 },
+                    { angle: 2.7922, radius: 190, rotation: -0.3000, width: 80, height: 30 },
+                    { angle: -2.7863, radius: 175, rotation: 1.3000, width: 150, height: 30 },
+                    { angle: 0.6736, radius: 200, rotation: -0.3000, width: 80, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.0900 } },
+                    { angle: -2.4254, radius: 137, rotation: -0.3000, width: 80, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.0900 } },
+                    { angle: -0.8675, radius: 98, rotation: -0.3000, width: 80, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.0900 } },
+                    { angle: -1.4730, radius: 211, rotation: -0.3000, width: 60, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.0900 } },
+                    { angle: 2.7177, radius: 61, rotation: -0.3000, width: 50, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.0500 } },
+                    { angle: 0.6158, radius: 78, rotation: -0.3000, width: 70, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.0900 } },
+                ],
+                stars: [3, 4, 5]
+            },
+
+            // NIVEAU 71
             {
                 name: "Abeille (difficile)",
                 targets: [
@@ -5590,59 +5862,116 @@
                 stars: [3, 4, 5]
             },
 
-            // NIVEAU 58
+            // NIVEAU 72
             {
-                name: "Triforce (Difficile)",
+                name: "Labyrinthe à 6 portes (difficile)",
                 targets: [
-                    { angle: -1.4940, radius: 26, width: 20, height: 20, rotation: 0.0000 },
+                    { angle: 1.9919, radius: 128, width: 20, height: 20, rotation: 0.0000 },
                 ],
                 obstacles: [
-                    { angle: 1.9208, radius: 67, rotation: 0.9000, width: 140, height: 20, isDestructible: true },
-                    { angle: 1.1659, radius: 69, rotation: -0.9000, width: 140, height: 20, isDestructible: true },
-                    { angle: 0.2187, radius: 74, rotation: 0.9500, width: 260, height: 20 },
-                    { angle: 1.5623, radius: 118, rotation: 0.0000, width: 300, height: 20 },
-                    { angle: 3.0061, radius: 67, rotation: -0.9500, width: 260, height: 20 },
-                    { angle: 1.9296, radius: 9, rotation: 0.0000, width: 120, height: 20, isDestructible: true },
-                    { angle: -1.5607, radius: 199, rotation: 0.0000, width: 80, height: 15, isPortal: true, portalId: 1, isMobile: true, move: { type: 'orbit', speed: 0.5000 } },
-                    { angle: 0.9081, radius: 104, rotation: 0.0000, width: 20, height: 20, isPortal: true, portalId: 1 },
-                    { angle: 2.2201, radius: 104, rotation: -0.1000, width: 20, height: 20, isPortal: true, portalId: 2 },
-                    { angle: 1.5510, radius: 202, rotation: 0.0000, width: 80, height: 15, isPortal: true, portalId: 2, isMobile: true, move: { type: 'orbit', speed: 0.5000 } },
+                    { angle: -2.9560, radius: 56, rotation: -0.3000, width: 80, height: 30 },
+                    { angle: -0.3406, radius: 117, rotation: -0.3000, width: 80, height: 30 },
+                    { angle: -2.9607, radius: 195, rotation: -0.3000, width: 80, height: 30 },
+                    { angle: 2.2152, radius: 196, rotation: -0.3000, width: 80, height: 30 },
+                    { angle: -2.8619, radius: 99, rotation: 1.3000, width: 80, height: 30 },
+                    { angle: -1.9475, radius: 183, rotation: 1.3000, width: 80, height: 30 },
+                    { angle: -0.7034, radius: 79, rotation: 1.3000, width: 80, height: 30 },
+                    { angle: 2.9795, radius: 202, rotation: 1.3000, width: 150, height: 30 },
+                    { angle: 2.0187, radius: 193, rotation: 1.3000, width: 80, height: 30 },
+                    { angle: -0.5279, radius: 148, rotation: 1.3000, width: 80, height: 30 },
+                    { angle: 0.2292, radius: 188, rotation: 1.3000, width: 80, height: 30 },
+                    { angle: 0.3115, radius: 211, rotation: -0.3000, width: 50, height: 30 },
+                    { angle: 1.8355, radius: 196, rotation: -0.3000, width: 80, height: 30 },
+                    { angle: -2.3894, radius: 213, rotation: -0.3000, width: 50, height: 30 },
+                    { angle: -1.8103, radius: 139, rotation: -0.3000, width: 80, height: 30 },
+                    { angle: -1.8149, radius: 213, rotation: -0.3000, width: 80, height: 30 },
+                    { angle: 3.0672, radius: 116, rotation: -0.3000, width: 80, height: 30 },
+                    { angle: 0.8567, radius: 143, rotation: 1.3000, width: 150, height: 30 },
+                    { angle: 0.6043, radius: 169, rotation: -0.3000, width: 80, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.1000 } },
+                    { angle: -2.3833, radius: 156, rotation: -0.3000, width: 80, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.1000 } },
+                    { angle: 1.1647, radius: 42, rotation: -0.3000, width: 80, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.2000 } },
+                    { angle: -1.2194, radius: 164, rotation: -0.3000, width: 80, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.1000 } },
+                    { angle: 2.3433, radius: 88, rotation: -0.3000, width: 80, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.1000 } },
+                    { angle: -0.2944, radius: 201, rotation: -0.3000, width: 50, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.1000 } },
                 ],
                 stars: [3, 4, 5]
             },
 
-            // NIVEAU 59
+            // NIVEAU 73
             {
-                name: "Labyrinthe 3 cibles 1 (Difficile)",
+                name: "Viser 5 (Difficile)",
                 targets: [
-                    { angle: 0.5779, radius: 170, width: 20, height: 20, rotation: 0.0000 },
-                    { angle: -1.8000, radius: 99, width: 20, height: 20, rotation: 0.0000 },
-                    { angle: -1.0857, radius: 192, width: 20, height: 20, rotation: 0.0000 },
+                    { angle: -1.5388, radius: 156, width: 20, height: 20, rotation: 0.0000 },
                 ],
                 obstacles: [
-                    { angle: -1.1396, radius: 226, rotation: 0.4400, width: 80, height: 20 },
-                    { angle: -0.3406, radius: 117, rotation: -0.3000, width: 80, height: 20, isDestructible: true },
-                    { angle: 1.7226, radius: 155, rotation: 0.0800, width: 92, height: 20 },
-                    { angle: 2.1523, radius: 196, rotation: -0.3000, width: 80, height: 20 },
-                    { angle: -2.7230, radius: 113, rotation: 1.0500, width: 80, height: 20, isDestructible: true },
-                    { angle: -0.3244, radius: 116, rotation: 1.3000, width: 80, height: 20, isDestructible: true },
-                    { angle: 2.4278, radius: 217, rotation: 0.8400, width: 80, height: 20 },
-                    { angle: -1.5551, radius: 166, rotation: 1.3000, width: 140, height: 20 },
-                    { angle: 1.3925, radius: 189, rotation: 1.3000, width: 80, height: 20 },
-                    { angle: 0.8606, radius: 154, rotation: 0.9400, width: 80, height: 20 },
-                    { angle: 0.4401, radius: 205, rotation: 1.3000, width: 80, height: 20 },
-                    { angle: 0.2674, radius: 206, rotation: -0.3000, width: 50, height: 20 },
-                    { angle: 0.7302, radius: 207, rotation: -0.3000, width: 80, height: 20 },
-                    { angle: -1.8511, radius: 197, rotation: -0.3000, width: 80, height: 20 },
-                    { angle: -2.8463, radius: 146, rotation: -0.3000, width: 80, height: 20 },
-                    { angle: -1.8253, radius: 133, rotation: -0.3000, width: 80, height: 20, isDestructible: true },
-                    { angle: 2.8222, radius: 191, rotation: -0.3000, width: 80, height: 20 },
-                    { angle: -2.7647, radius: 193, rotation: 1.3000, width: 100, height: 20 },
-                    { angle: -0.4074, radius: 226, rotation: 1.3000, width: 80, height: 20 },
-                    { angle: 3.0572, radius: 218, rotation: -1.4000, width: 80, height: 20 },
+                    { angle: 0.6435, radius: 15, rotation: 0.0000, width: 80, height: 15, isPortal: true, portalId: 1, isMobile: true, move: { type: 'rotate', speed: 0.5000 } },
+                    { angle: 1.4821, radius: 181, rotation: 0.0000, width: 80, height: 15, isPortal: true, portalId: 1 },
+                    { angle: -1.5042, radius: 75, rotation: 0.0000, width: 300, height: 15, isDestructible: true },
+                    { angle: -1.4913, radius: 113, rotation: 0.0000, width: 300, height: 15, isDestructible: true },
+                    { angle: -1.5445, radius: 190, rotation: 0.0000, width: 300, height: 15, isDestructible: true },
+                    { angle: -1.3191, radius: 36, rotation: 0.0000, width: 300, height: 15, isDestructible: true },
+                    { angle: 1.3387, radius: 57, rotation: 0.0000, width: 300, height: 15, isDestructible: true },
+                    { angle: 1.4525, radius: 102, rotation: 0.0000, width: 300, height: 15, isDestructible: true },
+                    { angle: 1.4853, radius: 141, rotation: 0.0000, width: 300, height: 15, isDestructible: true },
+                    { angle: -3.0923, radius: 162, rotation: 1.5600, width: 400, height: 30 },
+                    { angle: 0.0220, radius: 182, rotation: 1.5600, width: 400, height: 30 },
                 ],
-                stars: [3, 4, 5] // À ajuster manuellement
-            }
+                stars: [3, 4, 5]
+            },
+
+            // NIVEAU 74
+            {
+                name: "Viser 8 (Très Difficile)",
+                targets: [
+                    { angle: -3.0303, radius: 162, width: 20, height: 20, rotation: 0.0000 },
+                ],
+                obstacles: [
+                    { angle: -1.2490, radius: 9, rotation: 0.0000, width: 50, height: 20, isPortal: true, portalId: 1, isMobile: true, move: { type: 'rotate', speed: 0.3000 } },
+                    { angle: 1.5377, radius: 181, rotation: 0.0000, width: 80, height: 15, isPortal: true, portalId: 1 },
+                    { angle: -1.1978, radius: 74, rotation: 0.4700, width: 200, height: 15, isDestructible: true },
+                    { angle: 0.6541, radius: 76, rotation: -0.4200, width: 220, height: 15, isDestructible: true },
+                    { angle: -2.9784, radius: 86, rotation: 1.4500, width: 240, height: 15, isDestructible: true },
+                    { angle: -1.2874, radius: 107, rotation: 0.4700, width: 300, height: 15, isDestructible: true },
+                    { angle: 0.8425, radius: 99, rotation: -0.4200, width: 300, height: 15, isDestructible: true },
+                    { angle: -3.0402, radius: 119, rotation: 1.4500, width: 300, height: 15, isDestructible: true },
+                    { angle: -3.0656, radius: 198, rotation: 1.5500, width: 80, height: 30 },
+                ],
+                stars: [3, 4, 5]
+            },
+
+            // NIVEAU 75
+            {
+                name: "Labyrinthe 3 (difficile)",
+                targets: [{ angle: -1.8326, radius: 52, width: 20, height: 20, rotation: 0.0000 }],
+                obstacles: [
+                    { angle: 1.8035, radius: 28, rotation: -0.3000, width: 80, height: 30 },
+                    { angle: -0.3406, radius: 117, rotation: -0.3000, width: 80, height: 30 },
+                    { angle: -2.9607, radius: 195, rotation: -0.3000, width: 80, height: 30 },
+                    { angle: 2.2152, radius: 196, rotation: -0.3000, width: 80, height: 30 },
+                    { angle: -1.3765, radius: 114, rotation: 1.3000, width: 80, height: 30 },
+                    { angle: -1.9917, radius: 179, rotation: 1.3000, width: 80, height: 30 },
+                    { angle: -0.3244, radius: 116, rotation: 1.3000, width: 80, height: 30 },
+                    { angle: 2.1968, radius: 196, rotation: 1.3000, width: 80, height: 30 },
+                    { angle: 2.9346, radius: 175, rotation: 1.3000, width: 150, height: 30 },
+                    { angle: 1.5606, radius: 157, rotation: 1.3000, width: 80, height: 30 },
+                    { angle: -0.5571, radius: 208, rotation: 1.3000, width: 80, height: 30 },
+                    { angle: 0.3071, radius: 142, rotation: 1.3000, width: 80, height: 30 },
+                    { angle: 0.3529, radius: 197, rotation: -0.3000, width: 80, height: 30 },
+                    { angle: 1.6724, radius: 211, rotation: -0.3000, width: 80, height: 30 },
+                    { angle: -2.3472, radius: 205, rotation: -0.3000, width: 80, height: 30 },
+                    { angle: -1.8103, radius: 139, rotation: -0.3000, width: 80, height: 30 },
+                    { angle: -1.7942, radius: 218, rotation: -0.3000, width: 80, height: 30 },
+                    { angle: 3.0817, radius: 134, rotation: -0.3000, width: 80, height: 30 },
+                    { angle: 0.8567, radius: 143, rotation: 1.3000, width: 150, height: 30 },
+                    { angle: 0.6043, radius: 169, rotation: -0.3000, width: 80, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.0500 } },
+                    { angle: -2.3833, radius: 156, rotation: -0.3000, width: 80, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.0500 } },
+                    { angle: -0.8125, radius: 182, rotation: -0.3000, width: 80, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.0500 } },
+                    { angle: -1.3110, radius: 170, rotation: -0.3000, width: 80, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.0500 } },
+                    { angle: 2.5894, radius: 99, rotation: -0.3000, width: 80, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.0500 } },
+                    { angle: -0.3157, radius: 209, rotation: -0.3000, width: 80, height: 15, isMobile: true, move: { type: 'rotate', speed: 0.0500 } },
+                ],
+                stars: [3, 4, 5]
+            },
         ];
 
         let puzzleObstacles = [];    
