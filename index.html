@@ -635,7 +635,7 @@
         transform: translateY(-3px);
     }
 
-    #menu button:hover::before, #gameOverScreen button:hover::before, #modeSelect button:hover::before, #settingsScreen button:hover::before, #powerSelectMenu button:hover::before, #tutorialContainer button:hover::before, #levelCompleteScreen button:hover::before, #statsScreen button:hover::before, #achievementsScreen button:hover::before, #creditsScreen button:hover::before, #confirmDialog button:hover::before, #puzzleLevelSelectScreen button:hover::before, #puzzleCompleteScreen button:hover::before, #leaderboardScreen button:hover::before, #namePromptDialog button:hover::before {
+    #menu button:hover::before, #gameOverScreen button:hover::before, #modeSelect button:hover::before, #settingsScreen button::before, #powerSelectMenu button::before, #tutorialContainer button::hover::before, #levelCompleteScreen button::hover::before, #statsScreen button::hover::before, #achievementsScreen button::hover::before, #creditsScreen button::hover::before, #confirmDialog button::hover::before, #puzzleLevelSelectScreen button::hover::before, #puzzleCompleteScreen button::hover::before, #leaderboardScreen button::hover::before, #namePromptDialog button:hover::before {
         transform: scaleX(1);
     }
 
@@ -664,8 +664,10 @@
         box-shadow: 0 0 10px rgba(255, 68, 68, 0.4);
     }
     
-    /* Style pour bouton de menu actif (navigation clavier) */
-    .menu-button-active {
+    /* Style pour bouton de menu actif (navigation clavier) et boutons de paramètres actifs */
+    .menu-button-active,
+    #settingsScreen .language-buttons button.active,
+    #graphicsQualityButtons button.active {
         box-shadow: 0 0 25px #ffff00, 0 0 40px rgba(255, 255, 0, 0.7) !important;
         transform: scale(1.05) translateY(-3px) !important;
         border: 1px solid #ffff00;
@@ -2076,6 +2078,75 @@
             transform: translate(-50%, -50%) scale(0.8);
         }
     }
+    /* --- STYLES POUR AMÉLIORER LES PERFORMANCES --- */
+    .is-medium-performance #menu, .is-medium-performance #modeSelect, .is-medium-performance #settingsScreen, .is-medium-performance #powerSelectMenu, .is-medium-performance #tutorialContainer, .is-medium-performance #levelCompleteScreen, .is-medium-performance #statsScreen, .is-medium-performance #achievementsScreen, .is-medium-performance #creditsScreen, .is-medium-performance #confirmDialog, .is-medium-performance #puzzleLevelSelectScreen, .is-medium-performance #puzzleCompleteScreen, .is-medium-performance #leaderboardScreen, .is-medium-performance #gameOverScreen, .is-medium-performance #namePromptDialog, .is-medium-performance #dialogOverlay,
+    .is-medium-performance #leftUI, .is-medium-performance #rightUI {
+        backdrop-filter: none;
+        background: rgba(20, 5, 40, 0.9);
+        box-shadow: 0 0 15px rgba(0, 249, 255, 0.4);
+    }
+    .is-medium-performance #gameOverScreen h2::before, .is-medium-performance #gameOverScreen h2::after {
+        display: none; /* Désactive l'effet glitch coûteux */
+    }
+    .is-medium-performance .star.pop-in {
+        animation: star-pop-in 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28); /* Supprime l'animation de scintillement */
+    }
+
+    /* Qualité FAIBLE (encore plus agressif) */
+    .is-low-performance #menu, .is-low-performance #modeSelect, .is-low-performance #settingsScreen, .is-low-performance #powerSelectMenu, .is-low-performance #tutorialContainer, .is-low-performance #levelCompleteScreen, .is-low-performance #statsScreen, .is-low-performance #achievementsScreen, .is-low-performance #creditsScreen, .is-low-performance #confirmDialog, .is-low-performance #puzzleLevelSelectScreen, .is-low-performance #puzzleCompleteScreen, .is-low-performance #leaderboardScreen, .is-low-performance #gameOverScreen, .is-low-performance #namePromptDialog, .is-low-performance #dialogOverlay {
+        backdrop-filter: none;
+        background: rgba(13, 0, 26, 0.95);
+        box-shadow: none;
+        border-width: 1px;
+    }
+
+    .is-low-performance #leftUI, .is-low-performance #rightUI {
+        backdrop-filter: none;
+        background: rgba(13, 0, 26, 0.9);
+        box-shadow: none;
+        border-width: 1px;
+    }
+
+    .is-low-performance canvas#gameCanvas {
+        box-shadow: none;
+        border-width: 2px;
+    }
+
+    .is-low-performance #menu h1, .is-low-performance #modeSelect h1, .is-low-performance #settingsScreen h1, .is-low-performance #powerSelectMenu h2, .is-low-performance #tutorialContainer h2, .is-low-performance #levelCompleteScreen h2, .is-low-performance #statsScreen h1, .is-low-performance #achievementsScreen h1, .is-low-performance #puzzleLevelSelectScreen h1, .is-low-performance #puzzleCompleteScreen h2, .is-low-performance #leaderboardScreen h1,
+    .is-low-performance .achievement-item.rarity-platinum .icon,
+    .is-low-performance #gameOverScreen h2,
+    .is-low-performance #stars,
+    .is-low-performance #orientation-prompt i,
+    .is-low-performance .blinking-cursor,
+    .is-low-performance .unlock-notification {
+        animation: none !important;
+    }
+
+    .is-low-performance #gameOverScreen h2::before, .is-low-performance #gameOverScreen h2::after {
+        display: none;
+    }
+    
+    .is-low-performance .star.pop-in {
+        animation: none;
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    .is-low-performance .mobile-game-active #touchMoveZone {
+        backdrop-filter: none;
+        background: rgba(20, 5, 40, 0.4);
+    }
+    /* Enlève les dégradés des boutons pour les perfs basses */
+    .is-low-performance button, .is-low-performance button:hover {
+        background: var(--primary-glow-color) !important;
+    }
+    .is-low-performance button::before {
+        display: none;
+    }
+     .is-low-performance .boss-mode-btn, .is-low-performance .boss-mode-btn:hover { background: #ff0040 !important; }
+     .is-low-performance .extra-life-btn, .is-low-performance .extra-life-btn:hover { background: #ff00ff !important; }
+     .is-low-performance .puzzle-mode-btn, .is-low-performance .puzzle-mode-btn:hover { background: #4caf50 !important; }
+     .is-low-performance #gameOverScreen button, .is-low-performance #gameOverScreen button:hover { background: #ff4444 !important; }
 </style>
 </head>
 <body>
@@ -2275,6 +2346,13 @@
                     <i class="fas fa-volume-up"></i>
                     <span id="volumeValue">50%</span>
                 </div>
+            </div>
+
+            <h2 data-lang-key="graphics_settings">Graphismes</h2>
+            <div id="graphicsQualityButtons" class="language-buttons">
+                <button data-quality="low" data-lang-key="quality_low">Faible</button>
+                <button data-quality="medium" data-lang-key="quality_medium">Moyen</button>
+                <button data-quality="high" data-lang-key="quality_high">Élevé</button>
             </div>
 
             <button id="backToMenuFromSettingsBtn" data-lang-key="back_to_menu" style="margin-top: 20px;">Retour au Menu</button>
@@ -2529,6 +2607,10 @@
         // === TRANSLATION DATA ===
        const translations = {
             'fr': {
+                'graphics_settings': "Graphismes",
+                'quality_low': "Faible",
+                'quality_medium': "Moyen",
+                'quality_high': "Élevé",
                 'ui_time_left': "Temps restant",
                 'power_none_name': "Aucun",
                 'orientation_title': "Veuillez tourner votre appareil",
@@ -2801,6 +2883,10 @@
                 'ach_p_11_name': "Architecte de la victoire", 'ach_p_11_desc': "Obtenez 3 étoiles sur les 10 premiers puzzles."
             },
             'en': {
+                'graphics_settings': "Graphics",
+                'quality_low': "Low",
+                'quality_medium': "Medium",
+                'quality_high': "High",
                 'ui_time_left': "Time Left",
                 'power_none_name': "None",
                 'orientation_title': "Please rotate your device",
@@ -3073,6 +3159,10 @@
                 'ach_p_11_name': "Architect of Victory", 'ach_p_11_desc': "Get 3 stars on the first 10 puzzles."
             },
             'es': {
+                'graphics_settings': "Gráficos",
+                'quality_low': "Bajo",
+                'quality_medium': "Medio",
+                'quality_high': "Alto",
                 'ui_time_left': "Tiempo restante",
                 'power_none_name': "Ninguno",
                 'orientation_title': "Por favor, gira tu dispositivo",
@@ -3345,6 +3435,10 @@
                 'ach_p_11_name': "Arquitecto de la victoria", 'ach_p_11_desc': "Consigue 3 estrellas en los 10 primeros puzles."
             },
             'it': {
+                'graphics_settings': "Grafica",
+                'quality_low': "Bassa",
+                'quality_medium': "Media",
+                'quality_high': "Alta",
                 'ui_time_left': "Tempo rimasto",
                 'power_none_name': "Nessuno",
                 'orientation_title': "Per favore, ruota il tuo dispositivo",
@@ -3617,6 +3711,10 @@
                 'ach_p_11_name': "Architetto della vittoria", 'ach_p_11_desc': "Ottieni 3 stelle nei primi 10 puzzle."
             },
             'ja': {
+                'graphics_settings': "グラフィック",
+                'quality_low': "低",
+                'quality_medium': "中",
+                'quality_high': "高",
                 'ui_time_left': "残り時間",
                 'power_none_name': "なし",
                 'orientation_title': "端末を回転させてください",
@@ -3889,6 +3987,10 @@
                 'ach_p_11_name': "勝利の設計者", 'ach_p_11_desc': "最初の10個のパズルで星3つを獲得する。"
             },
             'de': {
+                'graphics_settings': "Grafik",
+                'quality_low': "Niedrig",
+                'quality_medium': "Mittel",
+                'quality_high': "Hoch",
                 'ui_time_left': "Zeit übrig",
                 'power_none_name': "Keine",
                 'orientation_title': "Bitte drehe dein Gerät",
@@ -6448,19 +6550,19 @@
 
         function handleSpecialBrickEffect(brick, ball, brickX, brickY) {
             switch(brick.specialType) {
-                case 'EXTRA_LIFE': if (currentLives < MAX_LIVES) { currentLives++; playExtraLife(); for (let i = 0; i < 15; i++) particles.push(new Particle(brickX, brickY, "#00ff00", Math.random() * 6 + 4)); } addLifeLayer(); break;
-                case 'SPEED_BOOST': for (let i = 0; i < 10; i++) particles.push(new Particle(brickX, brickY, "#ff0080", Math.random() * 5 + 3)); break;
-                case 'RANDOM_BOUNCE': for (let i = 0; i < 12; i++) particles.push(new Particle(brickX, brickY, "#ffff00", Math.random() * 4 + 2)); break;
-                case 'MOVING': for (let i = 0; i < 8; i++) particles.push(new Particle(brickX, brickY, "#ff6600", Math.random() * 3 + 2)); break;
-                case 'SHOOTER': for (let i = 0; i < 10; i++) particles.push(new Particle(brickX, brickY, "#ff0000", Math.random() * 4 + 3)); break;
+                case 'EXTRA_LIFE': if (currentLives < MAX_LIVES) { currentLives++; playExtraLife(); for (let i = 0; i < 15 * qualitySettings.particleCount; i++) particles.push(new Particle(brickX, brickY, "#00ff00", Math.random() * 6 + 4)); } addLifeLayer(); break;
+                case 'SPEED_BOOST': for (let i = 0; i < 10 * qualitySettings.particleCount; i++) particles.push(new Particle(brickX, brickY, "#ff0080", Math.random() * 5 + 3)); break;
+                case 'RANDOM_BOUNCE': for (let i = 0; i < 12 * qualitySettings.particleCount; i++) particles.push(new Particle(brickX, brickY, "#ffff00", Math.random() * 4 + 2)); break;
+                case 'MOVING': for (let i = 0; i < 8 * qualitySettings.particleCount; i++) particles.push(new Particle(brickX, brickY, "#ff6600", Math.random() * 3 + 2)); break;
+                case 'SHOOTER': for (let i = 0; i < 10 * qualitySettings.particleCount; i++) particles.push(new Particle(brickX, brickY, "#ff0000", Math.random() * 4 + 3)); break;
             }
         }
 
         function addLifeLayer() {
-            for (let i = 0; i < lifeLayers.length; i++) { if (!lifeLayers[i].active) { lifeLayers[i].active = true; const impactRadius = lifeLayers[i].radius; for (let j = 0; j < 15; j++) { const angle = Math.random() * Math.PI * 2, x = centerX + Math.cos(angle) * impactRadius, y = centerY + Math.sin(angle) * impactRadius; particles.push(new Particle(x, y, "#ff0040", Math.random() * 6 + 3)); } updateLifeDisplay(); return; } }
+            for (let i = 0; i < lifeLayers.length; i++) { if (!lifeLayers[i].active) { lifeLayers[i].active = true; const impactRadius = lifeLayers[i].radius; for (let j = 0; j < 15 * qualitySettings.particleCount; j++) { const angle = Math.random() * Math.PI * 2, x = centerX + Math.cos(angle) * impactRadius, y = centerY + Math.sin(angle) * impactRadius; particles.push(new Particle(x, y, "#ff0040", Math.random() * 6 + 3)); } updateLifeDisplay(); return; } }
             const layerThickness = 8, gap = 5, initialOffset = 20, newIndex = lifeLayers.length, radius = outerRadius + initialOffset + (newIndex * (layerThickness + gap)) + (layerThickness / 2);
             lifeLayers.push({ radius: radius, color: "#ff0040", active: true, index: newIndex });
-            for (let i = 0; i < 20; i++) { const angle = Math.random() * Math.PI * 2, x = centerX + Math.cos(angle) * radius, y = centerY + Math.sin(angle) * radius; particles.push(new Particle(x, y, "#ff0040", Math.random() * 8 + 4)); }
+            for (let i = 0; i < 20 * qualitySettings.particleCount; i++) { const angle = Math.random() * Math.PI * 2, x = centerX + Math.cos(angle) * radius, y = centerY + Math.sin(angle) * radius; particles.push(new Particle(x, y, "#ff0040", Math.random() * 8 + 4)); }
             updateLifeDisplay();
         }
 
@@ -6469,15 +6571,15 @@
             bricks.forEach(brick => {
                 if (brick.isSpecial && !brick.hit && brick.health > 0) {
                     if (brick.specialType === 'SHOOTER') { const currentTime = performance.now(); if (currentTime - brick.lastShotTime > 10000) { brick.lastShotTime = currentTime; const brickX = centerX + brick.radius * Math.cos(brick.angle), brickY = centerY + brick.radius * Math.sin(brick.angle), targetAngle = Math.atan2(centerY - brickY, centerX - brickX); specialBrickProjectiles.push({ x: brickX, y: brickY, dx: 2 * Math.cos(targetAngle), dy: 2 * Math.sin(targetAngle), radius: 6, color: brick.specialColor, life: 1 }); playMissile(); } }
-                    if (brick.specialType === 'REGENERATING' && brick.health < brick.maxHealth) { const currentTime = performance.now(); if (currentTime - (brick.lastRegenTime || 0) > 10000) { brick.health++; brick.lastRegenTime = currentTime; playRegenSound(); const brickX = centerX + brick.radius * Math.cos(brick.angle), brickY = centerY + brick.radius * Math.sin(brick.angle); for (let i = 0; i < 5; i++) particles.push(new Particle(brickX, brickY, brick.specialColor, Math.random() * 3 + 1)); } }
+                    if (brick.specialType === 'REGENERATING' && brick.health < brick.maxHealth) { const currentTime = performance.now(); if (currentTime - (brick.lastRegenTime || 0) > 10000) { brick.health++; brick.lastRegenTime = currentTime; playRegenSound(); const brickX = centerX + brick.radius * Math.cos(brick.angle), brickY = centerY + brick.radius * Math.sin(brick.angle); for (let i = 0; i < 5 * qualitySettings.particleCount; i++) particles.push(new Particle(brickX, brickY, brick.specialColor, Math.random() * 3 + 1)); } }
                 }
             });
             for (let i = specialBrickProjectiles.length - 1; i >= 0; i--) {
                 const proj = specialBrickProjectiles[i]; proj.x += proj.dx; proj.y += proj.dy; proj.life -= 0.002;
                 const px = centerX + outerRadius * Math.cos(paddle.angle), py = centerY + outerRadius * Math.sin(paddle.angle), paddleHalfWidth = (paddleBig ? 90 * 1.4 * 2 : 90 * 1.4) / 2, paddleHalfHeight = (12 * 1.4) / 2, dx_paddle = proj.x - px, dy_paddle = proj.y - py, angleDiff = Math.atan2(dy_paddle, dx_paddle) - paddle.angle, distToPaddleCenter = Math.hypot(dx_paddle, dy_paddle), localPx = distToPaddleCenter * Math.cos(angleDiff), localPy = distToPaddleCenter * Math.sin(angleDiff);
-                if (Math.abs(localPx) < paddleHalfWidth + proj.radius && Math.abs(localPy) < paddleHalfHeight + proj.radius) { particles.push(new Particle(proj.x, proj.y, proj.color, Math.random() * 8 + 3)); specialBrickProjectiles.splice(i, 1); playHit(); continue; }
+                if (Math.abs(localPx) < paddleHalfWidth + proj.radius && Math.abs(localPy) < paddleHalfHeight + proj.radius) { for (let i = 0; i < 8 * qualitySettings.particleCount; i++) particles.push(new Particle(proj.x, proj.y, proj.color, Math.random() * 8 + 3)); specialBrickProjectiles.splice(i, 1); playHit(); continue; }
                 let hitLifeLayer = false;
-                for (let j = lifeLayers.length - 1; j >= 0; j--) { const layer = lifeLayers[j]; if (layer.active) { const distToLayer = Math.hypot(proj.x - centerX, proj.y - centerY); if (Math.abs(distToLayer - layer.radius) < proj.radius + 5) { destroyLifeLayer(j); for (let k = 0; k < 10; k++) particles.push(new Particle(proj.x, proj.y, "#ff0040", Math.random() * 6 + 3)); specialBrickProjectiles.splice(i, 1); hitLifeLayer = true; break; } } }
+                for (let j = lifeLayers.length - 1; j >= 0; j--) { const layer = lifeLayers[j]; if (layer.active) { const distToLayer = Math.hypot(proj.x - centerX, proj.y - centerY); if (Math.abs(distToLayer - layer.radius) < proj.radius + 5) { destroyLifeLayer(j); for (let k = 0; k < 10 * qualitySettings.particleCount; k++) particles.push(new Particle(proj.x, proj.y, "#ff0040", Math.random() * 6 + 3)); specialBrickProjectiles.splice(i, 1); hitLifeLayer = true; break; } } }
                 if (hitLifeLayer) continue;
                 const distToBall = Math.hypot(proj.x - ball.x, proj.y - ball.y);
                 if (distToBall < proj.radius + ball.radius) { const pushAngle = Math.atan2(ball.y - proj.y, ball.x - proj.x); ball.dx += Math.cos(pushAngle) * 1.5; ball.dy += Math.sin(pushAngle) * 1.5; const currentSpeed = Math.hypot(ball.dx, ball.dy); if (currentSpeed > 0) { const targetSpeed = BASE_BALL_SPEED * ballSpeedMultiplier; ball.dx = (ball.dx / currentSpeed) * targetSpeed; ball.dy = (ball.dy / currentSpeed) * targetSpeed; } specialBrickProjectiles.splice(i, 1); continue; }
@@ -6486,7 +6588,7 @@
             }
         }
 
-        function drawSpecialBrickProjectiles() { specialBrickProjectiles.forEach(proj => { ctx.save(); ctx.globalAlpha = proj.life; ctx.beginPath(); ctx.arc(proj.x, proj.y, proj.radius, 0, Math.PI * 2); ctx.fillStyle = proj.color; ctx.shadowColor = proj.color; ctx.shadowBlur = 15; ctx.fill(); ctx.restore(); }); }
+        function drawSpecialBrickProjectiles() { specialBrickProjectiles.forEach(proj => { ctx.save(); ctx.globalAlpha = proj.life; ctx.beginPath(); ctx.arc(proj.x, proj.y, proj.radius, 0, Math.PI * 2); ctx.fillStyle = proj.color; if (qualitySettings.enableGlow) { ctx.shadowColor = proj.color; ctx.shadowBlur = 15; } ctx.fill(); ctx.restore(); }); }
 
         const SAVE_KEY_NORMAL = 'gyrobricks_save_normal_mp', SAVE_KEY_BOSS = 'gyrobricks_save_boss_mp', STATS_KEY_GLOBAL = 'gyrobricks_stats_global', STATS_KEY_LEVEL_NORMAL = 'gyrobricks_stats_level_normal', STATS_KEY_LEVEL_BOSS = 'gyrobricks_stats_level_boss', STATS_KEY_SURVIVAL = 'gyrobricks_stats_survival', STATS_KEY_PUZZLE = 'gyrobricks_stats_puzzle';
 
@@ -6612,28 +6714,28 @@
         class Particle {
             constructor(x, y, color, size = 3) { this.x = x; this.y = y; this.vx = (Math.random() - 0.5) * 6; this.vy = (Math.random() - 0.5) * 6; this.color = color; this.size = size; this.life = 1; this.decay = 0.02; }
             update() { this.x += this.vx; this.y += this.vy; this.vy += 0.02; this.life -= this.decay; this.size *= 0.98; }
-            draw() { ctx.save(); ctx.globalAlpha = this.life; ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fillStyle = this.color; ctx.shadowColor = this.color; ctx.shadowBlur = 10; ctx.fill(); ctx.restore(); }
+            draw() { if(!qualitySettings.enableParticles) return; ctx.save(); ctx.globalAlpha = this.life; ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fillStyle = this.color; if(qualitySettings.enableGlow) {ctx.shadowColor = this.color; ctx.shadowBlur = 10;} ctx.fill(); ctx.restore(); }
         }
         class Shockwave {
             constructor(x, y, color = "#fff", maxRadius = 60, life = 1) { this.x = x; this.y = y; this.color = color; this.radius = 5; this.maxRadius = maxRadius; this.life = life; this.lineWidth = 3; }
             update() { this.radius += (this.maxRadius - this.radius) * 0.1; this.life -= 0.04; this.lineWidth = 3 * this.life; }
-            draw() { if (this.life <= 0) return; ctx.save(); ctx.globalAlpha = this.life; ctx.beginPath(); ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2); ctx.strokeStyle = this.color; ctx.lineWidth = this.lineWidth; ctx.shadowColor = this.color; ctx.shadowBlur = 10; ctx.stroke(); ctx.restore(); }
+            draw() { if (this.life <= 0 || !qualitySettings.enableGlow) return; ctx.save(); ctx.globalAlpha = this.life; ctx.beginPath(); ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2); ctx.strokeStyle = this.color; ctx.lineWidth = this.lineWidth; ctx.shadowColor = this.color; ctx.shadowBlur = 10; ctx.stroke(); ctx.restore(); }
         }
         class HomingParticle {
             constructor(x, y) { this.x = x; this.y = y; this.angle = Math.random() * Math.PI * 2; this.radius = Math.random() * 30 + 20; this.speed = Math.random() * 0.02 + 0.01; this.life = 1; this.size = Math.random() * 3 + 2; }
             update() { this.angle += this.speed; this.life -= 0.005; this.size *= 0.999; }
-            draw(centerX, centerY) { const x = centerX + Math.cos(this.angle) * this.radius, y = centerY + Math.sin(this.angle) * this.radius; ctx.save(); ctx.globalAlpha = this.life * 0.8; ctx.beginPath(); ctx.arc(x, y, this.size, 0, Math.PI * 2); ctx.fillStyle = "#ff00ff"; ctx.shadowColor = "#ff00ff"; ctx.shadowBlur = 15; ctx.fill(); ctx.restore(); }
+            draw(centerX, centerY) { if(!qualitySettings.enableParticles) return; const x = centerX + Math.cos(this.angle) * this.radius, y = centerY + Math.sin(this.angle) * this.radius; ctx.save(); ctx.globalAlpha = this.life * 0.8; ctx.beginPath(); ctx.arc(x, y, this.size, 0, Math.PI * 2); ctx.fillStyle = "#ff00ff"; if(qualitySettings.enableGlow){ ctx.shadowColor = "#ff00ff"; ctx.shadowBlur = 15;} ctx.fill(); ctx.restore(); }
         }
         class Trail {
             constructor(x, y, radius) { this.points = [{ x, y, radius, life: 1 }]; this.maxLength = 10; }
-            addPoint(x, y, radius) { this.points.unshift({ x, y, radius, life: 1 }); if (this.points.length > this.maxLength) this.points.pop(); }
-            update() { this.points.forEach(p => { p.life -= 0.1; p.radius *= 0.95; }); this.points = this.points.filter(p => p.life > 0); }
-            draw(color = "#00f9ff") { this.points.forEach(p => { ctx.save(); ctx.globalAlpha = p.life * 0.5; ctx.beginPath(); ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2); ctx.fillStyle = color; ctx.shadowColor = color; ctx.shadowBlur = 15; ctx.fill(); ctx.restore(); }); }
+            addPoint(x, y, radius) { if(!qualitySettings.enableTrails) return; this.points.unshift({ x, y, radius, life: 1 }); if (this.points.length > this.maxLength) this.points.pop(); }
+            update() { if(!qualitySettings.enableTrails) {this.points = []; return;} this.points.forEach(p => { p.life -= 0.1; p.radius *= 0.95; }); this.points = this.points.filter(p => p.life > 0); }
+            draw(color = "#00f9ff") { if(!qualitySettings.enableTrails) return; this.points.forEach(p => { ctx.save(); ctx.globalAlpha = p.life * 0.5; ctx.beginPath(); ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2); ctx.fillStyle = color; if(qualitySettings.enableGlow) {ctx.shadowColor = color; ctx.shadowBlur = 15;} ctx.fill(); ctx.restore(); }); }
         }
         class BossProjectile {
             constructor(startX, startY, targetAngle, speed, size, color) { this.x = startX; this.y = startY; this.dx = speed * Math.cos(targetAngle); this.dy = speed * Math.sin(targetAngle); this.radius = size; this.color = color; this.life = 1; }
             update() { this.x += this.dx; this.y += this.dy; this.life -= 0.005; }
-            draw() { ctx.save(); ctx.globalAlpha = this.life; ctx.beginPath(); ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2); ctx.fillStyle = this.color; ctx.shadowColor = this.color; ctx.shadowBlur = 15; ctx.fill(); ctx.restore(); }
+            draw() { ctx.save(); ctx.globalAlpha = this.life; ctx.beginPath(); ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2); ctx.fillStyle = this.color; if(qualitySettings.enableGlow) {ctx.shadowColor = this.color; ctx.shadowBlur = 15;} ctx.fill(); ctx.restore(); }
         }
         class Boss {
             constructor(type, index, totalBosses) { this.type = type; this.health = type.health; this.maxHealth = type.health; this.radius = type.radius; this.speed = type.speed; this.color = type.color; this.name_key = type.name_key; this.behavior = type.behavior; this.attackInterval = type.attackInterval; this.shape = type.shape || "circle"; this.movePattern = type.movePattern || 'orbit'; this.moveProgress = 0; this.moveState = 0; const angleOffset = (index / totalBosses) * Math.PI * 2; this.angle = angleOffset; this.baseAngle = angleOffset; this.orbitRadius = 100 + (index * 25); this.x = centerX + Math.cos(this.angle) * this.orbitRadius; this.y = centerY + Math.sin(this.angle) * this.orbitRadius; this.lastAttackTime = performance.now(); this.bossHitGlow = 0; this.attackCount = 0; this.shielded = false; this.shieldTime = 0; this.shieldToggleInterval = type.shieldInterval || 0; this.lastShieldToggleTime = performance.now(); this.fastDirection = Math.random() * Math.PI * 2; this.generatorCooldown = 0; this.shockwaveRadius = 0; this.shockwaveActive = false; }
@@ -6712,14 +6814,19 @@
             }
             draw() {
                 if (this.health <= 0) return;
-                ctx.save(); ctx.translate(this.x, this.y); ctx.rotate(this.angle); const glow = Math.sin(performance.now() * 0.005) * 10 + 15;
-                if (this.behavior === "protector" && this.shielded) { ctx.beginPath(); ctx.arc(0, 0, this.radius + 15, 0, Math.PI * 2); ctx.strokeStyle = "#00ffff"; ctx.lineWidth = 3; ctx.shadowColor = "#00ffff"; ctx.shadowBlur = 20; ctx.stroke(); }
-                ctx.shadowColor = this.color; ctx.shadowBlur = glow + (this.bossHitGlow * 50); ctx.beginPath();
+                ctx.save(); ctx.translate(this.x, this.y); ctx.rotate(this.angle); 
+                if (qualitySettings.enableGlow) {
+                    const glow = Math.sin(performance.now() * 0.005) * 10 + 15;
+                    ctx.shadowColor = this.color; ctx.shadowBlur = glow + (this.bossHitGlow * 50);
+                }
+                if (this.behavior === "protector" && this.shielded) { ctx.beginPath(); ctx.arc(0, 0, this.radius + 15, 0, Math.PI * 2); ctx.strokeStyle = "#00ffff"; ctx.lineWidth = 3; if(qualitySettings.enableGlow) {ctx.shadowColor = "#00ffff"; ctx.shadowBlur = 20;} ctx.stroke(); }
+                ctx.beginPath();
                 switch (this.shape) { case "triangle": ctx.moveTo(0, -this.radius); ctx.lineTo(-this.radius * 0.866, this.radius * 0.5); ctx.lineTo(this.radius * 0.866, this.radius * 0.5); ctx.closePath(); break; case "square": ctx.rect(-this.radius * 0.7, -this.radius * 0.7, this.radius * 1.4, this.radius * 1.4); break; case "diamond": ctx.moveTo(0, -this.radius); ctx.lineTo(this.radius, 0); ctx.lineTo(0, this.radius); ctx.lineTo(-this.radius, 0); ctx.closePath(); break; case "hexagon": for (let i = 0; i < 6; i++) { const angle = (i * Math.PI) / 3, x = this.radius * Math.cos(angle), y = this.radius * Math.sin(angle); if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y); } ctx.closePath(); break; case "star": for (let i = 0; i < 10; i++) { const angle = (i * Math.PI) / 5, radius = i % 2 === 0 ? this.radius : this.radius * 0.5, x = radius * Math.cos(angle), y = radius * Math.sin(angle); if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y); } ctx.closePath(); break; default: ctx.arc(0, 0, this.radius, 0, Math.PI * 2); break; }
-                ctx.globalAlpha = 0.25; ctx.fillStyle = this.color; ctx.fill(); ctx.globalAlpha = 1.0; ctx.strokeStyle = this.color; ctx.lineWidth = 5; ctx.stroke();
+                if(qualitySettings.enableGlow) {ctx.globalAlpha = 0.25; ctx.fillStyle = this.color; ctx.fill();}
+                ctx.globalAlpha = 1.0; ctx.strokeStyle = this.color; ctx.lineWidth = 5; ctx.stroke();
                 ctx.shadowColor = "transparent"; ctx.fillStyle = "#fff"; ctx.font = "bold 20px 'Orbitron', sans-serif"; ctx.textAlign = "center"; ctx.textBaseline = "middle"; ctx.fillText(this.health, 0, 0);
                 ctx.restore();
-                if (this.behavior === "shockwave" && this.shockwaveActive) { ctx.save(); ctx.globalAlpha = 0.6 - (this.shockwaveRadius / 150) * 0.6; ctx.beginPath(); ctx.arc(this.x, this.y, this.shockwaveRadius, 0, Math.PI * 2); ctx.strokeStyle = this.color; ctx.lineWidth = 4; ctx.shadowColor = this.color; ctx.shadowBlur = 15; ctx.stroke(); ctx.restore(); }
+                if (this.behavior === "shockwave" && this.shockwaveActive) { ctx.save(); ctx.globalAlpha = 0.6 - (this.shockwaveRadius / 150) * 0.6; ctx.beginPath(); ctx.arc(this.x, this.y, this.shockwaveRadius, 0, Math.PI * 2); ctx.strokeStyle = this.color; ctx.lineWidth = 4; if(qualitySettings.enableGlow){ctx.shadowColor = this.color; ctx.shadowBlur = 15;} ctx.stroke(); ctx.restore(); }
             }
         }
 
@@ -6730,7 +6837,7 @@
             bricks.length = 0; const health = getBrickHealth(level), color = getBrickColor(level), specialProbability = getSpecialBrickProbability(level);
             totalBrickHP = 0;
             for (let i = 0; i < count; i++) {
-                const angle = (i / count) * Math.PI * 2, baseBrick = { angle, radius: innerStart, hit: false, width: 60 * 1.1, height: 22, health, color, isHomingTarget: false, targetGlow: 0, hitCooldown: 0 }; // <--- AJOUT DE hitCooldown: 0
+                const angle = (i / count) * Math.PI * 2, baseBrick = { angle, radius: innerStart, hit: false, width: 60 * 1.1, height: 22, health, color, isHomingTarget: false, targetGlow: 0, hitCooldown: 0 };
                 if (Math.random() < specialProbability) bricks.push(createSpecialBrick(baseBrick)); else bricks.push(baseBrick);
                 totalBrickHP += health;
             }
@@ -6770,7 +6877,7 @@
             updateUIText(confirmDialog);
             updateMenuFocus(confirmDialog);
         }
-        function playHit() { playSound('hit'); shockwaves.push(new Shockwave(ball.x, ball.y, "#00f9ff", 40));} 
+        function playHit() { playSound('hit'); if (qualitySettings.enableParticles) shockwaves.push(new Shockwave(ball.x, ball.y, "#00f9ff", 40));} 
         function playBreak() { 
             playSound('break'); 
             levelBounces++; 
@@ -6784,7 +6891,7 @@
         function playBonus() { playSound('bonus'); } function playMenuClick() { playSound('menuClick'); } function playGameOver() { soundEffects.gameover.currentTime = 0; soundEffects.gameover.play().catch(e => {}); } function playLevelUp() { playSound('levelup'); } function playMissile() { playSound('missile'); } function playWarning() { playSound('warning'); } function playHomingLock() { playSound('homingLock'); } function playHomingGuide() { playSound('homingguide'); } function playBossHit() { playSound('bossHit'); } function playBossAttack() { playSound('bossAttack'); } function playBossDefeat() { playSound('bossDefeat'); } function playLifeLost() { playSound('lifeLost'); } function playSuperhit() { playSound('superHit'); } function playPowerFail() { playSound('powerFail'); } function playAttract() { soundEffects.attract.currentTime = 0; soundEffects.attract.play().catch(e => console.error("Error playing attract sound:", e)); } function playExplosion() { soundEffects.explosion.currentTime = 0; soundEffects.explosion.play().catch(e => console.error("Error playing explosion sound:", e)); } function playShield() { soundEffects.shield.currentTime = 0; soundEffects.shield.play().catch(e => console.error("Error playing shield sound:", e)); } function playExtraLife() { soundEffects.extraLife.currentTime = 0; soundEffects.extraLife.play().catch(e => console.error("Error playing extra life sound:", e)); } function playDeathEffect() { playSound('deathEffect'); } function playTyping() { soundEffects.typing.volume = 0.6; playSound('typing'); } function playLineReveal() { soundEffects.lineReveal.volume = 0.4; playSound('lineReveal'); } function playSplitSound() { playSound('split'); } function playRegenSound() { playSound('regen'); } function playCountSound() { soundEffects.count.play().catch(e => console.error("Error playing sound:", e)); } function playStarSound() { playSound('star'); }
         function triggerScreenFlash(color = 'white', duration = 100) { screenFlash.color = color; screenFlash.alpha = 0.4; screenFlash.duration = duration; screenFlash.timer = 0; }
         
-        function decomposeObject(x, y, width, height, color, count) { for (let i = 0; i < count; i++) { const px = x + (Math.random() - 0.5) * width, py = y + (Math.random() - 0.5) * height, p = new Particle(px, py, color, Math.random() * 4 + 2); p.vx = (Math.random() - 0.5) * 12; p.vy = (Math.random() - 0.5) * 12; particles.push(p); } }
+        function decomposeObject(x, y, width, height, color, count) { for (let i = 0; i < count * qualitySettings.particleCount; i++) { const px = x + (Math.random() - 0.5) * width, py = y + (Math.random() - 0.5) * height, p = new Particle(px, py, color, Math.random() * 4 + 2); p.vx = (Math.random() - 0.5) * 12; p.vy = (Math.random() - 0.5) * 12; particles.push(p); } }
         function triggerDecompositionAnimation(reasonKey = "") {
             if (isDecomposing) return; gameRunning = false; isDecomposing = true; playDeathEffect(); 
             gameOverReason.textContent = getTranslation(reasonKey);
@@ -6888,8 +6995,10 @@
                     ctx.fillStyle = "#4caf50";
                     ctx.strokeStyle = "#8bc34a";
                     ctx.lineWidth = 3;
-                    ctx.shadowColor = "#8bc34a";
-                    ctx.shadowBlur = 20;
+                    if(qualitySettings.enableGlow) {
+                        ctx.shadowColor = "#8bc34a";
+                        ctx.shadowBlur = 20;
+                    }
                     ctx.fillRect(-target.width / 2, -target.height / 2, target.width, target.height);
                     ctx.strokeRect(-target.width / 2, -target.height / 2, target.width, target.height);
                     ctx.restore();
@@ -6912,8 +7021,10 @@
 
                 ctx.strokeStyle = color;
                 ctx.lineWidth = obs.lineWidth || 2;
-                ctx.shadowColor = color;
-                ctx.shadowBlur = 15;
+                if(qualitySettings.enableGlow){
+                    ctx.shadowColor = color;
+                    ctx.shadowBlur = 15;
+                }
 
                 // Logique de dessin en fonction de la forme
                 if (obs.shape === 'curve') {
@@ -7336,27 +7447,37 @@
             ctx.beginPath(); 
             ctx.arc(centerX, centerY, outerRadius, 0, Math.PI * 2); 
             ctx.strokeStyle = "#00f9ff"; ctx.lineWidth = 3; 
-            ctx.shadowColor = "#00f9ff"; ctx.shadowBlur = 20; 
+            if(qualitySettings.enableGlow) {
+                ctx.shadowColor = "#00f9ff"; ctx.shadowBlur = 20; 
+            }
             ctx.stroke(); 
             if(!isPuzzleMode) {
                 ctx.beginPath(); 
                 ctx.arc(centerX, centerY, arenaRadius + pulseSize, 0, Math.PI * 2); // Utilise arenaRadius
                 ctx.strokeStyle = "#ff0040"; 
-                ctx.setLineDash([5, 5]); 
+                if(!document.body.classList.contains('is-low-performance')) {
+                    ctx.setLineDash([5, 5]); 
+                }
                 ctx.lineWidth = 3; 
-                ctx.shadowColor = "#ff0040"; 
-                ctx.shadowBlur = 15; 
+                if(qualitySettings.enableGlow) {
+                    ctx.shadowColor = "#ff0040"; ctx.shadowBlur = 15; 
+                }
                 ctx.stroke(); 
                 ctx.setLineDash([]);
             }
         }
-        function drawLifeLayers() { if(isPuzzleMode) return; lifeLayers.forEach(layer => { if (layer.active) { ctx.beginPath(); ctx.arc(centerX, centerY, layer.radius, 0, Math.PI * 2); ctx.strokeStyle = layer.color; ctx.lineWidth = 5; ctx.shadowColor = layer.color; ctx.shadowBlur = 10; ctx.stroke(); } }); }
+        function drawLifeLayers() { if(isPuzzleMode) return; lifeLayers.forEach(layer => { if (layer.active) { ctx.beginPath(); ctx.arc(centerX, centerY, layer.radius, 0, Math.PI * 2); ctx.strokeStyle = layer.color; ctx.lineWidth = 5; if(qualitySettings.enableGlow){ctx.shadowColor = layer.color; ctx.shadowBlur = 10;} ctx.stroke(); } }); }
         
         function defineBrickPath(brick) {
             const w = brick.width, h = brick.height, radius = 8;
             ctx.beginPath();
             const createRoundedRect = (width, height, r) => { ctx.moveTo(-width/2 + r, -height/2); ctx.lineTo(width/2 - r, -height/2); ctx.quadraticCurveTo(width/2, -height/2, width/2, -height/2 + r); ctx.lineTo(width/2, height/2 - r); ctx.quadraticCurveTo(width/2, height/2, width/2 - r, height/2); ctx.lineTo(-width/2 + r, height/2); ctx.quadraticCurveTo(-width/2, height/2, -width/2, height/2 - r); ctx.lineTo(-width/2, -height/2 + r); ctx.quadraticCurveTo(-width/2, -height/2, -width/2 + r, -height/2); ctx.closePath(); };
-            if (!brick.isSpecial) { createRoundedRect(w, h, radius); return; }
+            
+            if (!brick.isSpecial || document.body.classList.contains('is-low-performance')) { 
+                createRoundedRect(w, h, radius); 
+                return; 
+            }
+
             switch(brick.specialType) {
                 case 'SPEED_BOOST': ctx.moveTo(0, -h/2); ctx.lineTo(w/2, 0); ctx.lineTo(0, h/2); ctx.lineTo(-w/2, 0); ctx.closePath(); break;
                 case 'EXTRA_LIFE': case 'REGENERATING': case 'SPLITTING': createRoundedRect(w, h, radius); break;
@@ -7377,9 +7498,13 @@
                         const x = centerX + b.radius * Math.cos(b.angle), y = centerY + b.radius * Math.sin(b.angle); 
                         ctx.save(); ctx.translate(x, y); ctx.rotate(b.angle + Math.PI/2 + brickOscillation); 
                         const baseColor = b.isSpecial ? b.specialColor : b.color, finalColor = freeze ? "#aaa" : (b.isHomingTarget ? "#ff00ff" : baseColor);
-                        if (b.isHomingTarget) { b.targetGlow += 0.1; const glowSize = Math.sin(b.targetGlow) * 10 + 10; ctx.shadowColor = "#ff00ff"; ctx.shadowBlur = glowSize; }
-                        else if (b.isSpecial) { ctx.shadowColor = finalColor; ctx.shadowBlur = 15 + (b.glowIntensity * 10); }
-                        defineBrickPath(b); ctx.fillStyle = finalColor; ctx.globalAlpha = 0.25; ctx.fill(); ctx.globalAlpha = 1.0; ctx.strokeStyle = finalColor; ctx.lineWidth = 5; ctx.stroke();
+                        if(qualitySettings.enableGlow) {
+                            if (b.isHomingTarget) { b.targetGlow += 0.1; const glowSize = Math.sin(b.targetGlow) * 10 + 10; ctx.shadowColor = "#ff00ff"; ctx.shadowBlur = glowSize; }
+                            else if (b.isSpecial) { ctx.shadowColor = finalColor; ctx.shadowBlur = 15 + (b.glowIntensity * 10); }
+                        }
+                        defineBrickPath(b); ctx.fillStyle = finalColor; 
+                        if(qualitySettings.enableGlow) {ctx.globalAlpha = 0.25; ctx.fill();}
+                        ctx.globalAlpha = 1.0; ctx.strokeStyle = finalColor; ctx.lineWidth = 5; ctx.stroke();
                         ctx.shadowColor = "transparent"; ctx.fillStyle = "#fff"; ctx.font = "bold 12px 'Orbitron', sans-serif"; ctx.textAlign = "center"; ctx.textBaseline = "middle"; ctx.fillText(b.health, 0, 0); 
                         ctx.restore(); 
                     } 
@@ -7387,9 +7512,10 @@
             }
             for (let i = generatedBricks.length - 1; i >= 0; i--) {
                 const brick = generatedBricks[i];
-                ctx.save(); ctx.translate(brick.x, brick.y); ctx.rotate(brick.angle); ctx.shadowColor = brick.color; ctx.shadowBlur = 10; 
+                ctx.save(); ctx.translate(brick.x, brick.y); ctx.rotate(brick.angle); if(qualitySettings.enableGlow) {ctx.shadowColor = brick.color; ctx.shadowBlur = 10;}
                 ctx.beginPath(); const w = brick.width, h = brick.height, r = 6; ctx.moveTo(-w/2 + r, -h/2); ctx.lineTo(w/2 - r, -h/2); ctx.quadraticCurveTo(w/2, -h/2, w/2, -h/2 + r); ctx.lineTo(w/2, h/2 - r); ctx.quadraticCurveTo(w/2, h/2, w/2 - r, h/2); ctx.lineTo(-w/2 + r, h/2); ctx.quadraticCurveTo(-w/2, h/2, -w/2, h/2 - r); ctx.lineTo(-w/2, -h/2 + r); ctx.quadraticCurveTo(-w/2, -h/2, -w/2 + r, -h/2); ctx.closePath();
-                ctx.fillStyle = brick.color; ctx.globalAlpha = 0.25; ctx.fill(); ctx.globalAlpha = 1.0; ctx.strokeStyle = brick.color; ctx.lineWidth = 4; ctx.stroke(); 
+                if(qualitySettings.enableGlow) {ctx.fillStyle = brick.color; ctx.globalAlpha = 0.25; ctx.fill();}
+                ctx.globalAlpha = 1.0; ctx.strokeStyle = brick.color; ctx.lineWidth = 4; ctx.stroke(); 
                 ctx.restore(); 
                 const dx = centerX - brick.x, dy = centerY - brick.y, dist = Math.hypot(dx, dy); 
                 if (dist > 0) { brick.x += (dx / dist) * brick.moveSpeed; brick.y += (dy / dist) * brick.moveSpeed; } 
@@ -7399,12 +7525,12 @@
 
         function drawBosses() { bosses.forEach(boss => boss.draw()); }
         function findOptimalTarget() { for (let boss of bosses) { if (boss.health > 0) return { isHomingTarget: true, targetGlow: 0, x: boss.x, y: boss.y, health: boss.health, width: boss.radius * 2, height: boss.radius * 2, isBoss: true, bossRef: boss }; } let bestTarget = null, bestScore = -1; bricks.forEach(brick => { if (!brick.hit && brick.health > 0) { const bx = centerX + brick.radius * Math.cos(brick.angle), by = centerY + brick.radius * Math.sin(brick.angle), dist = Math.hypot(ball.x - bx, ball.y - by); let score = 1000 - dist + (brick.health * 50); if (brick.radius < innerStart + 50) score += 200; if (dist > 200) score -= 100; if (score > bestScore) { bestScore = score; bestTarget = brick; } } }); return bestTarget; }
-        function updateHomingSystem() { if (!homingActive) return; homingScanAnimation += 0.05; if (!homingTargetBrick || (homingTargetBrick.isBoss && homingTargetBrick.bossRef && homingTargetBrick.bossRef.health <= 0) || (!homingTargetBrick.isBoss && (homingTargetBrick.hit || homingTargetBrick.health <= 0))) { if (homingTargetBrick && !homingTargetBrick.isBoss) homingTargetBrick.isHomingTarget = false; homingTargetBrick = findOptimalTarget(); if (homingTargetBrick) { if (!homingTargetBrick.isBoss) { homingTargetBrick.isHomingTarget = true; homingTargetBrick.targetGlow = 0; } if (!homingLockSound) { playHomingLock(); homingLockSound = true; setTimeout(() => { homingLockSound = false; }, 500); } const bx = homingTargetBrick.isBoss ? homingTargetBrick.x : (centerX + homingTargetBrick.radius * Math.cos(homingTargetBrick.angle)), by = homingTargetBrick.isBoss ? homingTargetBrick.y : (centerY + homingTargetBrick.radius * Math.sin(homingTargetBrick.angle)); for (let i = 0; i < 10; i++) homingTargetParticles.push(new HomingParticle(bx, by)); } } homingTargetParticles = homingTargetParticles.filter(p => { p.update(); return p.life > 0; }); homingLaserIntensity = Math.sin(performance.now() * 0.01) * 0.3 + 0.7; }
-        function drawHomingEffects() { if (!homingActive || !homingTargetBrick) return; const bx = homingTargetBrick.isBoss ? homingTargetBrick.x : (centerX + homingTargetBrick.radius * Math.cos(homingTargetBrick.angle)), by = homingTargetBrick.isBoss ? homingTargetBrick.y : (centerY + homingTargetBrick.radius * Math.sin(homingTargetBrick.angle)); homingTargetParticles.forEach(p => p.draw(bx, by)); ctx.save(); ctx.globalAlpha = homingLaserIntensity * 0.8; ctx.strokeStyle = "#ff00ff"; ctx.lineWidth = 2; ctx.shadowColor = "#ff00ff"; ctx.shadowBlur = 10; ctx.setLineDash([5, 5]); ctx.beginPath(); ctx.moveTo(ball.x, ball.y); ctx.lineTo(bx, by); ctx.stroke(); ctx.setLineDash([]); ctx.restore(); ctx.save(); ctx.translate(bx, by); ctx.rotate(homingScanAnimation); ctx.globalAlpha = homingLaserIntensity; for (let i = 0; i < 4; i++) { ctx.save(); ctx.rotate((Math.PI / 2) * i); ctx.strokeStyle = "#ff00ff"; ctx.lineWidth = 3; ctx.shadowColor = "#ff00ff"; ctx.shadowBlur = 15; ctx.beginPath(); ctx.moveTo(40, 0); ctx.lineTo(60, 0); ctx.stroke(); ctx.beginPath(); ctx.moveTo(45, -5); ctx.lineTo(45, 5); ctx.stroke(); ctx.restore(); } const pulseRadius = 30 + Math.sin(performance.now() * 0.02) * 10; ctx.beginPath(); ctx.arc(0, 0, pulseRadius, 0, Math.PI * 2); ctx.strokeStyle = "#ff00ff"; ctx.lineWidth = 2; ctx.shadowBlur = 20; ctx.stroke(); ctx.restore(); ctx.save(); ctx.translate(bx, by); ctx.rotate(homingScanAnimation * 2); ctx.globalAlpha = 0.3; const scanGradient = ctx.createLinearGradient(-50, 0, 50, 0); scanGradient.addColorStop(0, "transparent"); scanGradient.addColorStop(0.5, "#ff00ff"); scanGradient.addColorStop(1, "transparent"); ctx.fillStyle = scanGradient; ctx.fillRect(-50, -2, 100, 4); ctx.restore(); }
+        function updateHomingSystem() { if (!homingActive) return; homingScanAnimation += 0.05; if (!homingTargetBrick || (homingTargetBrick.isBoss && homingTargetBrick.bossRef && homingTargetBrick.bossRef.health <= 0) || (!homingTargetBrick.isBoss && (homingTargetBrick.hit || homingTargetBrick.health <= 0))) { if (homingTargetBrick && !homingTargetBrick.isBoss) homingTargetBrick.isHomingTarget = false; homingTargetBrick = findOptimalTarget(); if (homingTargetBrick) { if (!homingTargetBrick.isBoss) { homingTargetBrick.isHomingTarget = true; homingTargetBrick.targetGlow = 0; } if (!homingLockSound) { playHomingLock(); homingLockSound = true; setTimeout(() => { homingLockSound = false; }, 500); } const bx = homingTargetBrick.isBoss ? homingTargetBrick.x : (centerX + homingTargetBrick.radius * Math.cos(homingTargetBrick.angle)), by = homingTargetBrick.isBoss ? homingTargetBrick.y : (centerY + homingTargetBrick.radius * Math.sin(homingTargetBrick.angle)); for (let i = 0; i < 10 * qualitySettings.particleCount; i++) homingTargetParticles.push(new HomingParticle(bx, by)); } } homingTargetParticles = homingTargetParticles.filter(p => { p.update(); return p.life > 0; }); homingLaserIntensity = Math.sin(performance.now() * 0.01) * 0.3 + 0.7; }
+        function drawHomingEffects() { if (!homingActive || !homingTargetBrick || !qualitySettings.enableGlow) return; const bx = homingTargetBrick.isBoss ? homingTargetBrick.x : (centerX + homingTargetBrick.radius * Math.cos(homingTargetBrick.angle)), by = homingTargetBrick.isBoss ? homingTargetBrick.y : (centerY + homingTargetBrick.radius * Math.sin(homingTargetBrick.angle)); homingTargetParticles.forEach(p => p.draw(bx, by)); ctx.save(); ctx.globalAlpha = homingLaserIntensity * 0.8; ctx.strokeStyle = "#ff00ff"; ctx.lineWidth = 2; ctx.shadowColor = "#ff00ff"; ctx.shadowBlur = 10; ctx.setLineDash([5, 5]); ctx.beginPath(); ctx.moveTo(ball.x, ball.y); ctx.lineTo(bx, by); ctx.stroke(); ctx.setLineDash([]); ctx.restore(); ctx.save(); ctx.translate(bx, by); ctx.rotate(homingScanAnimation); ctx.globalAlpha = homingLaserIntensity; for (let i = 0; i < 4; i++) { ctx.save(); ctx.rotate((Math.PI / 2) * i); ctx.strokeStyle = "#ff00ff"; ctx.lineWidth = 3; ctx.shadowColor = "#ff00ff"; ctx.shadowBlur = 15; ctx.beginPath(); ctx.moveTo(40, 0); ctx.lineTo(60, 0); ctx.stroke(); ctx.beginPath(); ctx.moveTo(45, -5); ctx.lineTo(45, 5); ctx.stroke(); ctx.restore(); } const pulseRadius = 30 + Math.sin(performance.now() * 0.02) * 10; ctx.beginPath(); ctx.arc(0, 0, pulseRadius, 0, Math.PI * 2); ctx.strokeStyle = "#ff00ff"; ctx.lineWidth = 2; ctx.shadowBlur = 20; ctx.stroke(); ctx.restore(); ctx.save(); ctx.translate(bx, by); ctx.rotate(homingScanAnimation * 2); ctx.globalAlpha = 0.3; const scanGradient = ctx.createLinearGradient(-50, 0, 50, 0); scanGradient.addColorStop(0, "transparent"); scanGradient.addColorStop(0.5, "#ff00ff"); scanGradient.addColorStop(1, "transparent"); ctx.fillStyle = scanGradient; ctx.fillRect(-50, -2, 100, 4); ctx.restore(); }
         function applyHomingGuidance(b) { if (!homingActive || !homingTargetBrick || !ballLaunched) return; const bx = homingTargetBrick.isBoss ? homingTargetBrick.x : (centerX + homingTargetBrick.radius * Math.cos(homingTargetBrick.angle)), by = homingTargetBrick.isBoss ? homingTargetBrick.y : (centerY + homingTargetBrick.radius * Math.sin(homingTargetBrick.angle)); const dx = bx - b.x, dy = by - b.y, distance = Math.hypot(dx, dy); if (distance > 0) { const guidance = Math.min(homingGuidanceForce, distance / 100), targetSpeed = BASE_BALL_SPEED * ballSpeedMultiplier, targetVx = (dx / distance) * targetSpeed, targetVy = (dy / distance) * targetSpeed; b.dx += (targetVx - b.dx) * guidance; b.dy += (targetVy - b.dy) * guidance; const currentSpeed = Math.hypot(b.dx, b.dy); if (currentSpeed > 0) { b.dx = (b.dx / currentSpeed) * targetSpeed; b.dy = (b.dy / currentSpeed) * targetSpeed; } if (Math.random() < 0.02) playHomingGuide(); } }
         const ballTrails = [];
-        function drawBall(b) { if (!ballTrails[b === ball ? 0 : 1]) { ballTrails[b === ball ? 0 : 1] = new Trail(b.x, b.y, ballBig ? b.radius * 2 : b.radius); } ballTrails[b === ball ? 0 : 1].addPoint(b.x, b.y, ballBig ? b.radius * 2 : b.radius); ballTrails[b === ball ? 0 : 1].update(); let trailColor = "#00f9ff"; if (b.isSuperHit) trailColor = "#ff0000"; else if (homingActive) trailColor = "#ff00ff"; else if (attractActive) trailColor = "#9900ff"; else if (explosionActive) trailColor = "#ff4500"; else if (shieldActive) trailColor = "#000080"; ballTrails[b === ball ? 0 : 1].draw(trailColor); let alpha = 1; if ((ballBig && ballBigTime <= 120) || (attractActive && (performance.now() - attractStartTime) >= (ATTRACT_DURATION - 500)) || (explosionActive && (performance.now() - explosionStartTime) >= (EXPLOSION_DURATION - 100)) || (shieldActive && (performance.now() - shieldStartTime) >= (SHIELD_DURATION - 500))) alpha = Math.abs(Math.sin(performance.now() * 0.02)); ctx.save(); ctx.globalAlpha = alpha; let shadowColor = "#00f9ff", fillColor = "#fff", shadowBlur = 25; if (b.isSuperHit) { shadowColor = "#ff0000"; fillColor = "#ffaaaa"; shadowBlur = 40; } else if (homingActive) { shadowColor = "#ff00ff"; fillColor = "#ff88ff"; shadowBlur = 35; } else if (attractActive) { shadowColor = "#9900ff"; fillColor = "#cc66ff"; shadowBlur = 35; } else if (explosionActive) { shadowColor = "#ff4500"; fillColor = "#ffa500"; shadowBlur = 40; } else if (shieldActive) { shadowColor = "#000080"; fillColor = "#4169E1"; shadowBlur = 35; } else if (ballBig) { shadowColor = "#ffff00"; fillColor = "#fff"; shadowBlur = 35; } ctx.beginPath(); ctx.arc(b.x, b.y, ballBig ? b.radius * 2 : b.radius, 0, Math.PI * 2); ctx.fillStyle = fillColor; ctx.shadowColor = shadowColor; ctx.shadowBlur = shadowBlur; ctx.fill(); ctx.beginPath(); ctx.arc(b.x, b.y, ballBig ? b.radius : b.radius * 0.7, 0, Math.PI * 2); ctx.fillStyle = ballBig ? "#ffff88" : (homingActive ? "#ffffff" : (attractActive ? "#ffffff" : (explosionActive ? "#ffffff" : (shieldActive ? "#ffffff" : "#ffffff")))); ctx.shadowBlur = 5; ctx.fill(); ctx.restore(); }
-        function drawPaddle() { const x = centerX + outerRadius * Math.cos(paddle.angle), y = centerY + outerRadius * Math.sin(paddle.angle); paddleTilt = Math.sin(performance.now() * 0.005) * 0.1; ctx.save(); ctx.translate(x, y); ctx.rotate(paddle.angle + Math.PI / 2 + paddleTilt); const w = paddleBig ? 90 * 1.4 * 2 : 90 * 1.4, h = 12 * 1.4, gradient = ctx.createLinearGradient(-w/2, -h/2, w/2, h/2); let shadowColor = "#00ffcc", shadowBlur = 20; if (paddleRedEffect) { gradient.addColorStop(0, "#ff0000"); gradient.addColorStop(0.5, "#ff4444"); gradient.addColorStop(1, "#ff0000"); shadowColor = "#ff0000"; shadowBlur = 30; } else if (attractActive) { gradient.addColorStop(0, "#9900ff"); gradient.addColorStop(0.5, "#cc66ff"); gradient.addColorStop(1, "#9900ff"); shadowColor = "#9900ff"; shadowBlur = 30; } else if (explosionActive) { gradient.addColorStop(0, "#ff4500"); gradient.addColorStop(0.5, "#ffa500"); gradient.addColorStop(1, "#ff4500"); shadowColor = "#ff4500"; shadowBlur = 35; } else if (shieldActive) { gradient.addColorStop(0, "#000080"); gradient.addColorStop(0.5, "#4169E1"); gradient.addColorStop(1, "#000080"); shadowColor = "#000080"; shadowBlur = 35; } else { gradient.addColorStop(0, "#00ffcc"); gradient.addColorStop(0.5, "#00f9ff"); gradient.addColorStop(1, "#00ffcc"); } let alpha = 1; if ((paddleBig && paddleBigTime <= 120) || (attractActive && (performance.now() - attractStartTime) >= (ATTRACT_DURATION - 500)) || (explosionActive && (performance.now() - explosionStartTime) >= (EXPLOSION_DURATION - 100)) || (shieldActive && (performance.now() - shieldStartTime) >= (SHIELD_DURATION - 500))) alpha = Math.abs(Math.sin(performance.now() * 0.02)); ctx.globalAlpha = alpha; ctx.fillStyle = gradient; ctx.shadowColor = shadowColor; ctx.shadowBlur = shadowBlur; ctx.fillRect(-w/2, -h/2, w, h); ctx.strokeStyle = paddleRedEffect ? "#ff4444" : (attractActive ? "#cc66ff" : (explosionActive ? "#ffa500" : (shieldActive ? "#4169E1" : "#00f9ff"))); ctx.lineWidth = 2; ctx.strokeRect(-w/2, -h/2, w, h); ctx.restore(); }
+        function drawBall(b) { if (!ballTrails[b === ball ? 0 : 1]) { ballTrails[b === ball ? 0 : 1] = new Trail(b.x, b.y, ballBig ? b.radius * 2 : b.radius); } ballTrails[b === ball ? 0 : 1].addPoint(b.x, b.y, ballBig ? b.radius * 2 : b.radius); ballTrails[b === ball ? 0 : 1].update(); let trailColor = "#00f9ff"; if (b.isSuperHit) trailColor = "#ff0000"; else if (homingActive) trailColor = "#ff00ff"; else if (attractActive) trailColor = "#9900ff"; else if (explosionActive) trailColor = "#ff4500"; else if (shieldActive) trailColor = "#000080"; ballTrails[b === ball ? 0 : 1].draw(trailColor); let alpha = 1; if ((ballBig && ballBigTime <= 120) || (attractActive && (performance.now() - attractStartTime) >= (ATTRACT_DURATION - 500)) || (explosionActive && (performance.now() - explosionStartTime) >= (EXPLOSION_DURATION - 100)) || (shieldActive && (performance.now() - shieldStartTime) >= (SHIELD_DURATION - 500))) alpha = Math.abs(Math.sin(performance.now() * 0.02)); ctx.save(); ctx.globalAlpha = alpha; let shadowColor = "#00f9ff", fillColor = "#fff", shadowBlur = 25; if (b.isSuperHit) { shadowColor = "#ff0000"; fillColor = "#ffaaaa"; shadowBlur = 40; } else if (homingActive) { shadowColor = "#ff00ff"; fillColor = "#ff88ff"; shadowBlur = 35; } else if (attractActive) { shadowColor = "#9900ff"; fillColor = "#cc66ff"; shadowBlur = 35; } else if (explosionActive) { shadowColor = "#ff4500"; fillColor = "#ffa500"; shadowBlur = 40; } else if (shieldActive) { shadowColor = "#000080"; fillColor = "#4169E1"; shadowBlur = 35; } else if (ballBig) { shadowColor = "#ffff00"; fillColor = "#fff"; shadowBlur = 35; } ctx.beginPath(); ctx.arc(b.x, b.y, ballBig ? b.radius * 2 : b.radius, 0, Math.PI * 2); ctx.fillStyle = fillColor; if(qualitySettings.enableShadows) {ctx.shadowColor = shadowColor; ctx.shadowBlur = shadowBlur;} ctx.fill(); ctx.beginPath(); ctx.arc(b.x, b.y, ballBig ? b.radius : b.radius * 0.7, 0, Math.PI * 2); ctx.fillStyle = ballBig ? "#ffff88" : (homingActive ? "#ffffff" : (attractActive ? "#ffffff" : (explosionActive ? "#ffffff" : (shieldActive ? "#ffffff" : "#ffffff")))); if(qualitySettings.enableGlow) ctx.shadowBlur = 5; ctx.fill(); ctx.restore(); }
+        function drawPaddle() { const x = centerX + outerRadius * Math.cos(paddle.angle), y = centerY + outerRadius * Math.sin(paddle.angle); paddleTilt = Math.sin(performance.now() * 0.005) * 0.1; ctx.save(); ctx.translate(x, y); ctx.rotate(paddle.angle + Math.PI / 2 + paddleTilt); const w = paddleBig ? 90 * 1.4 * 2 : 90 * 1.4, h = 12 * 1.4; let shadowColor = "#00ffcc", shadowBlur = 20, fillStyle; if (paddleRedEffect) { fillStyle = "#ff0000"; shadowColor = "#ff0000"; shadowBlur = 30; } else if (attractActive) { fillStyle = "#9900ff"; shadowColor = "#9900ff"; shadowBlur = 30; } else if (explosionActive) { fillStyle = "#ff4500"; shadowColor = "#ff4500"; shadowBlur = 35; } else if (shieldActive) { fillStyle = "#000080"; shadowColor = "#000080"; shadowBlur = 35; } else { fillStyle = "#00ffcc"; } if (qualitySettings.enableGlow) { const gradient = ctx.createLinearGradient(-w/2, -h/2, w/2, h/2); if(paddleRedEffect) { gradient.addColorStop(0,"#ff0000"); gradient.addColorStop(1,"#ff4444"); } else if(attractActive) { gradient.addColorStop(0,"#9900ff"); gradient.addColorStop(1,"#cc66ff"); } else { gradient.addColorStop(0, "#00ffcc"); gradient.addColorStop(1, "#00f9ff"); } fillStyle = gradient; } let alpha = 1; if ((paddleBig && paddleBigTime <= 120) || (attractActive && (performance.now() - attractStartTime) >= (ATTRACT_DURATION - 500)) || (explosionActive && (performance.now() - explosionStartTime) >= (EXPLOSION_DURATION - 100)) || (shieldActive && (performance.now() - shieldStartTime) >= (SHIELD_DURATION - 500))) alpha = Math.abs(Math.sin(performance.now() * 0.02)); ctx.globalAlpha = alpha; ctx.fillStyle = fillStyle; if(qualitySettings.enableShadows){ctx.shadowColor = shadowColor; ctx.shadowBlur = shadowBlur;} ctx.fillRect(-w/2, -h/2, w, h); ctx.strokeStyle = paddleRedEffect ? "#ff4444" : (attractActive ? "#cc66ff" : (explosionActive ? "#ffa500" : (shieldActive ? "#4169E1" : "#00f9ff"))); ctx.lineWidth = 2; ctx.strokeRect(-w/2, -h/2, w, h); ctx.restore(); }
         function drawSecondPaddle() {
             if(isPuzzleMode) return;
             const x = centerX + outerRadius * Math.cos(secondPaddle.angle),
@@ -7416,17 +7542,19 @@
             const w = secondPaddle.width,
                   h = secondPaddle.height;
             ctx.strokeStyle = "#00f9ff";
-            ctx.shadowColor = "#00f9ff"; 
-            ctx.shadowBlur = 15;
+            if(qualitySettings.enableGlow){
+                ctx.shadowColor = "#00f9ff"; 
+                ctx.shadowBlur = 15;
+            }
             ctx.lineWidth = 2;
             ctx.strokeRect(-w/2, -h/2, w, h); 
             ctx.restore();
         }
-        function drawMissile() { if (!missile) return; ctx.save(); ctx.translate(missile.x, missile.y); ctx.rotate(missile.angle + Math.PI / 2); const gradient = ctx.createLinearGradient(0, -10, 0, 10); gradient.addColorStop(0, "#ff0000"); gradient.addColorStop(1, "#ff6600"); ctx.beginPath(); ctx.moveTo(0, -10); ctx.lineTo(-8, 10); ctx.lineTo(8, 10); ctx.closePath(); ctx.fillStyle = gradient; ctx.shadowColor = "#ff0000"; ctx.shadowBlur = 15; ctx.fill(); ctx.beginPath(); ctx.moveTo(-3, 10); ctx.lineTo(0, 20); ctx.lineTo(3, 10); ctx.fillStyle = "#ffaa00"; ctx.shadowColor = "#ffaa00"; ctx.shadowBlur = 10; ctx.fill(); ctx.restore(); }
+        function drawMissile() { if (!missile) return; ctx.save(); ctx.translate(missile.x, missile.y); ctx.rotate(missile.angle + Math.PI / 2); let fillStyle = "#ff0000"; if(qualitySettings.enableGlow) { const gradient = ctx.createLinearGradient(0, -10, 0, 10); gradient.addColorStop(0, "#ff0000"); gradient.addColorStop(1, "#ff6600"); fillStyle = gradient; } ctx.beginPath(); ctx.moveTo(0, -10); ctx.lineTo(-8, 10); ctx.lineTo(8, 10); ctx.closePath(); ctx.fillStyle = fillStyle; if(qualitySettings.enableGlow){ ctx.shadowColor = "#ff0000"; ctx.shadowBlur = 15; } ctx.fill(); ctx.beginPath(); ctx.moveTo(-3, 10); ctx.lineTo(0, 20); ctx.lineTo(3, 10); ctx.fillStyle = "#ffaa00"; if(qualitySettings.enableGlow){ ctx.shadowColor = "#ffaa00"; ctx.shadowBlur = 10; } ctx.fill(); ctx.restore(); }
         function drawBossProjectiles() { bossProjectiles.forEach(proj => proj.draw()); }
         const bonuses = []; const bonusTypes = [ { type: "bigPaddle", color: "#00ffcc", icon: "" }, { type: "freeze", color: "#00f9ff", icon: "❄" }, { type: "bigBall", color: "#ffff00", icon: "🥎​" }, { type: "missile", color: "#ff0000", icon: "🚀" }, { type: "secondBall", color: "#ff00ff", icon: "☯" }, { type: "temporaryLife", color: "#0096ff", icon: "❤" }, { type: "homing", color: "#ff00ff", icon: "🎯" }, { type: "attract", color: "#ff8800", icon: "✨" }, { type: "brickRepulse", color: "#00ff00", icon: "📊" }, { type: "explosion", color: "#ff4500", icon: "💥" }, { type: "chaos", color: "#ffc107", icon: "🎲" }, { type: "maxMana", color: "#e91e63", icon: "⚡" } ];
         setInterval(() => { if (!gameRunning || isPuzzleMode) return; let availableBonuses = bonusTypes; if (bosses.length > 0) availableBonuses = bonusTypes.filter(b => b.type !== 'shield'); if (availableBonuses.length === 0) return; const angle = Math.random() * Math.PI * 2, radius = innerStart + 40, x = centerX + radius * Math.cos(angle), y = centerY + radius * Math.sin(angle), t = availableBonuses[Math.floor(Math.random() * availableBonuses.length)]; bonuses.push({ x, y, ...t, life: 600 }); }, 10000);
-        function drawBonuses() { bonuses.forEach((b, idx) => { b.life--; if (b.life <= 0) { bonuses.splice(idx, 1); return; } const alpha = b.life <= 120 ? Math.abs(Math.sin(performance.now() * 0.02)) : 1; ctx.save(); ctx.globalAlpha = alpha; ctx.translate(b.x, b.y); ctx.rotate(performance.now() * 0.003); if (b.type === "homing" || b.type === "attract" || b.type === "brickRepulse" || b.type === "explosion" || b.type === "shield") ctx.shadowBlur = 25; ctx.beginPath(); ctx.arc(0, 0, 25, 0, Math.PI * 2); ctx.strokeStyle = b.color; ctx.lineWidth = 2; ctx.shadowColor = b.color; ctx.shadowBlur = 20; ctx.stroke(); const gradient = ctx.createRadialGradient(0, 0, 0, 0, 0, 20); gradient.addColorStop(0, "#fff"); gradient.addColorStop(1, b.color); ctx.fillStyle = gradient; ctx.beginPath(); ctx.arc(0, 0, 20, 0, Math.PI * 2); ctx.fill(); ctx.fillStyle = "#000"; ctx.font = "bold 20px Arial"; ctx.textAlign = "center"; ctx.textBaseline = "middle"; ctx.fillText(b.icon, 0, 0); for (let i = 0; i < 4; i++) { ctx.save(); ctx.rotate((Math.PI / 2) * i + performance.now() * 0.01); ctx.fillStyle = b.color; ctx.fillRect(15, -1, 8, 2); ctx.restore(); } ctx.restore(); }); }
+        function drawBonuses() { bonuses.forEach((b, idx) => { b.life--; if (b.life <= 0) { bonuses.splice(idx, 1); return; } const alpha = b.life <= 120 ? Math.abs(Math.sin(performance.now() * 0.02)) : 1; ctx.save(); ctx.globalAlpha = alpha; ctx.translate(b.x, b.y); ctx.rotate(performance.now() * 0.003); if (qualitySettings.enableGlow && (b.type === "homing" || b.type === "attract" || b.type === "brickRepulse" || b.type === "explosion" || b.type === "shield")) ctx.shadowBlur = 25; ctx.beginPath(); ctx.arc(0, 0, 25, 0, Math.PI * 2); ctx.strokeStyle = b.color; ctx.lineWidth = 2; if(qualitySettings.enableGlow){ctx.shadowColor = b.color; ctx.shadowBlur = 20;} ctx.stroke(); let fillStyle = b.color; if(qualitySettings.enableGlow) {const gradient = ctx.createRadialGradient(0, 0, 0, 0, 0, 20); gradient.addColorStop(0, "#fff"); gradient.addColorStop(1, b.color); fillStyle = gradient; } ctx.fillStyle = fillStyle; ctx.beginPath(); ctx.arc(0, 0, 20, 0, Math.PI * 2); ctx.fill(); ctx.fillStyle = "#000"; ctx.font = "bold 20px Arial"; ctx.textAlign = "center"; ctx.textBaseline = "middle"; ctx.fillText(b.icon, 0, 0); for (let i = 0; i < 4; i++) { ctx.save(); ctx.rotate((Math.PI / 2) * i + performance.now() * 0.01); ctx.fillStyle = b.color; ctx.fillRect(15, -1, 8, 2); ctx.restore(); } ctx.restore(); }); }
         
         function activateBonus(type, color = "#fff") {
             levelBonusesCollected++;
@@ -7493,7 +7621,7 @@
             } else if (type === "maxMana") {
                 currentMP = MAX_MP;
                 updateMpBar();
-                for (let i = 0; i < 20; i++) particles.push(new Particle(centerX, centerY, color, Math.random() * 8 + 4));
+                for (let i = 0; i < 20 * qualitySettings.particleCount; i++) particles.push(new Particle(centerX, centerY, color, Math.random() * 8 + 4));
             }
             playBonus();
             triggerScreenFlash(color, 150);
@@ -7562,8 +7690,8 @@
             if (ballBigTime > 0) ballBigTime--; else { ballBig = false; ball.noBounce = false; } 
             if (temporaryLifeTime > 0) temporaryLifeTime--; else temporaryLifeActive = false; 
             if (homingTime > 0) homingTime--; else { homingActive = false; homingTargetBrick = null; homingTargetParticles = []; bricks.forEach(brick => brick.isHomingTarget = false); } 
-            if (attractActive) { const elapsedAttractTime = performance.now() - attractStartTime; if (elapsedAttractTime >= ATTRACT_DURATION) { if (attractActive) { for (let i = 0; i < 10; i++) particles.push(new Particle(ball.x, ball.y, "#9900ff", Math.random() * 5 + 2)); if (secondBall) for (let i = 0; i < 10; i++) particles.push(new Particle(secondBall.x, secondBall.y, "#9900ff", Math.random() * 5 + 2)); } attractActive = false; } } 
-            if (shieldActive) { const elapsedShieldTime = performance.now() - shieldStartTime; if (elapsedShieldTime >= SHIELD_DURATION) { if (shieldActive) { for (let i = 0; i < 10; i++) particles.push(new Particle(ball.x, ball.y, "#000080", Math.random() * 5 + 2)); if (secondBall) for (let i = 0; i < 10; i++) particles.push(new Particle(secondBall.x, secondBall.y, "#000080", Math.random() * 5 + 2)); } shieldActive = false; } } 
+            if (attractActive) { const elapsedAttractTime = performance.now() - attractStartTime; if (elapsedAttractTime >= ATTRACT_DURATION) { if (attractActive) { for (let i = 0; i < 10 * qualitySettings.particleCount; i++) particles.push(new Particle(ball.x, ball.y, "#9900ff", Math.random() * 5 + 2)); if (secondBall) for (let i = 0; i < 10 * qualitySettings.particleCount; i++) particles.push(new Particle(secondBall.x, secondBall.y, "#9900ff", Math.random() * 5 + 2)); } attractActive = false; } } 
+            if (shieldActive) { const elapsedShieldTime = performance.now() - shieldStartTime; if (elapsedShieldTime >= SHIELD_DURATION) { if (shieldActive) { for (let i = 0; i < 10 * qualitySettings.particleCount; i++) particles.push(new Particle(ball.x, ball.y, "#000080", Math.random() * 5 + 2)); if (secondBall) for (let i = 0; i < 10 * qualitySettings.particleCount; i++) particles.push(new Particle(secondBall.x, secondBall.y, "#000080", Math.random() * 5 + 2)); } shieldActive = false; } } 
             if (attractBonusesActive) { const elapsed = performance.now() - attractBonusesStartTime; if (elapsed >= ATTRACT_BONUSES_DURATION) attractBonusesActive = false; } 
             updateActiveBonusesAndPowers(); 
         }
@@ -7593,8 +7721,8 @@
                     const currentSpeed = Math.hypot(ball.dx, ball.dy), SUPER_HIT_VELOCITY_MULTIPLIER = 1.8, newSpeed = Math.min(currentSpeed * SUPER_HIT_VELOCITY_MULTIPLIER, 15);
                     ball.dx = (ball.dx / currentSpeed) * newSpeed; ball.dy = (ball.dy / currentSpeed) * newSpeed; ball.isSuperHit = true;
                     if (secondBall) { const currentSpeed2 = Math.hypot(secondBall.dx, secondBall.dy), newSpeed2 = Math.min(currentSpeed2 * SUPER_HIT_VELOCITY_MULTIPLIER, 15); secondBall.dx = (secondBall.dx / currentSpeed2) * newSpeed2; secondBall.dy = (secondBall.dy / currentSpeed2) * newSpeed2; secondBall.isSuperHit = true; }
-                    for (let i = 0; i < 20; i++) particles.push(new Particle(ball.x, ball.y, "#ff0000", Math.random() * 8 + 3));
-                    if (secondBall) for (let i = 0; i < 20; i++) particles.push(new Particle(secondBall.x, secondBall.y, "#ff0000", Math.random() * 8 + 3));
+                    for (let i = 0; i < 20 * qualitySettings.particleCount; i++) particles.push(new Particle(ball.x, ball.y, "#ff0000", Math.random() * 8 + 3));
+                    if (secondBall) for (let i = 0; i < 20 * qualitySettings.particleCount; i++) particles.push(new Particle(secondBall.x, secondBall.y, "#ff0000", Math.random() * 8 + 3));
                     paddleRedEffect = true; paddleRedEffectTimer = PADDLE_RED_EFFECT_DURATION; playSuperhit(); break;
                 }
                 case 'attract': if (!attractActive) { attractActive = true; attractStartTime = performance.now(); playAttract(); } break;
@@ -7616,7 +7744,7 @@
                     if (currentLives >= MAX_LIVES) { currentMP = Math.min(MAX_MP, currentMP + POWER_MP_COSTS.extraLife); updateMpBar(); playPowerFail(); return; }
                     currentLives++;
                     for (let i = 0; i < lifeLayers.length; i++) if (!lifeLayers[i].active) { lifeLayers[i].active = true; break; }
-                    updateLifeDisplay(); playExtraLife(); for (let i = 0; i < 20; i++) particles.push(new Particle(centerX, centerY, "#ff00ff", Math.random() * 8 + 3));
+                    updateLifeDisplay(); playExtraLife(); for (let i = 0; i < 20 * qualitySettings.particleCount; i++) particles.push(new Particle(centerX, centerY, "#ff00ff", Math.random() * 8 + 3));
                     break;
                 }
             }
@@ -7804,7 +7932,7 @@
         function resetBonusesAndHoming() { freeze = false; freezeTime = 0; paddleBig = false; paddleBigTime = 0; ballBig = false; ballBigTime = 0; homingActive = false; homingTime = 0; attractActive = false; attractStartTime = 0; explosionActive = false; explosionStartTime = 0; explosionRadius = 0; shieldActive = false; shieldStartTime = 0; bonuses.length = 0; homingTargetBrick = null; homingTargetParticles = []; bricks.forEach(brick => brick.isHomingTarget = false); }
         function scheduleWarning() { warningSoundTimeout = setTimeout(() => { if (gameRunning && !isSurvivalMode && !isPuzzleMode) { playWarning(); scheduleWarning(); } }, 30000); }
         function updateParticles() { particles.forEach((p, index) => { p.update(); if (p.life <= 0) particles.splice(index, 1); }); }
-        function createBrickExplosion(x, y, color) { shockwaves.push(new Shockwave(x, y, color, 80)); for (let i = 0; i < 15; i++) particles.push(new Particle(x, y, color, Math.random() * 5 + 2)); }
+        function createBrickExplosion(x, y, color) { if(qualitySettings.enableGlow) shockwaves.push(new Shockwave(x, y, color, 80)); for (let i = 0; i < 15 * qualitySettings.particleCount; i++) particles.push(new Particle(x, y, color, Math.random() * 5 + 2)); }
         
         function updateLifeLayers() {
             if (!isSurvivalMode || !gameRunning || isPuzzleMode) return;
@@ -7826,14 +7954,14 @@
 
         function destroyLifeLayer(index) {
             if (index < 0 || index >= lifeLayers.length || !lifeLayers[index].active) return;
-            if (temporaryLifeActive) { temporaryLifeActive = false; temporaryLifeTime = 0; playHit(); updateLifeDisplay(); updateActiveBonusesAndPowers(); for (let i = 0; i < 15; i++) particles.push(new Particle(centerX, centerY, "#0096ff", Math.random() * 6 + 3)); return; }
+            if (temporaryLifeActive) { temporaryLifeActive = false; temporaryLifeTime = 0; playHit(); updateLifeDisplay(); updateActiveBonusesAndPowers(); for (let i = 0; i < 15 * qualitySettings.particleCount; i++) particles.push(new Particle(centerX, centerY, "#0096ff", Math.random() * 6 + 3)); return; }
             
             if (performance.now() - levelStartTime < 10000) {
                 unlockAchievement('b_30');
             }
 
             lifeLayers[index].active = false; currentLives--; playLifeLost(); updateLifeDisplay(); const impactRadius = lifeLayers[index].radius; shockwaves.push(new Shockwave(centerX, centerY, "#ff0040", impactRadius + 10));
-            for (let i = 0; i < 20; i++) { const angle = Math.random() * Math.PI * 2, x = centerX + Math.cos(angle) * impactRadius, y = centerY + Math.sin(angle) * impactRadius; particles.push(new Particle(x, y, "#ff0040", Math.random() * 6 + 3)); }
+            for (let i = 0; i < 20 * qualitySettings.particleCount; i++) { const angle = Math.random() * Math.PI * 2, x = centerX + Math.cos(angle) * impactRadius, y = centerY + Math.sin(angle) * impactRadius; particles.push(new Particle(x, y, "#ff0040", Math.random() * 6 + 3)); }
             if (currentLives <= 0) { if (warningSoundTimeout) clearTimeout(warningSoundTimeout); triggerDecompositionAnimation("game_over_reason_no_lives"); }
         }
 
@@ -7856,7 +7984,7 @@
                 if (Math.abs(localPx) < paddleHalfWidth + proj.radius && Math.abs(localPy) < paddleHalfHeight + proj.radius) {
                     score = Math.max(0, score - 50);
                     showPlus100();
-                    particles.push(new Particle(proj.x, proj.y, "#ff6600", Math.random() * 8 + 3));
+                    for (let i = 0; i < 8 * qualitySettings.particleCount; i++) particles.push(new Particle(proj.x, proj.y, "#ff6600", Math.random() * 8 + 3));
                     bossProjectiles.splice(index, 1);
                     playHit();
                     return;
@@ -7865,7 +7993,7 @@
                     const layer = lifeLayers[i];
                     if (layer.active && Math.abs(dist - layer.radius) < proj.radius) {
                         destroyLifeLayer(i);
-                        particles.push(new Particle(proj.x, proj.y, "#ff0040", Math.random() * 8 + 3));
+                        for (let i = 0; i < 8 * qualitySettings.particleCount; i++) particles.push(new Particle(proj.x, proj.y, "#ff0040", Math.random() * 8 + 3));
                         bossProjectiles.splice(index, 1);
                         return;
                     }
@@ -7878,7 +8006,7 @@
         function drawScreenFlash() { if (screenFlash.alpha > 0) { ctx.save(); ctx.globalAlpha = screenFlash.alpha; ctx.fillStyle = screenFlash.color; ctx.fillRect(0, 0, canvas.width, canvas.height); ctx.restore(); screenFlash.timer += 16; if(screenFlash.timer >= screenFlash.duration) screenFlash.alpha -= 0.1; if (screenFlash.alpha < 0) screenFlash.alpha = 0; } }
         
         function initGalaxy() { if (!canvas) return; galaxyStars = []; const baseHue = (galaxyHueOffset) % 360; for (let i = 0; i < GALAXY_STAR_COUNT; i++) galaxyStars.push({ x: Math.random() * canvas.width, y: Math.random() * canvas.height, size: Math.random() * 2 + 0.5, speed: Math.random() * 0.4 + 0.1, color: `hsla(${(baseHue + Math.random() * 60) % 360}, 100%, ${Math.random() * 40 + 50}%, ${Math.random() * 0.7 + 0.3})` }); }
-        function drawAndMoveGalaxy() { if (!gameRunning) return; galaxyStars.forEach(star => { star.y += star.speed; if (star.y > canvas.height) { star.y = 0; star.x = Math.random() * canvas.width; } ctx.beginPath(); ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2); ctx.fillStyle = star.color; ctx.fill(); }); }
+        function drawAndMoveGalaxy() { if (!gameRunning || !qualitySettings.enableGalaxy) return; galaxyStars.forEach(star => { star.y += star.speed; if (star.y > canvas.height) { star.y = 0; star.x = Math.random() * canvas.width; } ctx.beginPath(); ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2); ctx.fillStyle = star.color; ctx.fill(); }); }
 
         function gameLoop() {
             if (!ballLaunched) { const paddleBallRadius = outerRadius - 20; ball.x = centerX + paddleBallRadius * Math.cos(paddle.angle); ball.y = centerY + paddleBallRadius * Math.sin(paddle.angle); }
@@ -7928,7 +8056,7 @@
             secondPaddle.angle = paddle.angle + Math.PI;
             if (explosionActive) { explosionRadius += (MAX_EXPLOSION_RADIUS / EXPLOSION_DURATION) * deltaTime; if (explosionRadius >= MAX_EXPLOSION_RADIUS) { explosionActive = false; explosionRadius = 0; } }
             if (paddleRedEffectTimer > 0) { paddleRedEffectTimer -= deltaTime; if (paddleRedEffectTimer <= 0) { paddleRedEffect = false; paddleRedEffectTimer = 0; } }
-            if(attractBonusesActive) { bonuses.forEach(bonus => { const dx = ball.x - bonus.x, dy = ball.y - bonus.y, distance = Math.hypot(dx, dy); if (distance > 0 && distance < 200) { const force = ATTRACT_BONUSES_FORCE * (1 - distance / 200); bonus.x += (dx / distance) * force * 10; bonus.y += (dy / distance) * force * 10; if (Math.random() < 0.1) particles.push(new Particle(bonus.x, bonus.y, "#ffeb3b", Math.random() * 3 + 2)); } }); }
+            if(attractBonusesActive) { bonuses.forEach(bonus => { const dx = ball.x - bonus.x, dy = ball.y - bonus.y, distance = Math.hypot(dx, dy); if (distance > 0 && distance < 200) { const force = ATTRACT_BONUSES_FORCE * (1 - distance / 200); bonus.x += (dx / distance) * force * 10; bonus.y += (dy / distance) * force * 10; if (qualitySettings.enableParticles && Math.random() < 0.1) particles.push(new Particle(bonus.x, bonus.y, "#ffeb3b", Math.random() * 3 + 2)); } }); }
             updateEffects(); updateMissile(); updateParticles(); updateHomingSystem(); updateBosses(); updateSpecialBricks(); checkAndUnlockAchievements();
             
             if (isSurvivalMode) {
@@ -8160,7 +8288,7 @@
 
                                 } else {
                                     if (homingActive && homingTargetBrick === brick) {
-                                        brick.isHomingTarget = false; homingTargetBrick = null; for (let i = 0; i < 20; i++) particles.push(new Particle(bx, by, "#ff00ff", Math.random() * 8 + 3));
+                                        brick.isHomingTarget = false; homingTargetBrick = null; for (let i = 0; i < 20 * qualitySettings.particleCount; i++) particles.push(new Particle(bx, by, "#ff00ff", Math.random() * 8 + 3));
                                     }
                                     if (brick.isSpecial) handleSpecialBrickEffect(brick, b, bx, by);
 
@@ -8810,7 +8938,7 @@
         class IntroParticle {
             constructor(x, y, color, size) { this.x = x; this.y = y; this.vx = (Math.random() - 0.5) * 1.5; this.vy = (Math.random() - 0.5) * 1.5; this.color = color; this.size = size; this.life = 1; this.decay = Math.random() * 0.02 + 0.01; }
             update() { this.x += this.vx; this.y += this.vy; this.life -= this.decay; this.size *= 0.99; }
-            draw(context) { if (this.life <= 0 || this.size < 0.5) return; context.save(); context.globalAlpha = this.life; context.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); context.fillStyle = this.color; context.shadowColor = this.color; context.shadowBlur = 8; context.fill(); context.restore(); }
+            draw(context) { if (this.life <= 0 || this.size < 0.5) return; context.save(); context.globalAlpha = this.life; context.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); context.fillStyle = this.color; ctx.shadowColor = this.color; ctx.shadowBlur = 8; ctx.fill(); context.restore(); }
         }
         
         function resizeIntroCanvas() { introCanvas.width = window.innerWidth; introCanvas.height = window.innerHeight; }
@@ -8888,6 +9016,8 @@
                     } else {
                          setGlobalVolume(0.5); // Default volume
                     }
+
+                    detectPerformance();
 
                     loadingScreen.style.display = 'none';
                     document.getElementById('gameContainer').style.visibility = 'visible';
@@ -8968,6 +9098,12 @@
             localStorage.setItem('gyrobricks_language', lang);
             updateUIText();
             populateTutorialSlides();
+
+            // Mettre à jour le bouton de langue actif
+            const langButtons = document.querySelectorAll('#settingsScreen .language-buttons button');
+            langButtons.forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.lang === lang);
+            });
         }
 
         document.querySelector('#settingsScreen .language-buttons').addEventListener('click', (e) => {
@@ -9329,6 +9465,65 @@
                  .replace(/"/g, "&quot;")
                  .replace(/'/g, "&#039;");
          }
+
+        // --- NOUVELLES FONCTIONS POUR LA QUALITÉ GRAPHIQUE ---
+        let qualitySettings = {
+            particleCount: 1, // 1 = 100%, 0.5 = 50%, etc.
+            enableShadows: true,
+            enableGlow: true,
+            enableTrails: true,
+            enableGalaxy: true,
+            enableParticles: true,
+        };
+
+        function setGraphicsQuality(level) {
+            localStorage.setItem('gyrobricks_quality', level);
+            document.body.classList.remove('is-low-performance', 'is-medium-performance');
+
+            switch (level) {
+                case 'low':
+                    document.body.classList.add('is-low-performance');
+                    qualitySettings = { particleCount: 0.1, enableShadows: false, enableGlow: false, enableTrails: false, enableGalaxy: false, enableParticles: false };
+                    break;
+                case 'medium':
+                     document.body.classList.add('is-medium-performance');
+                    qualitySettings = { particleCount: 0.5, enableShadows: false, enableGlow: true, enableTrails: false, enableGalaxy: false, enableParticles: true };
+                    break;
+                case 'high':
+                default:
+                    qualitySettings = { particleCount: 1, enableShadows: true, enableGlow: true, enableTrails: true, enableGalaxy: true, enableParticles: true };
+                    break;
+            }
+            
+            const qualityButtons = document.querySelectorAll('#graphicsQualityButtons button');
+            qualityButtons.forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.quality === level);
+            });
+        }
+        
+        function detectPerformance() {
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            const isFirefox = typeof InstallTrigger !== 'undefined';
+            const savedQuality = localStorage.getItem('gyrobricks_quality');
+
+            if (savedQuality) {
+                setGraphicsQuality(savedQuality);
+            } else if (isMobile || isFirefox) {
+                console.log("Appareil mobile ou Firefox détecté, passage en qualité moyenne par défaut.");
+                setGraphicsQuality('medium');
+            } else {
+                setGraphicsQuality('high');
+            }
+        }
+
+        document.getElementById('graphicsQualityButtons').addEventListener('click', (e) => {
+            if (e.target.tagName === 'BUTTON') {
+                const quality = e.target.dataset.quality;
+                if (quality) {
+                    setGraphicsQuality(quality);
+                }
+            }
+        });
     </script>
 </body>
 </html>
